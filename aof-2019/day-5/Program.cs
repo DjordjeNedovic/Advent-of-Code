@@ -7,6 +7,235 @@ namespace day_5
         static void Main(string[] args)
         {
             PartOne();
+            PartTwo();
+        }
+
+        private static void PartTwo()
+        {
+            int result = 0;
+            Console.WriteLine("Enter input: ");
+            string keyInput = Console.ReadLine();
+            int input = Int32.Parse(keyInput);
+            int[] ints = new int[] { 3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31,1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104,999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99};
+            int oct = 0;
+            while (true)
+            {
+                if (oct > ints.Length)
+                {
+                    Console.WriteLine($"out of memory");
+                    break;
+                }
+                if (ints[oct] == 99)
+                {
+                    Console.WriteLine($"end of program");
+                    break;
+                }
+                
+                int operant = ints[oct] % 10;
+                int first = ints[oct + 1];
+                int secound = ints[oct + 2];
+                
+                if (operant == 1 || operant == 2)
+                {
+                    result = ints[oct + 3];
+                    if (ints[oct] > 10)
+                    {
+                        int command = ints[oct];
+                        string fullCommand = AddMissingZeros(command);
+
+                        bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
+                        bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
+
+                        int firstValue = IsFistParamInPositionMode ? ints[first] : first;
+                        int secoundValue = IsSecoundParamInPositionMode ? ints[secound] : secound;
+
+                        if (operant == 1)
+                        {
+                            ints[result] = firstValue + secoundValue;
+                        }
+                        else if (operant == 2)
+                        {
+                            ints[result] = firstValue * secoundValue;
+                        }
+                    }
+                    else
+                    {
+                        int resultFirs = ints[first];
+                        int resultSec = ints[secound];
+                        if (operant == 1)
+                        {
+                            ints[result] = resultFirs + resultSec;
+                        }
+                        else if (operant == 2)
+                        {
+                            ints[result] = resultFirs * resultSec;
+                        }
+                    }
+
+                    oct += 4;
+                }
+                else if (operant == 3)
+                {
+                    result = ints[oct + 1];
+                    oct += 2;
+                    ints[result] = input;
+                }
+                else if (operant == 4)
+                {
+                    if (ints[oct] > 10)
+                    {
+                        int command = ints[oct];
+                        string fullCommand = AddMissingZeros(command);
+
+                        bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        if (IsFistParamInPositionMode)
+                        {
+                            result = ints[first];
+                            Console.WriteLine($"Output: {ints[result]}");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Output: {first}");
+                        }
+                    }
+                    else
+                    {
+                        result = ints[oct + 1];
+                        Console.WriteLine($"Output: {ints[result]}");
+
+                    }
+
+                    oct += 2;
+                }
+                else if (operant == 5 || operant == 6)
+                {
+                    if (ints[oct] > 10)
+                    {
+                        int command = ints[oct];
+                        string fullCommand = AddMissingZeros(command);
+
+                        bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
+                        bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
+
+                        int firstValue = IsFistParamInPositionMode ? ints[first] : first;
+                        int secoundValue = IsSecoundParamInPositionMode ? ints[secound] : secound;
+
+                        if (operant == 5)
+                        {
+                            if (firstValue != 0)
+                            {
+                                oct = secoundValue;
+                                continue;
+                            }
+                            oct += 3;
+                        }
+                        if (operant == 6)
+                        {
+                            if (firstValue == 0)
+                            {
+                                oct = secoundValue;
+                                continue;
+                            }
+                            oct += 3;
+                        }
+                    }
+                    else
+                    {
+                        if (operant == 5)
+                        {
+                            if (ints[first] !=0 )
+                            {
+                                oct = ints[secound]; 
+                                continue;
+                            }
+                            oct += 3;
+                        }
+                        if (operant == 6)
+                        {
+                            if (ints[first] == 0)
+                            {
+                                oct = ints[secound];
+                                continue;
+                            }
+                            oct += 3;
+                        }
+                    }
+                }
+                else if (operant == 7 || operant == 8)
+                {
+                    result = ints[oct + 3];
+                    if (ints[oct] > 10)
+                    {
+                        int command = ints[oct];
+                        string fullCommand = AddMissingZeros(command);
+
+                        bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
+                        bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
+
+                        int firstValue = IsFistParamInPositionMode ? ints[first] : first;
+                        int secoundValue = IsSecoundParamInPositionMode ? ints[secound] : secound;
+
+                        if (operant == 7)
+                        {
+                            if (firstValue < secoundValue)
+                            {
+                                ints[result] = 1;
+                            }
+                            else
+                            {
+                                ints[result] = 0;
+                            }
+                        }
+                        if (operant == 8)
+                        {
+                            if (firstValue == secoundValue)
+                            {
+                                ints[result] = 1;
+                            }
+                            else
+                            {
+                                ints[result] = 0;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (operant == 7) 
+                        {
+                            if (ints[first] < ints[secound])
+                            {
+                                ints[result] = 1;
+                            }
+                            else
+                            {
+                                ints[result] = 0;
+                            }
+                        }
+                        if (operant == 8)
+                        {
+                            if (ints[first] == ints[secound])
+                            {
+                                ints[result] = 1;
+                            }
+                            else
+                            {
+                                ints[result] = 0;
+                            }
+                        }
+                    }
+
+                    oct += 4;
+                }
+                else
+                {
+                    Console.WriteLine("BUM");
+                    break;
+                }
+            }
         }
 
         private static void PartOne()
