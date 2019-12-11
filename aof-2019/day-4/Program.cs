@@ -14,25 +14,76 @@ namespace day_4
             int end = Int32.Parse(values[1]);
 
             List<string> numbers = new List<string>();
-            List<string> solution = new List<string>();
+            List<string> partOneSolutions = new List<string>();
+            List<string> n = new List<string>();
             for (int i = 1; i < end-start; i++) 
             {
                 numbers.Add((start + i).ToString());
             }
 
-            foreach (string n in numbers) 
+            foreach (string number in numbers) 
             {
-
-                if (meth(n)) 
+                if (IsNumberForSolutionForPartOne(number)) 
                 {
-                    solution.Add(n);
+                    partOneSolutions.Add(number);
                 }
             }
 
-            Console.WriteLine($"Result: {solution.Count}");
+            foreach (string nu in numbers) 
+            {
+                if (IsNumberForSolutionForPartTwo(nu))
+                {
+                    n.Add(nu);
+                }
+            }
+
+            //(You guessed 1306<x<1801)your answer is too low
+            Console.WriteLine($"Result: {partOneSolutions.Count}");
+            Console.WriteLine($"Result: {n.Count}");
+            Console.WriteLine(String.Join( ",",n));
         }
 
-        private static bool meth(string n) 
+        private static bool IsNumberForSolutionForPartTwo(string n)
+        {
+            int counter = 1;
+            bool hasMoreSame = false;
+            bool hasPair = false;
+            for (int i = 0; i < n.Length; i++)
+            {
+                if (i == 0)
+                    continue;
+                var curetn = n[i].ToString();
+                var last = n[i - 1].ToString();
+
+                if (Int32.Parse(curetn) < Int32.Parse(last))
+                    return false;
+                if (Int32.Parse(curetn) == Int32.Parse(last))
+                {
+                    if (!hasMoreSame)
+                    {
+                        hasMoreSame = !hasMoreSame;
+                        if (!hasPair)
+                            hasPair = !hasPair;
+                    }
+
+                    counter++;
+                }
+                if (Int32.Parse(curetn) > Int32.Parse(last))
+                {
+                    if (counter == 1)
+                        continue;
+                    if (counter > 2)
+                        hasPair = false;
+                    hasMoreSame = false;
+                    counter = 1;
+                }
+
+            }
+
+            return hasPair;
+        }
+
+        private static bool IsNumberForSolutionForPartOne(string n) 
         {
             bool hasTwoSame = false;
             for (int i = 0; i < n.Length; i++)
@@ -47,7 +98,6 @@ namespace day_4
 
                 if (Int32.Parse(curetn) > Int32.Parse(last)) 
                 {
-
                     continue;
                 }
 

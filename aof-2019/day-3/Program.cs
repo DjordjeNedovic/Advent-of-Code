@@ -10,8 +10,8 @@ namespace day_3
         static List<Tuple<int, int>> firstWire = new List<Tuple<int, int>>();
         static List<Tuple<int, int>> secoundWire = new List<Tuple<int, int>>();
 
-        static string firstPath = "R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51";
-        static string secoundPath = "U98,R91,D20,R16,D67,R40,U7,R15,U6,R7";
+        static string firstPath = "R75,D30,R83,U83,L12,D49,R71,U7,L72";
+        static string secoundPath = "U62,R66,U55,R34,D71,R55,D58,R83";
 
         static void Main(string[] args)
         {
@@ -19,26 +19,32 @@ namespace day_3
             CalculatePaths(firstPath, ref firstWire);
             secoundWire.Add(new Tuple<int, int>(0,0));
             CalculatePaths(secoundPath, ref secoundWire);
+
             List<Tuple<int, int>> corses = firstWire.Where(x => secoundWire.Any(y => y.Item1 == x.Item1 && y.Item2 == x.Item2)).Select(x => x).ToList();
-            var t = corses[1];
-            int sh = 0;
+            Tuple<int, int> corse = corses[1];
+            int fewestSteps = 0;
+            
             foreach (Tuple<int, int> course in corses) 
             {
                 Console.WriteLine($"pair({course.Item1},{course.Item2})");
-                if (Math.Abs(course.Item1) + Math.Abs(course.Item2) > 0 && Math.Abs(course.Item1) + Math.Abs(course.Item2) < Math.Abs(t.Item1) + Math.Abs(t.Item2))
-                    t = course;
+                if (Math.Abs(course.Item1) + Math.Abs(course.Item2) > 0 && Math.Abs(course.Item1) + Math.Abs(course.Item2) < Math.Abs(corse.Item1) + Math.Abs(corse.Item2))
+                    corse = course;
 
                 int indexA = firstWire.IndexOf(course);
                 int indexB = secoundWire.IndexOf(course);
-                if (sh == 0)
-                    sh = indexA + indexB;
-                else if (sh > indexA + indexB)
-                    sh = indexA + indexB;
-                
+                if (fewestSteps == 0)
+                {
+                    fewestSteps = indexA + indexB;
+                }
+                else if (fewestSteps > indexA + indexB) 
+                {
+                    fewestSteps = indexA + indexB;
+                }
             }
 
-            Console.WriteLine($"index of a+b = {sh}");
-            Console.WriteLine($"Shortest path is on ({t.Item1},{t.Item2}) with distance {Math.Abs(t.Item1) + Math.Abs(t.Item2)}");
+            int manhattanDistanceToTheClosestIntersection = Math.Abs(corse.Item1) + Math.Abs(corse.Item2);
+            Console.WriteLine($"Fewest combined steps the wires must take to reach an intersection is {fewestSteps}");
+            Console.WriteLine($"Manhattan distance from the central port to the closest intersection is {manhattanDistanceToTheClosestIntersection}");
         }
 
         private static void CalculatePaths(string path, ref List<Tuple<int, int>> wirePaths) 
@@ -87,10 +93,7 @@ namespace day_3
                         wirePaths.Add(p);
                     }
                 }
-
             }
-
-            //return wirePaths;
         }
     }
 }

@@ -6,35 +6,28 @@ namespace day_1
     {
         static void Main(string[] args)
         {
-            int finaly = 0;
-            int[] ints = new int[] { 1969, 100756 };
-            foreach (int num in ints)
+            int solution = 0;
+            int[] modelues = new int[] { 1969, 100756 };
+            foreach (int num in modelues)
             {
-                var tt = num;
+                int module = num;
                 bool isPostible = true;
-                int mass = 0;
+                int fuelPerModule = 0;
                 while (isPostible)
                 {
-                    var t = Math.Floor(tt / 3.0);
-                    int interval = Convert.ToInt32(t);
-                    int reslut = interval - 2;
-
-                    Console.WriteLine($"tt: {tt}");
-                    mass += reslut;
-                    Console.WriteLine(mass);
-                    tt = reslut;
-
+                    int reslut = Convert.ToInt32(Math.Floor(module / 3.0)) - 2;
+                    fuelPerModule += reslut;
+                    module = reslut;
                     if (reslut / 3 < 3)
                     {
                         break;
                     }
-
                 }
 
-                finaly += mass;
+                solution += fuelPerModule;
             }
 
-            Console.WriteLine($"final reslut is: {finaly}");
+            Console.WriteLine($"final reslut is: {solution}");
         }
     }
 }

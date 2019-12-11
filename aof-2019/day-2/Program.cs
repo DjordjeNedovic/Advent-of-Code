@@ -6,68 +6,67 @@ namespace day_2
     {
         static void Main(string[] args)
         {
-            int[] ints = new int[] { 1, 1, 1, 4, 99, 5, 6, 0, 99 };
-            for (int i = 0; i < 100; i++) 
+            int[] testValues = new int[] { 1, 1, 1, 4, 99, 5, 6, 0, 99 };
+            for (int firstIndex = 0; firstIndex < 100; firstIndex++) 
             {
-                for (int j = 0; j < 100; j++) 
+                for (int secondIndex = 0; secondIndex < 100; secondIndex++) 
                 {
-                    int[] programs = new int[ints.Length];
-                    Array.Copy(ints, programs, ints.Length);
-                    programs[1]= i;
-                    programs[2] = j;
+                    int[] variations = new int[testValues.Length];
+                    Array.Copy(testValues, variations, testValues.Length);
+                    variations[1] = firstIndex;
+                    variations[2] = secondIndex;
                     int oct = 0;
                     while (true)
                     {
-                        if (oct > programs.Length)
+                        if (oct > variations.Length)
                         {
                             Console.WriteLine($"out of memory");
                             break;
                         }
-                        if (programs[oct] == 99)
+                        if (variations[oct] == 99)
                         {
                             break;
                         }
 
-                        int first = programs[oct + 1];
-                        int secound = programs[oct + 2];
-                        if (first >= ints.Length)
-                        {
-                            break;
-                        }
-                        int resultFirs = programs[first];
-
-                        if (secound >= ints.Length)
-                        {
-                            break;
-                        }
-                        int resultSec = programs[secound];
-                        int resultAdress = programs[oct + 3];
-
-                        if (resultAdress >= ints.Length)
+                        int firstParam = variations[oct + 1];
+                        if (firstParam >= testValues.Length)
                         {
                             break;
                         }
 
-                        int g = programs[resultAdress];
-                        int operant = programs[oct];
+                        int resultFirs = variations[firstParam];
+                        
+                        int secoundParam = variations[oct + 2];
+                        if (secoundParam >= testValues.Length)
+                        {
+                            break;
+                        }
 
+                        int resultSec = variations[secoundParam];
+                        
+                        int resultAdress = variations[oct + 3];
+                        if (resultAdress >= testValues.Length)
+                        {
+                            break;
+                        }
+
+                        int operant = variations[oct];
                         if (operant == 1)
                         {
-                            programs[resultAdress] = resultFirs + resultSec;
+                            variations[resultAdress] = resultFirs + resultSec;
                         }
                         else if (operant == 2)
                         {
-                            programs[resultAdress] = resultFirs * resultSec;
+                            variations[resultAdress] = resultFirs * resultSec;
                         }
 
                         oct += 4;
                     }
 
-                    if (programs[0]==19690720) 
+                    if (variations[0]==19690720) 
                     {
-                        Console.WriteLine($"ints[1] = {programs[1]}, ints[2]={programs[2]} = {programs[0]}");
-                        Console.WriteLine(String.Join(',', ints));
-
+                        Console.WriteLine($"ints[1] = {variations[1]}, ints[2]={variations[2]} = {variations[0]}");
+                        Console.WriteLine($"100 * noun + verb = {100 * variations[1] + variations[2]}");
                     }
                 }
             }
