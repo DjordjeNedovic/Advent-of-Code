@@ -14,12 +14,12 @@ namespace day_9
 
         private static void PartOne()
         {
-            //Console.WriteLine("Enter input: ");
-            //string keyInput = Console.ReadLine();
-            //long input = Int64.Parse(keyInput);
+            Console.WriteLine("Enter input: ");
+            string keyInput = Console.ReadLine();
+            long input = Int64.Parse(keyInput);
             long relativeBase = 0;
             long result = 0;
-            List<long> ints = new List<long> { 104, 1125899906842624, 99 };
+            List<long> ints = new List<long> { 109, 1, 203, 2, 204, 2, 99 };
             int oct = 0;
             while (true)
             {
@@ -94,9 +94,31 @@ namespace day_9
                 }
                 else if (operant == 3)
                 {
-                    result = ints[oct + 1];
-                    oct += 2;
-                    //ints[(int)result] = input;
+                    if (ints[oct] > 10)
+                    {
+                        int command = (int)ints[oct];
+                        string fullCommand = AddMissingZeros(command);
+                        Console.WriteLine($"full command: {fullCommand}");
+                        bool IsFirstParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        bool IsFirstParamInImmedMode = (Int32.Parse(fullCommand[2].ToString()) == 1) ? true : false;
+                        bool IsFirstParamInRelativeMode = (Int32.Parse(fullCommand[2].ToString()) == 2) ? true : false;
+                        
+                        if (IsFirstParamInRelativeMode)
+                        {
+                            //int memoryAddress = (int)(relativeBase + first);
+                            //Console.WriteLine($"Output: {ints[memoryAddress]}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Shit just become real");
+                        }
+                    }
+                    else
+                    {
+                        result = ints[oct + 1];
+                        oct += 2;
+                        ints[(int)result] = input;
+                    }
                 }
                 else if (operant == 4)
                 {
@@ -105,8 +127,8 @@ namespace day_9
                         int command = (int)ints[oct];
                         string fullCommand = AddMissingZeros(command);
                         Console.WriteLine($"full command: {fullCommand}");
-                        //for 203 error, full command is 00104
                         bool IsFirstParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        bool IsFirstParamInImmedMode = (Int32.Parse(fullCommand[2].ToString()) == 1) ? true : false;
                         bool IsFirstParamInRelativeMode = (Int32.Parse(fullCommand[2].ToString()) == 2) ? true : false;
                         if (IsFirstParamInPositionMode)
                         {
@@ -114,16 +136,18 @@ namespace day_9
                             Console.WriteLine($"Output: {(int)ints[(int)result]}");
 
                         }
+                        else if(IsFirstParamInImmedMode)
+                        {
+                            Console.WriteLine($"Output: {first}");
+                        }
                         else if (IsFirstParamInRelativeMode)
                         {
-                            //Console.WriteLine($"It is relative base");
                             int memoryAddress = (int)(relativeBase + first);
-                            //Console.WriteLine($"memoryAddress: {memoryAddress}");
                             Console.WriteLine($"Output: {ints[memoryAddress]}");
                         }
                         else 
                         {
-                            Console.WriteLine($"Output: {first}");
+                            Console.WriteLine("Shit just become real");
                         }
                     }
                     else
@@ -280,12 +304,44 @@ namespace day_9
                 {
 #if DEBUG
                     Console.WriteLine("It's nine!");
-
+#endif
                     int command = (int)ints[oct];
                     string fullCommand = AddMissingZeros(command);
-                    Console.WriteLine($"full command: {fullCommand}");
+                    bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                    if (Int32.Parse(fullCommand[2].ToString()) == 0)
+                    {
+#if DEBUG
+                        Console.WriteLine("mode 0");
+                        var valueFromFirstAddress = ints[(int)first];
+                        Console.WriteLine($"valueFromFirstAddress: {valueFromFirstAddress}");
+                        var valueFromRelativeBaseAddress = ints[(int)relativeBase];
+                        Console.WriteLine($"valueFromRelativeBaseAddress: {valueFromRelativeBaseAddress}");
 #endif
-                    relativeBase = first + relativeBase;
+                        Console.WriteLine("Position mode for 9");
+                        // In position mode, its value is the value stored at address
+                        relativeBase = ints[(int)first] + relativeBase;
+                    }
+                    else if (Int32.Parse(fullCommand[2].ToString()) == 1)
+                    {
+#if DEBUG
+                        Console.WriteLine("mode 1");
+#endif
+                        // In immediate mode, a parameter is interpreted as a value - if the parameter is 50, its value is simply 50.
+                        relativeBase = first + relativeBase;
+                    }
+                    else if (Int32.Parse(fullCommand[2].ToString()) == 2)
+                    {
+#if DEBUG
+                    Console.WriteLine("mode 2");
+#endif
+                        //209 command does not work properly
+                        var  tt = first + relativeBase;
+                        relativeBase = ints[(int)tt];
+                    }
+                    else 
+                    {
+                        Console.WriteLine("Shit just become real.");
+                    }
 #if DEBUG
                     Console.WriteLine($"new relative base: {relativeBase}");
 #endif
