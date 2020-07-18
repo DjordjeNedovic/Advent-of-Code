@@ -1,4 +1,5 @@
-﻿using System; 
+﻿using System;
+using System.IO;
 
 namespace day_2
 {
@@ -6,7 +7,8 @@ namespace day_2
     {
         static void Main(string[] args)
         {
-            int[] testValues = new int[] { 1, 1, 1, 4, 99, 5, 6, 0, 99 };
+            string input = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
+            int[] testValues = Array.ConvertAll(input.Split(','), s => Int32.Parse(s));
             for (int firstIndex = 0; firstIndex < 100; firstIndex++) 
             {
                 for (int secondIndex = 0; secondIndex < 100; secondIndex++) 

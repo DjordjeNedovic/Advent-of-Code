@@ -6,4 +6,10 @@
     <RootNamespace>day_2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="puzzleInput.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

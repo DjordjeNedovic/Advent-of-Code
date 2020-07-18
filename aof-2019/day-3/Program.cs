@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -9,26 +10,29 @@ namespace day_3
     {
         static List<Tuple<int, int>> firstWire = new List<Tuple<int, int>>();
         static List<Tuple<int, int>> secoundWire = new List<Tuple<int, int>>();
-
-        static string firstPath = "R75,D30,R83,U83,L12,D49,R71,U7,L72";
-        static string secoundPath = "U62,R66,U55,R34,D71,R55,D58,R83";
-
+ 
         static void Main(string[] args)
         {
+            string input = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
+            string firstPath = input.Split(Environment.NewLine)[0];
+            string secoundPath = input.Split(Environment.NewLine)[1];
+
             firstWire.Add(new Tuple<int, int>(0,0));
             CalculatePaths(firstPath, ref firstWire);
             secoundWire.Add(new Tuple<int, int>(0,0));
             CalculatePaths(secoundPath, ref secoundWire);
 
+            //this query takes too long, refacoring will be soon performed
             List<Tuple<int, int>> corses = firstWire.Where(x => secoundWire.Any(y => y.Item1 == x.Item1 && y.Item2 == x.Item2)).Select(x => x).ToList();
             Tuple<int, int> corse = corses[1];
             int fewestSteps = 0;
             
             foreach (Tuple<int, int> course in corses) 
             {
-                Console.WriteLine($"pair({course.Item1},{course.Item2})");
-                if (Math.Abs(course.Item1) + Math.Abs(course.Item2) > 0 && Math.Abs(course.Item1) + Math.Abs(course.Item2) < Math.Abs(corse.Item1) + Math.Abs(corse.Item2))
+                if (Math.Abs(course.Item1) + Math.Abs(course.Item2) > 0 && Math.Abs(course.Item1) + Math.Abs(course.Item2) < Math.Abs(corse.Item1) + Math.Abs(corse.Item2)) 
+                {
                     corse = course;
+                }
 
                 int indexA = firstWire.IndexOf(course);
                 int indexB = secoundWire.IndexOf(course);
@@ -49,7 +53,6 @@ namespace day_3
 
         private static void CalculatePaths(string path, ref List<Tuple<int, int>> wirePaths) 
         {
-
             string[] directions = path.Split(',');
             foreach (string direction in directions) 
             {
