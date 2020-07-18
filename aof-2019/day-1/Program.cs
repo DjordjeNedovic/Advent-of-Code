@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace day_1
 {
@@ -7,13 +8,14 @@ namespace day_1
         static void Main(string[] args)
         {
             int solution = 0;
-            int[] modelues = new int[] { 1969, 100756 };
+            string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzleInput.txt"));
+            int[] modelues = Array.ConvertAll(input, s => Int32.Parse(s));
             foreach (int num in modelues)
             {
                 int module = num;
-                bool isPostible = true;
+                bool isPosible = true;
                 int fuelPerModule = 0;
-                while (isPostible)
+                while (isPosible)
                 {
                     int reslut = Convert.ToInt32(Math.Floor(module / 3.0)) - 2;
                     fuelPerModule += reslut;
@@ -28,6 +30,7 @@ namespace day_1
             }
 
             Console.WriteLine($"final reslut is: {solution}");
+            Console.ReadKey();
         }
     }
 }

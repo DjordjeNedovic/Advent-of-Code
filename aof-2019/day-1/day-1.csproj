@@ -4,6 +4,16 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <RootNamespace>day_1</RootNamespace>
+    <StartupObject>day_1.Program</StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="puzleInput.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
