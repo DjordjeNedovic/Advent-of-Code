@@ -1,58 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace day_6
 {
     class Program
     {
+        static Dictionary<string, List<string>> OrbitPairs = new Dictionary<string, List<string>>();
+        static int numberOfOrbits = 0;
+
         static void Main(string[] args)
         {
-            string[] map = File.ReadAllLines("TextFile1.txt");
-            Dictionary<string, List<string>> dictionary = new Dictionary<string, List<string>>();
-            foreach (string orbit in map) 
+            string[] inputFromTxt = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
+            foreach (string mapping in inputFromTxt) 
             {
-                string[] objectsInOrbit = orbit.Split(')');
-                string COM = objectsInOrbit[0];
-                string objectInOrbit = objectsInOrbit[1];
-
-                Console.WriteLine($"{objectInOrbit} is in orbit of {COM}");
-
-                if (!dictionary.ContainsKey(objectInOrbit))
+                string[] relation = mapping.Split(')');
+                Console.WriteLine($"{relation[1]} is in orbit around {relation[0]}");
+                if (OrbitPairs.ContainsKey(relation[0]) == false)
                 {
-                    List<string> list = new List<string>();
-                    list.Add(COM);
-                    dictionary.Add(objectInOrbit, list);
-                }
-                else 
-                {
-                    dictionary[objectInOrbit].Add(COM);
-                }
-                if (!dictionary.ContainsKey(COM))
-                {
-                    List<string> list = new List<string>();
-                    dictionary.Add(COM, list);
-                }
-                else
-                {
-                    dictionary[objectInOrbit].AddRange(dictionary[COM]);
+                    OrbitPairs.Add(relation[0], new List<string>());
                 }
 
+                OrbitPairs[relation[0]].Add(relation[1]);
             }
 
-            int number = 0;
-            foreach (var tt in dictionary.Values) 
-            {
-                number += tt.Count;
-                if (tt.Count == 0) 
-                {
-                    Console.WriteLine("ROOT");
-                }
-            }
+            List<string> listOfDirectOrbits = OrbitPairs["COM"];
+            GetOrbits(listOfDirectOrbits, 0);
+            Console.WriteLine($"Number of direct and indirect orbits is: {numberOfOrbits}");
+        }
 
-            //(You guessed 2221.)
-            Console.WriteLine($"otal number of direct and indirect orbits is {number}");
+        private static void GetOrbits(List<string> listOfDirectOrbits, int result)
+        {
+            result++;
+            foreach (var element in listOfDirectOrbits) 
+            {
+                if (OrbitPairs.ContainsKey(element))
+                {
+                    GetOrbits(OrbitPairs[element], result);
+                }
+
+                numberOfOrbits += result;
+                Console.WriteLine($"    planet: {element} has direct and indirect orbits: {result}");
+            }
         }
     }
-}
+ }
