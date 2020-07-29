@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace day_7
 {
@@ -10,18 +11,17 @@ namespace day_7
 
         static void Main(string[] args)
         {
+            Console.WriteLine("################### PART ONE ###################");
             SolvePartOne();
+            Console.WriteLine("################### PART TWO ###################");
             SolvePartTwo();
         }
 
         private static void SolvePartOne()
         {
-            combinations = new List<string>();
-            String str = "01234";
-            int n = str.Length;
-            permute(str, 0, n - 1);
+            string permuteCompination = "01234";
+            List<string> combinations = Permute(permuteCompination, 0, permuteCompination.Length - 1, new List<string>());
             int result = 0;
-            string t = "";
             foreach (string combination in combinations)
             {
                 var ampA = RunAmplifierPartOne(Int32.Parse(combination[0].ToString()), 0);
@@ -33,25 +33,20 @@ namespace day_7
                 if (ampE > result)
                 {
                     result = ampE;
-                    t = combination;
                 }
             }
 
-            Console.WriteLine($"Output is: {result}, {t}");
+            Console.WriteLine($"The highest signal that can be sent to the thrusters is: {result}");
         }
 
-        private static void SolvePartTwo() 
+        private static void SolvePartTwo()
         {
-            combinations = new List<string>();
-            String str = "56789";
-            int n = str.Length;
-            permute(str, 0, n - 1);
+            string str = "56789";
+            List<string> combinations = Permute(str, 0, str.Length - 1, new List<string>());
             int result = 0;
-            string t = "";
             foreach (string combination in combinations)
             {
-                Console.WriteLine($"combination {combination}");
-                List<int> inputsApmA = new List<int>{ Int32.Parse(combination[0].ToString()), 0 };
+                List<int> inputsApmA = new List<int> { Int32.Parse(combination[0].ToString()), 0 };
                 List<int> inputsApmB = new List<int> { Int32.Parse(combination[1].ToString()) };
                 List<int> inputsApmC = new List<int> { Int32.Parse(combination[2].ToString()) };
                 List<int> inputsApmD = new List<int> { Int32.Parse(combination[3].ToString()) };
@@ -69,39 +64,263 @@ namespace day_7
                     inputsApmE.Add(ampD);
                     var ampE = RunAmplifierPartTwo(inputsApmE, "ampE");
                     inputsApmA.Add(ampE);
-                    if (isAmpEHalted )
+                    if (isAmpEHalted)
                     {
                         if (ampE > result)
                         {
                             result = ampE;
-                            t = combination; 
                         }
 
                         break;
-                    } 
+                    }
                 }
             }
 
-            Console.WriteLine($"Output is: {result}, {t}");
+            Console.WriteLine($"Diagnostic code for system ID 5 is: {result}");
         }
 
+        //maintability index for this method is 23, refactoring will be done... one day
+        private static int RunAmplifierPartOne(int firstInput, int secondInput)
+        {
+            int solution = 0;
+            int i = 0;
+            int result = 0;
+            int[] inputs = new int[] { firstInput, secondInput };
+            string inputFromTxt = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
+            int[] puzzleInput = Array.ConvertAll(inputFromTxt.Split(','), s => Int32.Parse(s));
+            int opcodeIndex = 0;
+            while (true)
+            {
+                if (opcodeIndex > puzzleInput.Length)
+                {
+                    break;
+                }
+                if (puzzleInput[opcodeIndex] == 99)
+                {
+                    break;
+                }
+
+                int opcode = puzzleInput[opcodeIndex] % 10;
+                int firstParam = puzzleInput[opcodeIndex + 1];
+                int secondParam = puzzleInput[opcodeIndex + 2];
+                if (opcode == 1 || opcode == 2)
+                {
+                    result = puzzleInput[opcodeIndex + 3];
+                    if (puzzleInput[opcodeIndex] > 10)
+                    {
+                        int command = puzzleInput[opcodeIndex];
+                        string fullCommand = AddMissingZeros(command);
+                        bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
+                        int firstValue = IsFistParamInPositionMode ? puzzleInput[firstParam] : firstParam;
+                        int secoundValue = IsSecoundParamInPositionMode ? puzzleInput[secondParam] : secondParam;
+                        if (opcode == 1)
+                        {
+                            puzzleInput[result] = firstValue + secoundValue;
+                        }
+                        else if (opcode == 2)
+                        {
+                            puzzleInput[result] = firstValue * secoundValue;
+                        }
+                    }
+                    else
+                    {
+                        int readValueOfFirstParam = puzzleInput[firstParam];
+                        int readValueOfSecondParam = puzzleInput[secondParam];
+                        if (opcode == 1)
+                        {
+                            puzzleInput[result] = readValueOfFirstParam + readValueOfSecondParam;
+                        }
+                        else if (opcode == 2)
+                        {
+                            puzzleInput[result] = readValueOfFirstParam * readValueOfSecondParam;
+                        }
+                    }
+
+                    opcodeIndex += 4;
+                }
+                else if (opcode == 3)
+                {
+                    result = puzzleInput[opcodeIndex + 1];
+                    opcodeIndex += 2;
+                    puzzleInput[result] = inputs[i];
+
+                    i++;
+                }
+                else if (opcode == 4)
+                {
+                    if (puzzleInput[opcodeIndex] > 10)
+                    {
+                        int command = puzzleInput[opcodeIndex];
+                        string fullCommand = AddMissingZeros(command);
+
+                        bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        if (IsFistParamInPositionMode)
+                        {
+                            result = puzzleInput[firstParam];
+                            solution = puzzleInput[result];
+                        }
+                        else
+                        {
+                            solution = firstParam;
+                        }
+                    }
+                    else
+                    {
+                        result = puzzleInput[opcodeIndex + 1];
+                        solution = puzzleInput[result];
+                    }
+
+                    opcodeIndex += 2;
+                }
+                else if (opcode == 5 || opcode == 6)
+                {
+                    if (puzzleInput[opcodeIndex] > 10)
+                    {
+                        int command = puzzleInput[opcodeIndex];
+                        string fullCommand = AddMissingZeros(command);
+
+                        bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
+                        bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
+
+                        int firstValue = IsFistParamInPositionMode ? puzzleInput[firstParam] : firstParam;
+                        int secoundValue = IsSecoundParamInPositionMode ? puzzleInput[secondParam] : secondParam;
+                        if (opcode == 5)
+                        {
+                            if (firstValue != 0)
+                            {
+                                opcodeIndex = secoundValue;
+                                continue;
+                            }
+
+                            opcodeIndex += 3;
+                        }
+                        if (opcode == 6)
+                        {
+                            if (firstValue == 0)
+                            {
+                                opcodeIndex = secoundValue;
+
+                                continue;
+                            }
+
+                            opcodeIndex += 3;
+                        }
+                    }
+                    else
+                    {
+                        if (opcode == 5)
+                        {
+                            if (puzzleInput[firstParam] != 0)
+                            {
+                                opcodeIndex = puzzleInput[secondParam];
+                                continue;
+                            }
+
+                            opcodeIndex += 3;
+                        }
+                        if (opcode == 6)
+                        {
+                            if (puzzleInput[firstParam] == 0)
+                            {
+                                opcodeIndex = puzzleInput[secondParam];
+                                continue;
+                            }
+
+                            opcodeIndex += 3;
+                        }
+                    }
+                }
+                else if (opcode == 7 || opcode == 8)
+                {
+                    result = puzzleInput[opcodeIndex + 3];
+                    if (puzzleInput[opcodeIndex] > 10)
+                    {
+                        int command = puzzleInput[opcodeIndex];
+                        string fullCommand = AddMissingZeros(command);
+                        bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
+                        bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
+                        int firstValue = IsFistParamInPositionMode ? puzzleInput[firstParam] : firstParam;
+                        int secoundValue = IsSecoundParamInPositionMode ? puzzleInput[secondParam] : secondParam;
+                        if (opcode == 7)
+                        {
+                            if (firstValue < secoundValue)
+                            {
+                                puzzleInput[result] = 1;
+                            }
+                            else
+                            {
+                                puzzleInput[result] = 0;
+                            }
+                        }
+                        if (opcode == 8)
+                        {
+                            if (firstValue == secoundValue)
+                            {
+                                puzzleInput[result] = 1;
+                            }
+                            else
+                            {
+                                puzzleInput[result] = 0;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (opcode == 7)
+                        {
+                            if (puzzleInput[firstParam] < puzzleInput[secondParam])
+                            {
+                                puzzleInput[result] = 1;
+                            }
+                            else
+                            {
+                                puzzleInput[result] = 0;
+                            }
+                        }
+                        if (opcode == 8)
+                        {
+                            if (puzzleInput[firstParam] == puzzleInput[secondParam])
+                            {
+                                puzzleInput[result] = 1;
+                            }
+                            else
+                            {
+                                puzzleInput[result] = 0;
+                            }
+                        }
+                    }
+
+                    opcodeIndex += 4;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return solution;
+        }
+
+        //maintability index for this method is 23, refactoring will be done... one day
         private static int RunAmplifierPartTwo(List<int> inputs, string ampName)
         {
             int solution = 0;
             int i = 0;
             int result = 0;
-            int[] ints = new int[] { 3,26,1001,26,-4,26,3,27,1002,27,2,27,1,27,26,27,4,27,1001,28,-1,28,1005,28,6,99,0,0,5};
-            int oct = 0;
+            string inputFromTxt = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
+            int[] puzzleInput = Array.ConvertAll(inputFromTxt.Split(','), s => Int32.Parse(s));
+            int opcodeIndex = 0;
             while (true)
             {
-                if (oct > ints.Length)
+                if (opcodeIndex > puzzleInput.Length)
                 {
-                    Console.WriteLine("shit happend");
                     break;
                 }
-                if (ints[oct] == 99)
+                if (puzzleInput[opcodeIndex] == 99)
                 {
-                    if (ampName.Equals("ampE")) 
+                    if (ampName.Equals("ampE"))
                     {
                         isAmpEHalted = true;
                     }
@@ -109,484 +328,255 @@ namespace day_7
                     break;
                 }
 
-                int operant = ints[oct] % 10;
-                int first = ints[oct + 1];
-                int secound = ints[oct + 2];
-                if (operant == 1 || operant == 2)
+                int opcode = puzzleInput[opcodeIndex] % 10;
+                int firstParam = puzzleInput[opcodeIndex + 1];
+                int secondParam = puzzleInput[opcodeIndex + 2];
+                if (opcode == 1 || opcode == 2)
                 {
-                    result = ints[oct + 3];
-                    if (ints[oct] > 10)
+                    result = puzzleInput[opcodeIndex + 3];
+                    if (puzzleInput[opcodeIndex] > 10)
                     {
-                        int command = ints[oct];
+                        int command = puzzleInput[opcodeIndex];
                         string fullCommand = AddMissingZeros(command);
-
                         bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
                         bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
-                        int firstValue = IsFistParamInPositionMode ? ints[first] : first;
-                        int secoundValue = IsSecoundParamInPositionMode ? ints[secound] : secound;
-
-                        if (operant == 1)
+                        int firstValue = IsFistParamInPositionMode ? puzzleInput[firstParam] : firstParam;
+                        int secoundValue = IsSecoundParamInPositionMode ? puzzleInput[secondParam] : secondParam;
+                        if (opcode == 1)
                         {
-                            ints[result] = firstValue + secoundValue;
+                            puzzleInput[result] = firstValue + secoundValue;
                         }
-                        else if (operant == 2)
+                        else if (opcode == 2)
                         {
-                            ints[result] = firstValue * secoundValue;
+                            puzzleInput[result] = firstValue * secoundValue;
                         }
                     }
                     else
                     {
-                        int resultFirs = ints[first];
-                        int resultSec = ints[secound];
-                        if (operant == 1)
+                        int readValueOfFirstParam = puzzleInput[firstParam];
+                        int readValeuOfSecondParam = puzzleInput[secondParam];
+                        if (opcode == 1)
                         {
-                            ints[result] = resultFirs + resultSec;
+                            puzzleInput[result] = readValueOfFirstParam + readValeuOfSecondParam;
                         }
-                        else if (operant == 2)
+                        else if (opcode == 2)
                         {
-                            ints[result] = resultFirs * resultSec;
+                            puzzleInput[result] = readValueOfFirstParam * readValeuOfSecondParam;
                         }
                     }
 
-                    oct += 4;
+                    opcodeIndex += 4;
                 }
-                else if (operant == 3)
+                else if (opcode == 3)
                 {
-                    if (inputs.Count>i)
+                    if (inputs.Count > i)
                     {
-                        result = ints[oct + 1];
-                        oct += 2;
-                        ints[result] = inputs[i];
-
+                        result = puzzleInput[opcodeIndex + 1];
+                        opcodeIndex += 2;
+                        puzzleInput[result] = inputs[i];
                         i++;
                     }
-                    else 
+                    else
                     {
-                        //Console.WriteLine($"apm {ampName} needs next input, solution {solution} is pushed");
                         return solution;
                     }
 
                 }
-                else if (operant == 4)
+                else if (opcode == 4)
                 {
-                    if (ints[oct] > 10)
+                    if (puzzleInput[opcodeIndex] > 10)
                     {
-                        int command = ints[oct];
+                        int command = puzzleInput[opcodeIndex];
                         string fullCommand = AddMissingZeros(command);
-
                         bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
                         if (IsFistParamInPositionMode)
                         {
-                            result = ints[first];
-                            solution = ints[result];
+                            result = puzzleInput[firstParam];
+                            solution = puzzleInput[result];
                         }
                         else
                         {
-                            solution = first;
+                            solution = firstParam;
                         }
                     }
                     else
                     {
-                        result = ints[oct + 1];
-                        solution = ints[result];
+                        result = puzzleInput[opcodeIndex + 1];
+                        solution = puzzleInput[result];
                     }
 
-                    oct += 2;
+                    opcodeIndex += 2;
                 }
-                else if (operant == 5 || operant == 6)
+                else if (opcode == 5 || opcode == 6)
                 {
-                    if (ints[oct] > 10)
+                    if (puzzleInput[opcodeIndex] > 10)
                     {
-                        int command = ints[oct];
+                        int command = puzzleInput[opcodeIndex];
                         string fullCommand = AddMissingZeros(command);
 
                         bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
                         bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
                         bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
 
-                        int firstValue = IsFistParamInPositionMode ? ints[first] : first;
-                        int secoundValue = IsSecoundParamInPositionMode ? ints[secound] : secound;
-
-                        if (operant == 5)
+                        int firstValue = IsFistParamInPositionMode ? puzzleInput[firstParam] : firstParam;
+                        int secoundValue = IsSecoundParamInPositionMode ? puzzleInput[secondParam] : secondParam;
+                        if (opcode == 5)
                         {
                             if (firstValue != 0)
                             {
-                                oct = secoundValue;
+                                opcodeIndex = secoundValue;
                                 continue;
                             }
-                            oct += 3;
+
+                            opcodeIndex += 3;
                         }
-                        if (operant == 6)
+                        if (opcode == 6)
                         {
                             if (firstValue == 0)
                             {
-                                oct = secoundValue;
+                                opcodeIndex = secoundValue;
                                 continue;
                             }
-                            oct += 3;
+
+                            opcodeIndex += 3;
                         }
                     }
                     else
                     {
-                        if (operant == 5)
+                        if (opcode == 5)
                         {
-                            if (ints[first] != 0)
+                            if (puzzleInput[firstParam] != 0)
                             {
-                                oct = ints[secound];
+                                opcodeIndex = puzzleInput[secondParam];
                                 continue;
                             }
-                            oct += 3;
+
+                            opcodeIndex += 3;
                         }
-                        if (operant == 6)
+                        if (opcode == 6)
                         {
-                            if (ints[first] == 0)
+                            if (puzzleInput[firstParam] == 0)
                             {
-                                oct = ints[secound];
+                                opcodeIndex = puzzleInput[secondParam];
                                 continue;
                             }
-                            oct += 3;
+
+                            opcodeIndex += 3;
                         }
                     }
                 }
-                else if (operant == 7 || operant == 8)
+                else if (opcode == 7 || opcode == 8)
                 {
-                    result = ints[oct + 3];
-                    if (ints[oct] > 10)
+                    result = puzzleInput[opcodeIndex + 3];
+                    if (puzzleInput[opcodeIndex] > 10)
                     {
-                        int command = ints[oct];
+                        int command = puzzleInput[opcodeIndex];
                         string fullCommand = AddMissingZeros(command);
 
                         bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
                         bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
 
-                        int firstValue = IsFistParamInPositionMode ? ints[first] : first;
-                        int secoundValue = IsSecoundParamInPositionMode ? ints[secound] : secound;
+                        int firstValue = IsFistParamInPositionMode ? puzzleInput[firstParam] : firstParam;
+                        int secoundValue = IsSecoundParamInPositionMode ? puzzleInput[secondParam] : secondParam;
 
-                        if (operant == 7)
+                        if (opcode == 7)
                         {
                             if (firstValue < secoundValue)
                             {
-                                ints[result] = 1;
+                                puzzleInput[result] = 1;
                             }
                             else
                             {
-                                ints[result] = 0;
+                                puzzleInput[result] = 0;
                             }
                         }
-                        if (operant == 8)
+                        if (opcode == 8)
                         {
                             if (firstValue == secoundValue)
                             {
-                                ints[result] = 1;
+                                puzzleInput[result] = 1;
                             }
                             else
                             {
-                                ints[result] = 0;
+                                puzzleInput[result] = 0;
                             }
                         }
                     }
                     else
                     {
-                        if (operant == 7)
+                        if (opcode == 7)
                         {
-                            if (ints[first] < ints[secound])
+                            if (puzzleInput[firstParam] < puzzleInput[secondParam])
                             {
-                                ints[result] = 1;
+                                puzzleInput[result] = 1;
                             }
                             else
                             {
-                                ints[result] = 0;
+                                puzzleInput[result] = 0;
                             }
                         }
-                        if (operant == 8)
+                        if (opcode == 8)
                         {
-                            if (ints[first] == ints[secound])
+                            if (puzzleInput[firstParam] == puzzleInput[secondParam])
                             {
-                                ints[result] = 1;
+                                puzzleInput[result] = 1;
                             }
                             else
                             {
-                                ints[result] = 0;
+                                puzzleInput[result] = 0;
                             }
                         }
                     }
 
-                    oct += 4;
+                    opcodeIndex += 4;
                 }
                 else
                 {
-                    //Console.WriteLine("BUM");
                     break;
                 }
             }
 
             return solution;
         }
-
-        private static int RunAmplifierPartOne(int firstInput, int secondInput)
-        {
-            int solution = 0;
-            int i = 0;
-            int result = 0;
-            int[] inputs = new int[] { firstInput, secondInput };
-            int[] ints = new int[] { 3, 8, 1001, 8, 10, 8, 105, 1, 0, 0, 21, 42, 67, 84, 109, 126, 207, 288, 369, 450, 99999, 3, 9, 102, 4, 9, 9, 1001, 9, 4, 9, 102, 2, 9, 9, 101, 2, 9, 9, 4, 9, 99, 3, 9, 1001, 9, 5, 9, 1002, 9, 5, 9, 1001, 9, 5, 9, 1002, 9, 5, 9, 101, 5, 9, 9, 4, 9, 99, 3, 9, 101, 5, 9, 9, 1002, 9, 3, 9, 1001, 9, 2, 9, 4, 9, 99, 3, 9, 1001, 9, 2, 9, 102, 4, 9, 9, 101, 2, 9, 9, 102, 4, 9, 9, 1001, 9, 2, 9, 4, 9, 99, 3, 9, 102, 2, 9, 9, 101, 5, 9, 9, 1002, 9, 2, 9, 4, 9, 99, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 101, 2, 9, 9, 4, 9, 3, 9, 101, 2, 9, 9, 4, 9, 3, 9, 1001, 9, 2, 9, 4, 9, 3, 9, 101, 2, 9, 9, 4, 9, 3, 9, 1001, 9, 2, 9, 4, 9, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 1001, 9, 1, 9, 4, 9, 99, 3, 9, 1001, 9, 2, 9, 4, 9, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 1001, 9, 2, 9, 4, 9, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 1001, 9, 2, 9, 4, 9, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 102, 2, 9, 9, 4, 9, 99, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 1001, 9, 1, 9, 4, 9, 3, 9, 101, 1, 9, 9, 4, 9, 3, 9, 101, 1, 9, 9, 4, 9, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 101, 2, 9, 9, 4, 9, 3, 9, 101, 1, 9, 9, 4, 9, 3, 9, 101, 1, 9, 9, 4, 9, 3, 9, 101, 2, 9, 9, 4, 9, 99, 3, 9, 1001, 9, 2, 9, 4, 9, 3, 9, 101, 1, 9, 9, 4, 9, 3, 9, 101, 2, 9, 9, 4, 9, 3, 9, 1001, 9, 1, 9, 4, 9, 3, 9, 1001, 9, 2, 9, 4, 9, 3, 9, 1001, 9, 1, 9, 4, 9, 3, 9, 101, 1, 9, 9, 4, 9, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 101, 1, 9, 9, 4, 9, 99, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 1001, 9, 1, 9, 4, 9, 3, 9, 101, 2, 9, 9, 4, 9, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 1001, 9, 1, 9, 4, 9, 3, 9, 1002, 9, 2, 9, 4, 9, 3, 9, 101, 1, 9, 9, 4, 9, 3, 9, 102, 2, 9, 9, 4, 9, 3, 9, 1001, 9, 2, 9, 4, 9, 99 };
-            int oct = 0;
-                while (true)
-                {
-                    if (oct > ints.Length)
-                    {
-                        break;
-                    }
-                    if (ints[oct] == 99)
-                    {
-                        break;
-                    }
-
-                    int operant = ints[oct] % 10;
-                    int first = ints[oct + 1];
-                    int secound = ints[oct + 2];
-
-                    if (operant == 1 || operant == 2)
-                    {
-                        result = ints[oct + 3];
-                        if (ints[oct] > 10)
-                        {
-                            int command = ints[oct];
-                            string fullCommand = AddMissingZeros(command);
-
-                            bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
-                            bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
-                            int firstValue = IsFistParamInPositionMode ? ints[first] : first;
-                            int secoundValue = IsSecoundParamInPositionMode ? ints[secound] : secound;
-
-                            if (operant == 1)
-                            {
-                                ints[result] = firstValue + secoundValue;
-                            }
-                            else if (operant == 2)
-                            {
-                                ints[result] = firstValue * secoundValue;
-                            }
-                        }
-                        else
-                        {
-                            int resultFirs = ints[first];
-                            int resultSec = ints[secound];
-                            if (operant == 1)
-                            {
-                                ints[result] = resultFirs + resultSec;
-                            }
-                            else if (operant == 2)
-                            {
-                                ints[result] = resultFirs * resultSec;
-                            }
-                        }
-
-                        oct += 4;
-                    }
-                    else if (operant == 3)
-                    {
-                        result = ints[oct + 1];
-                        oct += 2;
-                        ints[result] = inputs[i];
-
-                        i++;
-                    }
-                    else if (operant == 4)
-                    {
-                        if (ints[oct] > 10)
-                        {
-                            int command = ints[oct];
-                            string fullCommand = AddMissingZeros(command);
-
-                            bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
-                            if (IsFistParamInPositionMode)
-                            {
-                                result = ints[first];
-                                //Console.WriteLine($"Output: {ints[result]}");
-                                solution = ints[result];
-                            }
-                            else
-                            {
-                                //Console.WriteLine($"Output: {first}");
-                                solution = first;
-                            }
-                        }
-                        else
-                        {
-                            result = ints[oct + 1];
-                            //Console.WriteLine($"Output: {ints[result]}");
-                            solution = ints[result];
-                        }
-
-                        oct += 2;
-                    }
-                    else if (operant == 5 || operant == 6)
-                    {
-                        if (ints[oct] > 10)
-                        {
-                            int command = ints[oct];
-                            string fullCommand = AddMissingZeros(command);
-
-                            bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
-                            bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
-                            bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
-
-                            int firstValue = IsFistParamInPositionMode ? ints[first] : first;
-                            int secoundValue = IsSecoundParamInPositionMode ? ints[secound] : secound;
-
-                            if (operant == 5)
-                            {
-                                if (firstValue != 0)
-                                {
-                                    oct = secoundValue;
-                                    continue;
-                                }
-                                oct += 3;
-                            }
-                            if (operant == 6)
-                            {
-                                if (firstValue == 0)
-                                {
-                                    oct = secoundValue;
-                                    continue;
-                                }
-                                oct += 3;
-                            }
-                        }
-                        else
-                        {
-                            if (operant == 5)
-                            {
-                                if (ints[first] != 0)
-                                {
-                                    oct = ints[secound];
-                                    continue;
-                                }
-                                oct += 3;
-                            }
-                            if (operant == 6)
-                            {
-                                if (ints[first] == 0)
-                                {
-                                    oct = ints[secound];
-                                    continue;
-                                }
-                                oct += 3;
-                            }
-                        }
-                    }
-                    else if (operant == 7 || operant == 8)
-                    {
-                        result = ints[oct + 3];
-                        if (ints[oct] > 10)
-                        {
-                            int command = ints[oct];
-                            string fullCommand = AddMissingZeros(command);
-
-                            bool IsFistParamInPositionMode = (Int32.Parse(fullCommand[2].ToString()) == 0) ? true : false;
-                            bool IsSecoundParamInPositionMode = (Int32.Parse(fullCommand[1].ToString()) == 0) ? true : false;
-
-                            int firstValue = IsFistParamInPositionMode ? ints[first] : first;
-                            int secoundValue = IsSecoundParamInPositionMode ? ints[secound] : secound;
-
-                            if (operant == 7)
-                            {
-                                if (firstValue < secoundValue)
-                                {
-                                    ints[result] = 1;
-                                }
-                                else
-                                {
-                                    ints[result] = 0;
-                                }
-                            }
-                            if (operant == 8)
-                            {
-                                if (firstValue == secoundValue)
-                                {
-                                    ints[result] = 1;
-                                }
-                                else
-                                {
-                                    ints[result] = 0;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            if (operant == 7)
-                            {
-                                if (ints[first] < ints[secound])
-                                {
-                                    ints[result] = 1;
-                                }
-                                else
-                                {
-                                    ints[result] = 0;
-                                }
-                            }
-                            if (operant == 8)
-                            {
-                                if (ints[first] == ints[secound])
-                                {
-                                    ints[result] = 1;
-                                }
-                                else
-                                {
-                                    ints[result] = 0;
-                                }
-                            }
-                        }
-
-                        oct += 4;
-                    }
-                    else
-                    {
-                        //Console.WriteLine("BUM");
-                        break;
-                    }
-                }
-
-            return solution;
-        }
-
+        
         private static string AddMissingZeros(int command)
         {
-            string commandStr = command.ToString();
-            while (commandStr.Length != 5)
+            string commandToString = command.ToString();
+            while (commandToString.Length != 5)
             {
-                commandStr = "0" + commandStr;
+                commandToString = "0" + commandToString;
             }
 
-            return commandStr;
+            return commandToString;
         }
 
-        private static void permute(String str,  int l, int r)
+        private static List<string> Permute(string stringToPemute, int currentIndex, int stringSize, List<string> combinations)
         {
-            if (l == r) {
-                combinations.Add(str);
+            if (currentIndex == stringSize)
+            {
+                combinations.Add(stringToPemute);
             }
             else
             {
-                for (int i = l; i <= r; i++)
+                for (int i = currentIndex; i <= stringSize; i++)
                 {
-                    str = swap(str, l, i);
-                    permute(str, l + 1, r);
-                    str = swap(str, l, i);
+                    stringToPemute = Swap(stringToPemute, currentIndex, i);
+                    Permute(stringToPemute, currentIndex + 1, stringSize, combinations);
+                    stringToPemute = Swap(stringToPemute, currentIndex, i);
                 }
             }
+
+            return combinations;
         }
 
-        public static String swap(String a, int i, int j)
+        public static string Swap(string stringToPermute, int indexFrom, int indexTo)
         {
             char temp;
-            char[] charArray = a.ToCharArray();
-            temp = charArray[i];
-            charArray[i] = charArray[j];
-            charArray[j] = temp;
-            string s = new string(charArray);
-            return s;
+            char[] charArray = stringToPermute.ToCharArray();
+            temp = charArray[indexFrom];
+            charArray[indexFrom] = charArray[indexTo];
+            charArray[indexTo] = temp;
+            return new string(charArray);
         }
     }
 }
