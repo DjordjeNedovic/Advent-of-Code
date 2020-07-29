@@ -106,4 +106,10 @@ COM - B - C - D - E - F
                 I - SAN
                  \
                   YOU
-What is the minimum number of orbital transfers required to move from the object YOU are orbiting to the object SAN is orbiting? (Between the objects they are orbiting - not between YOU and SAN.)
+What is the minimum number of orbital transfers required to move from the object YOU are orbiting to the object SAN is orbiting? 
+(Between the objects they are orbiting - not between YOU and SAN.)
+
+<details>
+  <summary>See result here</summary>
+	Your puzzle answer was 511.
+</details>
