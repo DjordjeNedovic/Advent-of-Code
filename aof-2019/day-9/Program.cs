@@ -119,11 +119,6 @@ namespace day_9
             {
                 long command = currentOctcode;
                 string fullCommand = AddMissingZeros(command);
-                if (currentOctcode==1102) 
-                {
-                    String t = String.Empty;
-                }
-
                 bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
                 AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, IsAddressParamInPositionMode);
                 
