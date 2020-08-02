@@ -7,6 +7,7 @@ namespace day_12
 {
     class Program
     {
+        //not 38688586308044 
         static void Main(string[] args)
         {
             string[] positionsOfPlanets = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
@@ -18,16 +19,23 @@ namespace day_12
                 string[] cordinates = trimedPosition.Split(',');
                 string[] valueX = cordinates[0].Split('=');
                 moon.PositionX = Int32.Parse(valueX[1].Trim());
+                moon.InitialX = Int32.Parse(valueX[1].Trim());
 
                 string[] valueY = cordinates[1].Split('=');
                 moon.PositionY = Int32.Parse(valueY[1].Trim());
+                moon.InitialY = Int32.Parse(valueY[1].Trim());
 
                 string[] valueZ = cordinates[2].Split('=');
                 moon.PositionZ = Int32.Parse(valueZ[1].Trim());
+                moon.InitialZ = Int32.Parse(valueZ[1].Trim());
 
                 moon.VelocityX = 0;
                 moon.VelocityY = 0;
                 moon.VelocityZ = 0;
+
+                moon.FoundedX = false;
+                moon.FoundedY = false;
+                moon.FoundedZ = false;
 
                 moon.PotentialEnergy = 0;
                 moon.KineticEnergy = 0;
@@ -46,7 +54,7 @@ namespace day_12
             }
             else 
             {
-                moons.ForEach(x => { x.InitialState =$"{x.PositionX}, {x.PositionY}, {x.PositionZ}"; x.FoundedLCM = false; });
+                Console.WriteLine("################### PART TWO ###################");
                 SolvePartTwo(moons);
             }
         }
@@ -92,9 +100,9 @@ namespace day_12
         {
             int steps = 0;
             while (true)
-            { 
-                Console.WriteLine();
-                Console.WriteLine($"Applying step { ++steps }");
+            {
+                ++steps; 
+                //Console.WriteLine($"Applying step {  }");
                 foreach (Moon targetMoon in moons)
                 {
                     foreach (Moon oterMoon in moons.Where(x => x != targetMoon))
@@ -114,19 +122,44 @@ namespace day_12
 
                 foreach (Moon m in moons) 
                 {
-                    if (!m.FoundedLCM) 
+                    if (!m.FoundedX) 
                     {
-                        m.CompareToInitialState(steps);
+                        m.CompareToInitialState(steps, "X");
+                    }
+
+                    if (!m.FoundedY)
+                    {
+                        m.CompareToInitialState(steps, "Y");
+                    }
+                    if (!m.FoundedZ)
+                    {
+                        m.CompareToInitialState(steps, "Z");
+                    }
+
+                    if (m.FoundedX && m.FoundedY && m.FoundedZ) 
+                    {
+                        var tt = String.Empty;
                     }
                 }
 
-                if (moons.TrueForAll(x => x.FoundedLCM))
+                if (moons.TrueForAll(x => x.FoundedX && x.FoundedY && x.FoundedZ)) 
+                {
+                    Console.WriteLine($"Applying step { steps }");
                     break;
+                }
             }
 
-
             moons.ForEach(x=>Console.WriteLine(x));
-            //Console.WriteLine("TT");
+
+            //result = Utility.LCM(p1, Utility.LCM(p2, Utility.LCM(p3, p4)));
+
+            var maxAsixX = moons.Max(x => x.LcmX);
+            var maxAsisY = moons.Max(x => x.LcmY);
+            var maxAsixZ = moons.Max(x => x.LcmZ);
+
+            decimal result = Utility.LCM(maxAsixX, Utility.LCM(maxAsisY, maxAsixZ));
+
+            Console.WriteLine($"it takes {result} steps to reach the first state");
         }
     }
 
@@ -141,13 +174,24 @@ namespace day_12
         internal int PotentialEnergy { get; set; }
         internal int KineticEnergy { get; set; }
         internal int TotalEnergy { get; set; }
-        internal string InitialState { get; set; }
-        internal int LCM = 0;
-        internal bool FoundedLCM = false;
+
+        internal int InitialX { get; set; }
+        internal int InitialY { get; set; }
+        internal int InitialZ { get; set; }
+
+        public bool FoundedX { get; internal set; }
+        public bool FoundedY { get; internal set; }
+        public bool FoundedZ { get; internal set; }
+
+        internal decimal LcmX = 0;
+        internal decimal LcmY = 0;
+        internal decimal LcmZ = 0;
 
         public override string ToString()
         {
-            return $"pos=<x= { PositionX }, y= { PositionY }, z= { PositionZ }>, vel=<x= { VelocityX }, y= { VelocityY }, z= { VelocityZ }>, LCM: {LCM}";
+            return $"pos=<x= { PositionX }, y= { PositionY }, z= { PositionZ }>, vel=<x= { VelocityX }, y= { VelocityY }, z= { VelocityZ }> \n" +
+                   $"LcmX: {LcmX}, LcmY: {LcmY}, LcmZ: {LcmZ}\n";
+
         }
 
         public string ReturnEnergy() 
@@ -155,13 +199,46 @@ namespace day_12
             return $"pot: {Math.Abs(PositionX)} + {Math.Abs(PositionY)} + {Math.Abs(PositionZ)};  kin: {Math.Abs(VelocityX)} + {Math.Abs(VelocityY)} + {Math.Abs(VelocityZ)}; total: {PotentialEnergy} * {KineticEnergy} = {TotalEnergy}";    
         }
 
-        internal void CompareToInitialState(int number)
+        internal void CompareToInitialState(int number, string asix)
         {
-            if (this.InitialState.Equals($"{this.PositionX}, {this.PositionY}, {this.PositionZ}")) 
+            if (asix == "X") 
             {
-                this.LCM = number;
-                this.FoundedLCM = true;
+                if (PositionX == InitialX && VelocityX == 0) 
+                {
+                    LcmX = number;
+                    FoundedX = true;
+                }
             }
+            else if (asix == "Y")
+            {
+                if (PositionY == InitialY && VelocityY == 0)
+                {
+                    LcmY = number;
+                    FoundedY = true;
+                }
+            }
+            else if (asix == "Z")
+            {
+                if (PositionZ == InitialZ && VelocityZ == 0)
+                {
+                    LcmZ = number;
+                    FoundedZ = true;
+                }
+            }
+        }
+    }
+
+    internal class Utility 
+    {
+        static decimal GCD(decimal a, decimal b)
+        {
+            if (a % b == 0) return b;
+            return GCD(b, a % b);
+        }
+
+        internal static decimal LCM(decimal a, decimal b)
+        {
+            return a * b / GCD(a, b);
         }
     }
 }
