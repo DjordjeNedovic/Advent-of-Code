@@ -144,15 +144,15 @@ namespace day_9
             {
                 int command = (int)octcodeList[octcodeListIndex];
                 string fullCommand = AddMissingZeros(command);
+                long operationFirstParametar = octcodeList[octcodeListIndex + 1];
                 Mode firstParamerMode = (Mode)Int32.Parse(fullCommand[2].ToString());
                 switch (firstParamerMode)
                 {
                     case (Mode.MODE_0_POSSITION_MODE):
-                        address = octcodeList[octcodeListIndex + 1];
-                        octcodeList[(int)address] = input;
+                        octcodeList[(int)operationFirstParametar] = input;
                         break;
                     case (Mode.MODE_2_RELATIVE_MODE):
-                        address = octcodeList[octcodeListIndex + 1] + relativeBaseResult;
+                        address = operationFirstParametar + relativeBaseResult;
                         octcodeList[(int)address] = input;
                         break;
                     case (Mode.UNKNOWN):
@@ -192,7 +192,7 @@ namespace day_9
                         Console.WriteLine($"Output: {operationFirstParametar}");
                         break;
                     case (Mode.MODE_2_RELATIVE_MODE):
-                        long memoryAddress = octcodeList[octcodeListIndex + 1] + relativeBaseResult;
+                        long memoryAddress = operationFirstParametar + relativeBaseResult;
                         Console.WriteLine($"Output: {octcodeList[(int)memoryAddress]}");
                         break;
                     case (Mode.UNKNOWN):
