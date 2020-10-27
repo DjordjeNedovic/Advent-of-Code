@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace day_9
+namespace day_13
 {
     class Program
     {
@@ -11,16 +11,61 @@ namespace day_9
         static List<long> octcodeList;
         static long relativeBaseResult = 0;
         static int octcodeListIndex = 0;
+        static int tupleIndex = 0;
+        static List<int> cordinates = new List<int>();
 
         static void Main(string[] args)
         {
             string inputFromTxt = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
             octcodeList = (Array.ConvertAll(inputFromTxt.Split(','), s => Int64.Parse(s))).ToList();
-            Console.WriteLine("Insert input: (1 for part one, 2 for part two)");
+            //Zero is placeholder, ignore
+            Intercode(0);
+            PartOne();
 
-            string stringInput = Console.ReadLine();
-            long input = Int64.Parse(stringInput);
-            Intercode(input);
+        }
+               
+        private static void PartOne()
+        {
+            int blockCounter = 0;
+            for (int i = 0; i < cordinates.Count; i += 3)
+            {
+                int x = cordinates.ElementAt(i);
+                int y = cordinates.ElementAt(i + 1);
+                int type = cordinates.ElementAt(i + 2);
+                Console.SetCursorPosition(x, y);
+                switch (type)
+                {
+                    case 0:
+                        Console.WriteLine();
+                        break;
+                    case 1:
+                        Console.WriteLine("#");
+                        break;
+                    case 2:
+                        blockCounter++;
+                        Console.WriteLine("%");
+                        break;
+                    case 3:
+                        Console.WriteLine("_");
+                        break;
+                    case 4:
+                        Console.WriteLine("*");
+                        break;
+                    default:
+
+                        break;
+                }
+            }
+
+            Console.WriteLine($"blockCounter {blockCounter}");
+            Console.ReadLine();
+        }
+
+        
+        private static void RemoveField(int x, int y)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(" ");
         }
 
         public static void Intercode(long input)
@@ -100,7 +145,7 @@ namespace day_9
                 string fullCommand = AddMissingZeros(command);
                 bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
                 AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, IsAddressParamInPositionMode);
-                
+
                 long resultFirst = Calculate(currentOctcode, operationFirstParametar, fullCommand[2].ToString());
                 long resultSec = Calculate(currentOctcode, operationSecondParametar, fullCommand[1].ToString());
                 StoreValue(currentOctcode, operationResultParametar, fullCommand[0].ToString(), resultFirst + resultSec);
@@ -120,12 +165,28 @@ namespace day_9
             long operationFirstParametar = octcodeList[octcodeListIndex + 1];
             long operationSecondParametar = octcodeList[octcodeListIndex + 2];
             long operationResultParametar = octcodeList[octcodeListIndex + 3];
+
+            if (currentOctcode == 21002) 
+            {
+                String r = String.Empty;
+            }
+
             if (currentOctcode > 10)
             {
                 long command = currentOctcode;
                 string fullCommand = AddMissingZeros(command);
-                bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
-                AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, IsAddressParamInPositionMode);
+
+                if (Int32.Parse(fullCommand[0].ToString()) == 0)
+                {
+                    //bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
+                    //AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, IsAddressParamInPositionMode);
+                    AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, true);
+                }
+                else if (Int32.Parse(fullCommand[0].ToString()) == 2) 
+                {
+                    bool IsAddressParamInRelativeMode = (Int32.Parse(fullCommand[0].ToString()) == 2) ? true : false;
+                    AddZerosAsElementsInList( operationResultParametar, relativeBaseResult, true);
+                }
                 
                 long resultFirst = Calculate(currentOctcode, operationFirstParametar, fullCommand[2].ToString());
                 long resultSec = Calculate(currentOctcode, operationSecondParametar, fullCommand[1].ToString());
@@ -191,14 +252,17 @@ namespace day_9
                 {
                     case (Mode.MODE_0_POSSITION_MODE):
                         operationResultParametar = (int)octcodeList[(int)operationFirstParametar];
-                        Console.WriteLine($"Output: {(int)octcodeList[(int)operationResultParametar]}");
+                        cordinates.Add((int)octcodeList[(int)operationResultParametar]);
+                        //Console.WriteLine($"Output: {(int)octcodeList[(int)operationResultParametar]}");
                         break;
                     case (Mode.MODE_1_PARAMETER_MODE):
-                        Console.WriteLine($"Output: {operationFirstParametar}");
+                        //Console.WriteLine($"Output: {operationFirstParametar}");
+                        cordinates.Add((int)operationFirstParametar);
                         break;
                     case (Mode.MODE_2_RELATIVE_MODE):
                         long memoryAddress = operationFirstParametar + relativeBaseResult;
-                        Console.WriteLine($"Output: {octcodeList[(int)memoryAddress]}");
+                        //Console.WriteLine($"Output: {octcodeList[(int)memoryAddress]}");
+                        cordinates.Add((int)octcodeList[(int)memoryAddress]);
                         break;
                     case (Mode.UNKNOWN):
                     default:
@@ -206,10 +270,11 @@ namespace day_9
                         break;
                 }
             }
-            else 
+            else
             {
                 result = octcodeList[octcodeListIndex + 1];
-                Console.WriteLine($"Output: {octcodeList[(int)result]}");
+                //Console.WriteLine($"Output: {octcodeList[(int)result]}");
+                cordinates.Add((int)octcodeList[(int)result]);
             }
 
             octcodeListIndex += 2;
@@ -280,7 +345,7 @@ namespace day_9
             long operationSecondParametar = octcodeList[octcodeListIndex + 2];
             long operationResultParametar = octcodeList[octcodeListIndex + 3];
             string fullCommand = String.Empty;
-            
+
             long firstValue = 0;
             long secoundValue = 0;
             if (currentOctcode > 10)
@@ -374,7 +439,7 @@ namespace day_9
 
         private static void Exit()
         {
-            Console.WriteLine("Code halted");
+            //Console.WriteLine("Code halted");
             runProgram = false;
         }
 
@@ -402,7 +467,7 @@ namespace day_9
                     resultSec = operationSecondParametar;
                     break;
                 case (Mode.MODE_2_RELATIVE_MODE):
-                    resultSec = (octcodeList[(int)relativeBaseResult +(int)operationSecondParametar]);
+                    resultSec = (octcodeList[(int)relativeBaseResult + (int)operationSecondParametar]);
                     break;
                 case (Mode.UNKNOWN):
                 default:
@@ -420,7 +485,7 @@ namespace day_9
             {
                 case (Mode.MODE_0_POSSITION_MODE):
                     octcodeList[(int)operationResultParametar] = valueToStore;
-                break;
+                    break;
                 case (Mode.MODE_2_RELATIVE_MODE):
                     octcodeList[(int)(operationResultParametar + relativeBaseResult)] = valueToStore;
                     var ter = (int)(operationResultParametar + relativeBaseResult);
@@ -440,7 +505,7 @@ namespace day_9
                 int missingZeroParams = (int)operationFirstParametar - intsCountMinusIndex;
                 int missingZeroIndexResult = (int)operationResultParametar - intsCountMinusIndex;
                 int missingZeroIndex = missingZeroIndexResult > missingZeroParams ? missingZeroIndexResult : missingZeroParams;
-                for (int i = 0; i < missingZeroIndex; i++)
+                for (int i = 0; i < missingZeroIndex + 10; i++)
                 {
                     octcodeList.Add(0);
                 }
