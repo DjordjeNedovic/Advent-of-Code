@@ -32,5 +32,6 @@ Beat the game by breaking all the blocks. What is your score after the last bloc
 
 <details>
   <summary>See result here</summary>
+  Your puzzle answer was 12263.
 </details>
 

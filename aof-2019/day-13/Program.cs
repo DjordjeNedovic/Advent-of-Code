@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace day_13
 {
@@ -11,17 +12,28 @@ namespace day_13
         static List<long> octcodeList;
         static long relativeBaseResult = 0;
         static int octcodeListIndex = 0;
-        static int tupleIndex = 0;
         static List<int> cordinates = new List<int>();
+        static int previousPadleX = 0;
+        static int previousPadleY = 0;
+        static int previousBallX = 0;
+        static int previousBallY = 0;
+
 
         static void Main(string[] args)
         {
             string inputFromTxt = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
             octcodeList = (Array.ConvertAll(inputFromTxt.Split(','), s => Int64.Parse(s))).ToList();
-            //Zero is placeholder, ignore
-            Intercode(0);
-            PartOne();
 
+            //change puzzleInput, first element (on memory address 0) to 2 for part two
+            if (octcodeList[0] != 2)
+            {
+                Intercode(0, true);
+                PartOne();
+            }
+            else 
+            {
+                PartTwo();
+            }
         }
                
         private static void PartOne()
@@ -61,14 +73,35 @@ namespace day_13
             Console.ReadLine();
         }
 
-        
+        private static void PartTwo()
+        {
+            Intercode(0, false);
+        }
+
+        private static int MovePaddle(int moveIndex, int previousPadleX, int previousPadleY)
+        {
+            Console.SetCursorPosition(0, 30);
+            Console.WriteLine("###################################");
+            Console.WriteLine($"DEBUG STATE: paddle possition before move ({previousPadleX},{previousPadleY})");
+
+            RemoveField(previousPadleX, previousPadleY);
+            int newPadleX = previousPadleX + moveIndex;
+            Console.SetCursorPosition(0, 32);
+            Console.WriteLine($"DEBUG STATE: paddle possition after move ({newPadleX},{previousPadleY})");
+
+            Console.SetCursorPosition(newPadleX, previousPadleY);
+            Console.WriteLine("_");
+
+            return newPadleX;
+        }
+
         private static void RemoveField(int x, int y)
         {
             Console.SetCursorPosition(x, y);
             Console.Write(" ");
         }
 
-        public static void Intercode(long input)
+        public static void Intercode(long input, bool isPartOne)
         {
             int g = 1;
             Operation operation = 0;
@@ -102,8 +135,25 @@ namespace day_13
                         WriteInput(currentOctcode, input);
                         break;
                     case (Operation.INSTRACTION_4_OUTPUT):
-                        OutputValue(currentOctcode);
-                        break;
+                        if (isPartOne)
+                        {
+                            OutputValue(currentOctcode);
+                            break;
+                        }
+                        else 
+                        {
+                            int cordinate = ReturnOutputValue(currentOctcode);
+                            cordinates.Add(cordinate);
+                            if (cordinates.Count == 3) 
+                            {
+                                WriteGrid(cordinates);
+                                cordinates.Clear();
+                                input = CalculateNewInput();
+                            }
+
+                            break;
+                        }
+
                     case (Operation.INSTRACTION_5_JUMP_IF_TRUE):
                         JumpIfTrue(currentOctcode);
                         break;
@@ -131,6 +181,79 @@ namespace day_13
                         runProgram = false;
                         break;
                 }
+            }
+        }
+
+        private static long CalculateNewInput()
+        {
+            Console.SetCursorPosition(0, 27);
+            Console.WriteLine($"DEBUG STATE: ball possition ({previousBallX},{previousBallY})");
+            Console.WriteLine($"DEBUG STATE: paddle possition ({previousPadleX},{previousPadleY})");
+
+            if (previousBallX != 0 && previousBallY != 0)
+            {
+                if (previousPadleX > previousBallX)
+                {
+                    return -1;
+                }
+                else if (previousPadleX < previousBallX)
+                {
+                    return 1;
+                }
+                else 
+                {
+                    return 0;
+                }
+            }
+
+            return 0;
+        }
+
+        private static void WriteGrid(List<int> cordinates)
+        {
+            int x = cordinates.ElementAt(0);
+            int y = cordinates.ElementAt(1);
+            int type = cordinates.ElementAt(2);
+
+            if (x == -1 && y == 0)
+            {
+                Console.SetCursorPosition(0, 25);
+                Console.WriteLine($"current score {type}");
+                return;
+            }
+
+            switch (type)
+            {
+                case 0:
+                    Console.SetCursorPosition(x, y);
+                    Console.WriteLine();
+                    break;
+                case 1:
+                    Console.SetCursorPosition(x, y);
+                    Console.WriteLine("#");
+                    break;
+                case 2:
+                    Console.SetCursorPosition(x, y);
+                    Console.WriteLine("%");
+                    break;
+                case 3:
+                    Console.SetCursorPosition(x, y);
+                    Console.WriteLine("_");
+                    previousPadleX = x;
+                    previousPadleY = y;
+                    break;
+                case 4:
+                    RemoveField(previousBallX, previousBallY);
+                    Console.SetCursorPosition(x, y);
+                    Console.WriteLine("*");
+
+
+                    previousBallX = x;
+                    previousBallY = y;
+
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -279,6 +402,51 @@ namespace day_13
 
             octcodeListIndex += 2;
         }
+
+        private static int ReturnOutputValue(long currentOctcode)
+        {
+            int returnValue =0;
+            long result = 0;
+            if (currentOctcode > 10)
+            {
+                long operationFirstParametar = octcodeList[octcodeListIndex + 1];
+                long operationResultParametar = 0;
+                long command = currentOctcode;
+                string fullCommand = AddMissingZeros(command);
+                bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
+                AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, IsAddressParamInPositionMode);
+                Mode firstParamMode = (Mode)Int32.Parse(fullCommand[2].ToString());
+                switch (firstParamMode)
+                {
+                    case (Mode.MODE_0_POSSITION_MODE):
+                        operationResultParametar = (int)octcodeList[(int)operationFirstParametar];
+                        returnValue=(int)octcodeList[(int)operationResultParametar];
+                        break;
+                    case (Mode.MODE_1_PARAMETER_MODE):
+                        returnValue = (int)operationFirstParametar;
+                        break;
+                    case (Mode.MODE_2_RELATIVE_MODE):
+                        long memoryAddress = operationFirstParametar + relativeBaseResult;
+                        returnValue = (int)octcodeList[(int)memoryAddress];
+                        break;
+                    case (Mode.UNKNOWN):
+                    default:
+                        Console.WriteLine($"Error {currentOctcode}, method Output()");
+                        break;
+                }
+            }
+            else
+            {
+                result = octcodeList[octcodeListIndex + 1];
+                //Console.WriteLine($"Output: {octcodeList[(int)result]}");
+                returnValue = ((int)octcodeList[(int)result]);
+            }
+
+            octcodeListIndex += 2;
+
+            return returnValue;
+        }
+
 
         private static void JumpIfTrue(long currentOctcode)
         {
@@ -534,5 +702,12 @@ namespace day_13
         MODE_1_PARAMETER_MODE = 1,
         MODE_2_RELATIVE_MODE = 2,
         UNKNOWN = 99
+    }
+
+    enum BallMove 
+    {
+        MOVE_LEFT = -1,
+        STAY = 0,
+        MOVE_RIGHT = 1,
     }
 }
