@@ -20,10 +20,10 @@ round down, and subtract 2.
 
 For example:
 
-- For a mass of 12, divide by 3 and round down to get 4, then subtract 2 to get 2.
-- For a mass of 14, dividing by 3 and rounding down still yields 4, so the fuel required is also 2.
-- For a mass of 1969, the fuel required is 654.
-- For a mass of 100756, the fuel required is 33583.
+- For a mass of `12`, divide by 3 and round down to get `4`, then subtract 2 to get `2`.
+- For a mass of `14`, dividing by 3 and rounding down still yields `4`, so the fuel required is also `2`.
+- For a mass of `1969`, the fuel required is `654`.
+- For a mass of `100756`, the fuel required is `33583`.
 
 The Fuel Counter-Upper needs to know the total fuel requirement. To find 
 it, individually calculate the fuel needed for the mass of each module 
@@ -32,10 +32,12 @@ it, individually calculate the fuel needed for the mass of each module
 What is the sum of the fuel requirements for all of the modules on your spacecraft?
 
 <details>
-  <summary>*See result here*</summary>
-		Your puzzle answer was **3328306**.
+  <summary><strong><em>See result here</em></strong></summary>
+		Your puzzle answer was <strong><em>3328306</em></strong>.
 
 </details>
+
+---
 
 ### --- Part Two ---
 
@@ -61,6 +63,6 @@ process, continuing until a fuel requirement is zero or negative. For example:
 What is the sum of the fuel requirements for all of the modules on your spacecraft when also taking into account the mass of the added fuel? (Calculate the fuel requirements for each module separately, then add them all up at the end.)
 
 <details>
-  <summary>*See result here*</summary>
-		Your puzzle answer was **4989588**.
+  <summary><strong><em>See result here</em></strong></summary>
+		Your puzzle answer was <strong><em>4989588</em></strong>.
 </details>
