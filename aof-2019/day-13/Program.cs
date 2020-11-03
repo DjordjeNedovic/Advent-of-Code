@@ -150,7 +150,7 @@ namespace day_13
                                 cordinates.Clear();
                                 input = CalculateNewInput();
                             }
-
+                            Thread.Sleep(20);
                             break;
                         }
 
@@ -246,8 +246,6 @@ namespace day_13
                     RemoveField(previousBallX, previousBallY);
                     Console.SetCursorPosition(x, y);
                     Console.WriteLine("*");
-
-
                     previousBallX = x;
                     previousBallY = y;
 
@@ -289,11 +287,6 @@ namespace day_13
             long operationSecondParametar = octcodeList[octcodeListIndex + 2];
             long operationResultParametar = octcodeList[octcodeListIndex + 3];
 
-            if (currentOctcode == 21002) 
-            {
-                String r = String.Empty;
-            }
-
             if (currentOctcode > 10)
             {
                 long command = currentOctcode;
@@ -301,13 +294,10 @@ namespace day_13
 
                 if (Int32.Parse(fullCommand[0].ToString()) == 0)
                 {
-                    //bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
-                    //AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, IsAddressParamInPositionMode);
                     AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, true);
                 }
                 else if (Int32.Parse(fullCommand[0].ToString()) == 2) 
                 {
-                    bool IsAddressParamInRelativeMode = (Int32.Parse(fullCommand[0].ToString()) == 2) ? true : false;
                     AddZerosAsElementsInList( operationResultParametar, relativeBaseResult, true);
                 }
                 
@@ -376,15 +366,12 @@ namespace day_13
                     case (Mode.MODE_0_POSSITION_MODE):
                         operationResultParametar = (int)octcodeList[(int)operationFirstParametar];
                         cordinates.Add((int)octcodeList[(int)operationResultParametar]);
-                        //Console.WriteLine($"Output: {(int)octcodeList[(int)operationResultParametar]}");
                         break;
                     case (Mode.MODE_1_PARAMETER_MODE):
-                        //Console.WriteLine($"Output: {operationFirstParametar}");
                         cordinates.Add((int)operationFirstParametar);
                         break;
                     case (Mode.MODE_2_RELATIVE_MODE):
                         long memoryAddress = operationFirstParametar + relativeBaseResult;
-                        //Console.WriteLine($"Output: {octcodeList[(int)memoryAddress]}");
                         cordinates.Add((int)octcodeList[(int)memoryAddress]);
                         break;
                     case (Mode.UNKNOWN):
@@ -396,7 +383,6 @@ namespace day_13
             else
             {
                 result = octcodeList[octcodeListIndex + 1];
-                //Console.WriteLine($"Output: {octcodeList[(int)result]}");
                 cordinates.Add((int)octcodeList[(int)result]);
             }
 
@@ -607,7 +593,8 @@ namespace day_13
 
         private static void Exit()
         {
-            //Console.WriteLine("Code halted");
+            Console.SetCursorPosition(0, 32);
+            Console.WriteLine("Code halted");
             runProgram = false;
         }
 
@@ -702,12 +689,5 @@ namespace day_13
         MODE_1_PARAMETER_MODE = 1,
         MODE_2_RELATIVE_MODE = 2,
         UNKNOWN = 99
-    }
-
-    enum BallMove 
-    {
-        MOVE_LEFT = -1,
-        STAY = 0,
-        MOVE_RIGHT = 1,
     }
 }
