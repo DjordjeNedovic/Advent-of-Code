@@ -39,8 +39,11 @@ For example, suppose you have the following program:
 For the purposes of illustration, here is the same program split into multiple lines:
 
 `1,9,10,3,`
+
 `2,3,11,0,`
+
 `99,`
+
 `30,40,50`
 
 The first four integers, `1,9,10,3`, are at positions `0`, `1`, `2`, and `3`.
@@ -53,8 +56,11 @@ the output position (`3`) is **at** position `3`, so it overwrites itself.
 Afterward, the program looks like this:
 
 `1,9,10,*70*,`
+
 `2,3,11,0,`
+
 `99,`
+
 `30,40,50``
 
 Step forward `4` positions to reach the next opcode, `2`. This opcode works 
@@ -63,8 +69,11 @@ at positions `3` and `11`; these positions contain `70` and `50` respectively.
 Multiplying these produces `3500`; this is stored at position `0`:
 
 `*3500*,9,10,70,`
+
 `2,3,11,0,`
+
 `99,`
+
 `30,40,50`
 
 Stepping forward `4` more positions arrives at opcode `99`, halting the program.
