@@ -217,3 +217,8 @@ The Elves are placing bets on which will be the **200th** asteroid to be
 vaporized. Win the bet by determining which asteroid that will be; **what do
 you get if you multiply its X coordinate by `100` and then add its Y 
 coordinate? (For example, `8,2` becomes **`802`**.)
+
+<details>
+  <summary><strong><em>See result here</em></strong></summary>
+	Your puzzle answer was <strong><em>504</em></strong>.
+</details>
