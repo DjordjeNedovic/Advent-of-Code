@@ -66,7 +66,7 @@ output a single value, the BOOST keycode. **What BOOST keycode does it produce?*
 
 <details>
   <summary><strong><em>See result here</em></strong></summary>
-	Your puzzle answer was <strong><em>2316632620.
+	Your puzzle answer was <strong><em>2316632620</em></strong>.
 </details>
 
 --- Part Two ---

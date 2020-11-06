@@ -9,7 +9,7 @@ On the way to Jupiter, you're [pulled over](https://www.youtube.com/watch?v=KwY2
 Not wanting to be sent to Space Jail, you radio back to the Elves on Earth
  for help. Although it takes almost three hours for their reply signal to
  reach you, they send instructions for how to power up the **emergency hull
- painting robot** and even provide a small Intcode program (your puzzle input) 
+ painting robot** and even provide a small [Intcode program](https://github.com/DjolenceTipic/Advent-of-Code/tree/master/aof-2019/day-9) (your puzzle input) 
  that will cause it to paint your ship appropriately.
 
 There's just one problem: you don't have an emergency hull painting robot.
