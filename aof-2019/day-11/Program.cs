@@ -19,17 +19,48 @@ namespace day_9
         //your answer is too high, You guessed 3752.
         static void Main(string[] args)
         {
-            string inputFromTxt = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
-            octcodeList = (Array.ConvertAll(inputFromTxt.Split(','), s => Int64.Parse(s))).ToList();
-
-            Panel startPanel = new Panel() { Color = 0, CordinateX = 0, CordinateY = 0 };
-            panels = new List<Panel>(); 
-            panels.Add(startPanel);
-            RobotPointigDirections = RobotPointigDirections.UP;
+            RestartMachine();
             Console.WriteLine("Position (0,0) is start position");
+
             Intercode(0);
             Console.WriteLine($"There are {panelCounter} panels");
 
+            RestartMachine();
+            Intercode(1);
+
+            var maxX = panels.Select(x => x.CordinateX).Max();
+            var maxY = panels.Select(x => x.CordinateY).Max();
+            var minY = panels.Select(x => x.CordinateY).Min();
+
+
+            //image is upside down, will be fix in some cleanup
+            for (int y = maxY; maxY > minY; y--) 
+            {
+                for (int x = 0; x < maxX; x++) 
+                {
+                    var tempPanel = panels.Where(tempPanel => tempPanel.CordinateX == x && tempPanel.CordinateY == y).FirstOrDefault();
+                    if (tempPanel != null)
+                    {
+                        Console.SetCursorPosition(tempPanel.CordinateX, Math.Abs(tempPanel.CordinateY +10));
+                        Console.Write(tempPanel.Color == 1 ? '#' : ' ');
+                    }
+                }
+            }
+        }
+
+        private static void RestartMachine()
+        {
+            string inputFromTxt = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
+            octcodeList = (Array.ConvertAll(inputFromTxt.Split(','), s => Int64.Parse(s))).ToList();
+            panels = new List<Panel>();
+            outputIndex = 0;
+            relativeBaseResult = 0;
+            runProgram = true;
+            octcodeListIndex = 0;
+            panelCounter = 1;
+            Panel startPanel = new Panel() { Color = 0, CordinateX = 0, CordinateY = 0 };
+            panels.Add(startPanel);
+            RobotPointigDirections = RobotPointigDirections.UP;
         }
 
         public static void Intercode(long input)
@@ -68,7 +99,6 @@ namespace day_9
                     case (Operation.INSTRACTION_4_OUTPUT):
                         outputIndex++;
                         input = OutputValue(currentOctcode);
-                        Console.WriteLine($"input changed to {input}");
                         break;
                     case (Operation.INSTRACTION_5_JUMP_IF_TRUE):
                         JumpIfTrue(currentOctcode);
@@ -133,9 +163,16 @@ namespace day_9
             {
                 long command = currentOctcode;
                 string fullCommand = AddMissingZeros(command);
-                bool IsAddressParamInPositionMode = (Int32.Parse(fullCommand[0].ToString()) == 0) ? true : false;
-                AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, IsAddressParamInPositionMode);
-                
+
+                if (Int32.Parse(fullCommand[0].ToString()) == 0)
+                {
+                    AddZerosAsElementsInList(operationFirstParametar, operationResultParametar, true);
+                }
+                else if (Int32.Parse(fullCommand[0].ToString()) == 2)
+                {
+                    AddZerosAsElementsInList(operationResultParametar, relativeBaseResult, true);
+                }
+
                 long resultFirst = Calculate(currentOctcode, operationFirstParametar, fullCommand[2].ToString());
                 long resultSec = Calculate(currentOctcode, operationSecondParametar, fullCommand[1].ToString());
                 StoreValue(currentOctcode, operationResultParametar, fullCommand[0].ToString(), resultFirst * resultSec);
@@ -573,7 +610,7 @@ namespace day_9
                 int missingZeroParams = (int)operationFirstParametar - intsCountMinusIndex;
                 int missingZeroIndexResult = (int)operationResultParametar - intsCountMinusIndex;
                 int missingZeroIndex = missingZeroIndexResult > missingZeroParams ? missingZeroIndexResult : missingZeroParams;
-                for (int i = 0; i < missingZeroIndex; i++)
+                for (int i = 0; i < missingZeroIndex + 10000; i++)
                 {
                     octcodeList.Add(0);
                 }
