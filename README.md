@@ -1,7 +1,7 @@
 # Advent-of-Code
 This repository contains my solutions for the problems of Advent of Code.
 
-Stars count: 25 :star:
+Stars count: 27 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -18,3 +18,7 @@ Day | Task | Solution | STARS |
 11 |[day 11 task](https://github.com/DjolenceTipic/Advent-of-Code/tree/master/aof-2019/day-11) |[day 11 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/master/aof-2019/day-10/Program.cs) |:star: :star: |
 12 |[day 12 task](https://github.com/DjolenceTipic/Advent-of-Code/tree/master/aof-2019/day-12) |[day 12 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/master/aof-2019/day-12/Program.cs) | :star: |
 13 |[day 13 task](https://github.com/DjolenceTipic/Advent-of-Code/tree/master/aof-2019/day-13) |[day 13 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/master/aof-2019/day-13/Program.cs) | :star: :star: |
+14 | | |
+15 | | |
+16 |[day 16 task](https://github.com/DjolenceTipic/Advent-of-Code/tree/master/aof-2019/day-16) |[day 16 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/master/aof-2019/day-16/Program.cs) | :star:  |
+17 |[day 17 task](https://github.com/DjolenceTipic/Advent-of-Code/tree/master/aof-2019/day-17) |[day 17 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/master/aof-2019/day-17/Program.cs) | :star:  |
