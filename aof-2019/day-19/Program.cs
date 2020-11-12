@@ -22,9 +22,9 @@ namespace day_19
 
         private static void SecondPart()
         {
-            for (int y = 100; y < 3000; y++) 
+            for (int y = 617; y < 3000; y++) 
             {
-                for (int x = 0; x < 3000; x++)
+                for (int x = 617; x < 3000; x++)
                 {
                     points.Add(new Point() { X = x, Y = y });
                 }
@@ -41,11 +41,12 @@ namespace day_19
             //WriteMap(points);
             //var s = points.Where(x => x.Type == 1).Count();
             var ss = points.Where(x => x.Type == 1).OrderBy(x => x.X).ToList();
+            var yyy = ss.Count;
             foreach (var sss in ss) 
             {
                 var ttt = ss.Where(x => x.X == (sss.X + 99) && x.Y == sss.Y).FirstOrDefault();
                 var ttt2 = ss.Where(x => x.X == sss.X  && x.Y == (sss.Y + 99)).FirstOrDefault();
-
+                Console.WriteLine(yyy--);
                 if (ttt != null && ttt2 != null) 
                 {
                     string PartB = (sss.X * 10000 + sss.Y).ToString();
