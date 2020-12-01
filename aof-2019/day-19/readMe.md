@@ -27,7 +27,11 @@ In this example, the number of points affected by the tractor beam in the 10x10 
 
 However, you'll need to scan a larger area to understand the shape of the beam. How many points are affected by the tractor beam in the 50x50 area closest to the emitter? (For each of X and Y, this will be 0 through 49.)
 
-Your puzzle answer was 220.
+<details>
+  <summary><strong><em>See result here</em></strong></summary>
+		Your puzzle answer was <strong><em>220</em></strong>.
+
+</details>
 
 ### --- Part Two ---
 
@@ -77,4 +81,7 @@ In this example, the 10x10 square closest to the emitter that fits entirely with
 
 Find the 100x100 square closest to the emitter that fits entirely within the tractor beam; within that square, find the point closest to the emitter. What value do you get if you take that point's X coordinate, multiply it by 10000, then add the point's Y coordinate? (In the example above, this would be 250020.)
 
-Your puzzle answer was 10010825.
+<details>
+  <summary><strong><em>See result here</em></strong></summary>
+		Your puzzle answer was <strong><em>10010825</em></strong>.
+</details>
