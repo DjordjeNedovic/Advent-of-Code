@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace day_1
 {
@@ -8,16 +10,17 @@ namespace day_1
         static void Main(string[] args)
         {
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
-            int[] modelues = Array.ConvertAll(input, s => Int32.Parse(s));
+            List<int> expenceReport = (Array.ConvertAll(input, s => Int32.Parse(s))).ToList();
+            expenceReport.Sort();
 
-            int solutionPartOne = PartOne(modelues);
+            int solutionPartOne = PartOne(expenceReport);
             Console.WriteLine($"Part one solution is {solutionPartOne}");
 
-            int solutionPartTwo = PartTwo(modelues);
+            int solutionPartTwo = PartTwo(expenceReport);
             Console.WriteLine($"Part two solution is {solutionPartTwo}");
         }
 
-        static int PartOne(int[] modelues) 
+        static int PartOne(List<int> modelues) 
         {
             foreach (int i in modelues)
             {
@@ -33,7 +36,7 @@ namespace day_1
             return 0;
         }
 
-        static int PartTwo(int[] modelues)
+        static int PartTwo(List<int> modelues)
         {
             foreach (int i in modelues)
             {
