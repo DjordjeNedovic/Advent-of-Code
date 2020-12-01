@@ -22,3 +22,5 @@ Day | Task | Solution | STARS |
 15 | | |
 16 |[day 16 task](https://github.com/DjolenceTipic/Advent-of-Code/tree/master/aof-2019/day-16) |[day 16 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/master/aof-2019/day-16/Program.cs) | :star:  |
 17 |[day 17 task](https://github.com/DjolenceTipic/Advent-of-Code/tree/master/aof-2019/day-17) |[day 17 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/master/aof-2019/day-17/Program.cs) | :star:  |
+18 | | |
+19 |[day 19 task](https://github.com/DjolenceTipic/Advent-of-Code/tree/master/aof-2019/day-19) |[day 19 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/master/aof-2019/day-19/Program.cs) | :star: :star:|
