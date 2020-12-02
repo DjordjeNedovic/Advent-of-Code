@@ -66,11 +66,10 @@ namespace day_2
                 int min = Int32.Parse(sp3[0].Trim());
                 int max = Int32.Parse(sp3[1].Trim());
 
-                if ((password[min - 1]).ToString() == code && (password[max - 1]).ToString() != code)
-                {
-                    valid++;
-                }
-                else if ((password[min - 1]).ToString() != code && (password[max - 1]).ToString() == code)
+                string first = password[min - 1].ToString();
+                string secound = password[max - 1].ToString();
+
+                if ((first == code && secound != code) || (first != code && secound == code))
                 {
                     valid++;
                 }
