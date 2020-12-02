@@ -69,7 +69,8 @@ namespace day_2
                 string first = password[min - 1].ToString();
                 string secound = password[max - 1].ToString();
 
-                if ((first == code && secound != code) || (first != code && secound == code))
+                // TIL  XOR and != achieve the same result when comparing 2 booleans
+                if ((first == code) != (secound == code)) 
                 {
                     valid++;
                 }
