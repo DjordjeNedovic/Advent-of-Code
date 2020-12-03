@@ -11,10 +11,10 @@ namespace day_3
         {
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
             int trees = SolvePartOne(input);
-            Console.WriteLine(trees);
+            Console.WriteLine($"Part one: there are {trees} trees");
 
             trees = SolvePartTwo(input);
-            Console.WriteLine(trees);
+            Console.WriteLine($"Part two: there are {trees} trees");
         }
 
         private static int SolvePartOne(string[] input)
@@ -38,7 +38,7 @@ namespace day_3
             {
                 trees.Add(Ski(input, slope.X, slope.Y));
             }
-
+            
             return trees.Aggregate(1, (x, y) => x * y);
         }
 
@@ -57,6 +57,7 @@ namespace day_3
                 {
                     x = x - widthOfMap;
                 }
+
                 char mapField = input[y][x];
                 if (mapField.ToString() == "#")
                 {
