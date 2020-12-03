@@ -38,7 +38,8 @@ namespace day_3
             {
                 trees.Add(Ski(input, slope.X, slope.Y));
             }
-            
+
+            //TIL aggregate function in LINQ
             return trees.Aggregate(1, (x, y) => x * y);
         }
 
