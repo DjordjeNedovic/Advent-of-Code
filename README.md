@@ -1,20 +1,28 @@
 # Advent-of-Code
 
-Foreach day, i add my inputs and in the end of md file solution that bring me stars for that input. 
+This repository contains my solutions for [Advent of Code](https://adventofcode.com/). 
+Solutions are not best nor fastest, but they are mine solutions :smile:
 
-For example:
+The folder for each day contains:
 
-<details>
-  <summary><strong><em>See result here</em></strong></summary>
-	Your puzzle answer was <strong><em>133</em></strong>.
-</details>
+- Task of the day (readMe.md file)
+- Input for the given task
+- Code to solve the given task (main file is always "Program.cs")
+- My solutions to the given input are at the end of readMe.md file
 
-Be free to use it for testing your solution.
+	For example:
 
-### Specfication
+	<details>
+	  <summary><strong><em>See result here</em></strong></summary>
+		Your puzzle answer was <strong><em>133</em></strong>.
+	</details>
+
+ - Be free to use it for testing your solution.
+
+## Specfication
 Solutions are done in .NET Core 3.0.
 
-### Contact
+## Contact
 For any question, you can find me:
 - nedovic.djordje@gmail.com
 - [@djordje_nedovic](https://twitter.com/djordje_nedovic) (twitter)
