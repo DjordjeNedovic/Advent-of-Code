@@ -77,6 +77,7 @@ namespace day_4
                                                      @"hgt:((1[5-8][0-9]|19[0-3])cm)|hgt:(7[0-6]|59|6[0-9])in",
                                                      @"hcl:(#[0-9a-f]{6})",
                                                      @"ecl:(amb|blu|brn|gry|grn|hzl|oth)",
+                                                     //TIL \b in regex
                                                      @"pid:(\d{9}\b)" };
 
             foreach (string regex in data)
