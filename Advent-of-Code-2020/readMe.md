@@ -4,7 +4,7 @@ This repository contains my solutions for the problems of Advent of Code.
                  .......|......                     1 **
                .'  -  -  \- .''                     2 **
                '.'. -   - \ -'':                    3 **
-				 ~ ''..'''_[].'						4 **
+                 ~ ''..'''_[].'                     4 **
 
 Stars count: 8 :star:
 
