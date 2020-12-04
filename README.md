@@ -16,5 +16,5 @@ Solutions are done in .NET Core 3.0.
 
 ### Contact
 For any question, you can find me:
-	- nedovic.djordje@gmail.com
-	- [@djordje_nedovic](https://twitter.com/djordje_nedovic) (twitter)
+- nedovic.djordje@gmail.com
+- [@djordje_nedovic](https://twitter.com/djordje_nedovic) (twitter)
