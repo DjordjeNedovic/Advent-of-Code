@@ -1,7 +1,7 @@
 # Advent-of-Code
 
 This repository contains my solutions for [Advent of Code](https://adventofcode.com/). 
-Solutions are not best nor fastest, but they are mine solutions :smile:
+Solutions are not best nor fastest, but they are my solutions :smile:
 
 The folder for each day contains:
 
