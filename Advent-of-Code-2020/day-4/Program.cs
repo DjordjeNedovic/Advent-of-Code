@@ -77,16 +77,7 @@ namespace day_4
                                                      //TIL \b in regex
                                                      @"pid:(\d{9}\b)" };
 
-            foreach (string regex in data)
-            {
-                MatchCollection matches = Regex.Matches(password, regex);
-                if (matches.Count == 0) 
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return data.All(reg => Regex.IsMatch(password, reg));
         }
 
         private static bool DoesPasswordHaveAllFields(string password)
