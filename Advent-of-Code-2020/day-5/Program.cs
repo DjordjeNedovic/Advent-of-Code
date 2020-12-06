@@ -11,39 +11,39 @@ namespace day_5
         {
             List<Seat> seats = new List<Seat>();
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
-            foreach (string i in input) 
+            foreach (string row in input) 
             {
-                int MIN_COLUMN = 0;
-                int MAX_COLUMN = 127;
-                int MIN_ROW = 0;
-                int MAX_ROW = 7;
-                var arrayOfCommands = i.ToCharArray();
+                int COLUMN_LOWER_LIMIT = 0;
+                int COLUMN_UPPER_LIMIT = 127;
+                int ROW_LOWER_LIMIT = 0;
+                int ROW_UPPER_LIMIT = 7;
+                var arrayOfCommands = row.ToCharArray();
                 foreach (char command in arrayOfCommands) 
                 {
                     switch(command){
                         case 'F':
-                            MAX_COLUMN = (MAX_COLUMN + MIN_COLUMN) / 2;
+                            COLUMN_UPPER_LIMIT = (COLUMN_UPPER_LIMIT + COLUMN_LOWER_LIMIT) / 2;
                             break;
                         case 'B':
-                            MIN_COLUMN =(int) Math.Ceiling((decimal)(MAX_COLUMN + MIN_COLUMN) / 2);
+                            COLUMN_LOWER_LIMIT =(int) Math.Ceiling((decimal)(COLUMN_UPPER_LIMIT + COLUMN_LOWER_LIMIT) / 2);
                             break;
                         case 'R':
-                            MIN_ROW = (int)Math.Ceiling((decimal)(MAX_ROW + MIN_ROW) / 2);
+                            ROW_LOWER_LIMIT = (int)Math.Ceiling((decimal)(ROW_UPPER_LIMIT + ROW_LOWER_LIMIT) / 2);
                             break;
                         case 'L':
-                            MAX_ROW = (MAX_ROW + MIN_ROW) / 2;
+                            ROW_UPPER_LIMIT = (ROW_UPPER_LIMIT + ROW_LOWER_LIMIT) / 2;
                             break;
                         default:
                             break;
                     }
                 }
 
-                Seat seat = new Seat() { Column = MAX_COLUMN, Row = MAX_ROW, Index = MAX_COLUMN * 8 + MAX_ROW};
+                Seat seat = new Seat() { Column = COLUMN_UPPER_LIMIT, Row = ROW_UPPER_LIMIT, Index = COLUMN_UPPER_LIMIT * 8 + ROW_UPPER_LIMIT};
                 seats.Add(seat);
             }
 
-            Console.WriteLine($"Part one solution: {seats.Max(x => x.Index)}");
-            Seat seatBeforeMy = seats.OrderBy(x => x.Index).ToList().Where(x=> !seats.Exists(z=>z.Index == x.Index+1)).First();
+            Console.WriteLine($"Part one solution: {seats.Max(seat => seat.Index)}");
+            Seat seatBeforeMy = seats.OrderBy(seat => seat.Index).ToList().Where(seat=> !seats.Exists(tempSeat=>tempSeat.Index == seat.Index + 1)).First();
             Console.WriteLine($"Part two solution: {seatBeforeMy.Index + 1}");
         }
     }
