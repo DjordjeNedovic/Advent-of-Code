@@ -5,7 +5,8 @@ This repository contains my solutions for the problems of Advent of Code.
                .'  -  -  \- .''                     2 **
                '.'. -   - \ -'':                    3 **
                  ~ ''..'''_[].'                     4 **
-			~____/ ''  ~                    5 ** 
+                    ~____/ ''  ~                    5 ** 
+			  ._____/                               6 **
 
 Stars count: 8 :star:
 
