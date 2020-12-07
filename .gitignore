@@ -1,3 +1,4 @@
+# AoC 2020
 /Advent-of-Code-2020/day-1/obj/*
 /Advent-of-Code-2020/day-1/day-1.csproj.user
 /Advent-of-Code-2020/day-1/bin/*
@@ -12,3 +13,22 @@
 /Advent-of-Code-2020/day-5/obj/*
 /Advent-of-Code-2020/day-6/bin/*
 /Advent-of-Code-2020/day-6/obj/*
+/Advent-of-Code-2020/day-7/bin/*
+/Advent-of-Code-2020/day-7/obj/*
+
+# AoC 2019
+/aof-2019/.vs/*
+/aof-2019/day-1/obj/*
+/aof-2019/day-2/obj/*
+/aof-2019/day-3/obj/*
+/aof-2019/day-4/obj/*
+/aof-2019/day-5/obj/*
+/aof-2019/day-6/obj/*
+/aof-2019/day-7/obj/*
+/aof-2019/day-8/obj/*
+/aof-2019/day-9/obj/*
+/aof-2019/day-10/obj/*
+/aof-2019/day-11/obj/*
+/aof-2019/day-12/obj/*
+/aof-2019/day-13/obj/*
+/aof-2019/day-16/obj/*
