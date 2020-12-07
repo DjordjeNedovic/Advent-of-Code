@@ -12,9 +12,9 @@ namespace day_6
             string[] input = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt")).Split(Environment.NewLine);
             List<string> answers = FindAnswers(input);
             int sum = PartOne(answers);
-            Console.WriteLine(sum);
+            Console.WriteLine($"Part two solution: { sum }");
             sum = PartTwo(answers);
-            Console.WriteLine(sum);
+            Console.WriteLine($"Part two solution: { sum }");
         }
 
         private static int PartTwo(List<string> answers)
