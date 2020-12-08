@@ -8,8 +8,9 @@ This repository contains my solutions for the problems of Advent of Code.
     ~   ~ ~  .'. ~  ~  ~ ____/ ''  ~  ~  ~     ~    ~    5 ** 
       ~    ~ ''  .._____/ ~   ~  ~  ~       ~            6 **
     ~   ~ ~   ~ :[]'.   ~   ~      ~                     7 **
+           ~     '.\ ~        ~  ~                       8 **
 
-Stars count: 14 :star:
+Stars count: 16 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -20,3 +21,4 @@ Day | Task | Solution | STARS |
 5 |[Binary Boarding](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-5) |[day 5 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-5/Program.cs) | :star: :star: |
 6 |[Custom Customs](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-6) |[day 6 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-6/Program.cs) | :star: :star: |
 7 |[Handy Haversacks](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-7) |[day 7 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-7/Program.cs) | :star: :star: |
+8 |[Handheld Halting](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-8) |[day 8 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-8/Program.cs) | :star: :star: |
