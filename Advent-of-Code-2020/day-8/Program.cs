@@ -9,12 +9,10 @@ namespace day_8
     {
         static void Main(string[] args)
         {
-
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
 
-            Console.WriteLine(SolvePartOne(input));
-
-            Console.WriteLine(SolvePartTwo(input));
+            Console.WriteLine($"Part one solution:  {SolvePartOne(input)}");
+            Console.WriteLine($"Part two solution:  {SolvePartTwo(input)}");
         }
 
         private static int SolvePartTwo(string[] commands)
