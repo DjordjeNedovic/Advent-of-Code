@@ -22,6 +22,7 @@ namespace day_9
             {
                 for (int k = y + 2; k < inputs.Length; k++)
                 {
+                    //TIL array split sintax
                     long[] temp = inputs[y..k];
                     long sum = temp.Sum();
                     if (sum == findThisNumber)

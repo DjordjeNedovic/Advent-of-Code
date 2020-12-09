@@ -12,7 +12,7 @@ This repository contains my solutions for the problems of Advent of Code.
 	~     ~     ~   \  ~
 	                ~\                                   9 **
 
-Stars count: 16 :star:
+Stars count: 18 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
