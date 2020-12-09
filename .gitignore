@@ -17,8 +17,8 @@
 /Advent-of-Code-2020/day-7/obj/*
 /Advent-of-Code-2020/day-8/bin/*
 /Advent-of-Code-2020/day-8/obj/*
-
-
+/Advent-of-Code-2020/day-9/bin/*
+/Advent-of-Code-2020/day-9/obj/*
 
 # AoC 2019
 /aof-2019/.vs/*
@@ -38,5 +38,3 @@
 /aof-2019/day-14/bin/*
 /aof-2019/day-14/obj/*
 /aof-2019/day-16/obj/*
-
-
