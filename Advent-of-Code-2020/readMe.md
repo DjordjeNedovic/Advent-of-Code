@@ -9,6 +9,8 @@ This repository contains my solutions for the problems of Advent of Code.
       ~    ~ ''  .._____/ ~   ~  ~  ~       ~            6 **
     ~   ~ ~   ~ :[]'.   ~   ~      ~                     7 **
            ~     '.\ ~        ~  ~                       8 **
+	~     ~     ~   \  ~
+	                ~\                                   9 **
 
 Stars count: 16 :star:
 
@@ -22,3 +24,4 @@ Day | Task | Solution | STARS |
 6 |[Custom Customs](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-6) |[day 6 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-6/Program.cs) | :star: :star: |
 7 |[Handy Haversacks](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-7) |[day 7 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-7/Program.cs) | :star: :star: |
 8 |[Handheld Halting](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-8) |[day 8 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-8/Program.cs) | :star: :star: |
+9 |[Encoding Error](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-9) |[day 9 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-9/Program.cs) | :star: :star: |
