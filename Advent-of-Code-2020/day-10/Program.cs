@@ -43,7 +43,17 @@ namespace day_10
             return jolt_1_diff * jolt_3_diff;
     }
 
-        //not my proudest solution, thanks reddit on help
+        /*not my proudest solution, thanks reddit on help
+        
+            - 7 has no children and would have 1 path(7->10)
+            - 6 has one child(7): it has 1 path (6->7->10)
+            - 4 can go to 6 or 7: it has 2 paths (4->6->7->10, 4->7->10)
+            - 3 can go to 4 or 6: it has 3 paths (2 via 4: 3->4->6->7->10, 3->4->7->10 and 1 via 6 3->6->7->10).
+            - 0 can only reach 3: it has 3 paths.
+             
+             https://www.reddit.com/r/adventofcode/comments/kadp4g/why_does_this_code_work_and_what_does_it_do/gf9pixm?utm_source=share&utm_medium=web2x&context=3
+        */
+
         private static long SolvePartTwo(long[] inputs)
         {
             counter++;
@@ -63,7 +73,7 @@ namespace day_10
             {
                 if (inputs[i] - temp <= 3) 
                 {
-                    total +=SolvePartTwo(inputs[i..]);
+                    total += SolvePartTwo(inputs[i..]);
                 }
                 else 
                 {
