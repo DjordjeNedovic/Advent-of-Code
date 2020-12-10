@@ -11,8 +11,16 @@ This repository contains my solutions for the problems of Advent of Code.
            ~     '.\ ~        ~  ~                       8 **
 	~     ~     ~   \  ~
 	                ~\                                   9 **
+					  \ ~
+					   \
+					   ~\
+					     \ ~
+	                   ~  \   ~                          10 **
+					   
+					
+					
 
-Stars count: 18 :star:
+Stars count: 20 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -25,3 +33,4 @@ Day | Task | Solution | STARS |
 7 |[Handy Haversacks](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-7) |[day 7 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-7/Program.cs) | :star: :star: |
 8 |[Handheld Halting](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-8) |[day 8 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-8/Program.cs) | :star: :star: |
 9 |[Encoding Error](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-9) |[day 9 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-9/Program.cs) | :star: :star: |
+10 |[Adapter Array](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-10) |[day 10 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-10/Program.cs) | :star: :star: |
