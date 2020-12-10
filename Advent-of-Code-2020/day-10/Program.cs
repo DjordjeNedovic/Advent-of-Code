@@ -43,8 +43,10 @@ namespace day_10
             return jolt_1_diff * jolt_3_diff;
     }
 
-        /*not my proudest solution, thanks reddit on help
+        /*
+            not my proudest solution, thanks reddit on help
         
+            eg for 3,4,6,7
             - 7 has no children and would have 1 path(7->10)
             - 6 has one child(7): it has 1 path (6->7->10)
             - 4 can go to 6 or 7: it has 2 paths (4->6->7->10, 4->7->10)
