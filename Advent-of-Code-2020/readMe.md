@@ -11,10 +11,10 @@ This repository contains my solutions for the problems of Advent of Code.
            ~     '.\ ~        ~  ~                       8 **
 	~     ~     ~   \  ~
 	                ~\                                   9 **
-					  \ ~
-					   \
-					   ~\
-					     \ ~
+			  \ ~
+			   \
+			   ~\
+			     \ ~
 	                   ~  \   ~                          10 **
 					   
 					
