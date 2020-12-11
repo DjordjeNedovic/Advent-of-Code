@@ -11,18 +11,18 @@ This repository contains my solutions for the problems of Advent of Code.
            ~     '.\ ~        ~  ~                       8 **
 	~     ~     ~   \  ~
 	                ~\                                   9 **
-					  \ ~
-					   \
-					   ~\
-						 \ ~
-					   ~  \   ~                          10 **
+			  \ ~
+			   \
+			   ~\
+                         \ ~
+			   ~  \   ~                          10 **
 	                       \    .
-						 ~  \'',:
-	                       :[]..'                        11 **
+			     ~  \'',:
+	                        :[]..'                       11 **
 					
 					
 
-Stars count: 20 :star:
+Stars count: 22 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
