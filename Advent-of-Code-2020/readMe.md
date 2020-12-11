@@ -11,12 +11,14 @@ This repository contains my solutions for the problems of Advent of Code.
            ~     '.\ ~        ~  ~                       8 **
 	~     ~     ~   \  ~
 	                ~\                                   9 **
-			  \ ~
-			   \
-			   ~\
-			     \ ~
-	                   ~  \   ~                          10 **
-					   
+					  \ ~
+					   \
+					   ~\
+						 \ ~
+					   ~  \   ~                          10 **
+	                       \    .
+						 ~  \'',:
+	                       :[]..'                        11 **
 					
 					
 
@@ -34,3 +36,4 @@ Day | Task | Solution | STARS |
 8 |[Handheld Halting](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-8) |[day 8 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-8/Program.cs) | :star: :star: |
 9 |[Encoding Error](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-9) |[day 9 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-9/Program.cs) | :star: :star: |
 10 |[Adapter Array](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-10) |[day 10 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-10/Program.cs) | :star: :star: |
+11 |[Seating System](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-11) |[day 11 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-11/Program.cs) | :star: :star: |
