@@ -16,9 +16,9 @@ This repository contains my solutions for the problems of Advent of Code.
 			   ~\
                          \ ~
 			   ~  \   ~                          10 **
-	                       	\    .
-				 ~  \'',:
-	                       :[]..'                        11 **
+	                       \    .
+			     ~  \'',:
+	                        :[]..'                       11 **
 					
 					
 
