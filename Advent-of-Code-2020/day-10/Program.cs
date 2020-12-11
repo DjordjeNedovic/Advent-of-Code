@@ -8,7 +8,6 @@ namespace day_10
     class Program
     {
         static Dictionary<long, long> resultSet = new Dictionary<long, long>();
-        static int counter = 0;
         static void Main(string[] args)
         {
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
@@ -19,7 +18,7 @@ namespace day_10
 
             inputs.Add(inputs.Last() + 3);
             inputs.Insert(0, 0);
-            Console.WriteLine($"Part two solution:  {SolvePartTwo(inputs.ToArray())}, {counter}");
+            Console.WriteLine($"Part two solution:  {SolvePartTwo(inputs.ToArray())}");
         }
 
         private static long SolvePartOne(List<long> inputs)
@@ -58,7 +57,6 @@ namespace day_10
 
         private static long SolvePartTwo(long[] inputs)
         {
-            counter++;
             if (resultSet.ContainsKey(inputs.Length)) 
             {
                return resultSet[inputs.Length];
@@ -70,10 +68,9 @@ namespace day_10
             }
 
             long total = 0;
-            long temp = inputs[0];
             for (int i = 1; i < inputs.Length; i++) 
             {
-                if (inputs[i] - temp <= 3) 
+                if (inputs[i] - inputs[0] <= 3) 
                 {
                     total += SolvePartTwo(inputs[i..]);
                 }
