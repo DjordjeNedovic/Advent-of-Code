@@ -36,6 +36,7 @@ namespace day_11
             counter++;
             foreach (Seat seat in seats) 
             {
+                //magic start here with magic number to reduce iteration number
                 if (counter - seat.LastTimeChanged < 5) 
                 {
                     bool ChageState = ChecknNighbors(seat, seats, tolerance);
