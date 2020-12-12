@@ -84,7 +84,6 @@ namespace day_12
                 Match match = Regex.Match(command, regex);
                 string direction = match.Groups["command"].Value;
                 int value = Int32.Parse(match.Groups["value"].Value);
-                Console.WriteLine($"{shipXAsixValue} : {shipYAsixValue} ({waypointX}, {waypointY})");
                 switch (direction)
                 {
                     case "N":
