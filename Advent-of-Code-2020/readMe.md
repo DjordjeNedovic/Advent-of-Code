@@ -20,14 +20,14 @@ This repository contains my solutions for the problems of Advent of Code.
                        \    .       ~  '.
                      ~  \'',:  ~         '..             
                         :[]..'          ~   ''...    11 **
-						 ''\__  ~     /
-						   ~  \__    /~     ~
-						         \__/                12 **
-								 ~        ~    ~
+                         ''\__  ~     /
+                           ~  \__    /~     ~
+                                 \__/                12 **
+                                 ~        ~    ~
                             ~
-							  . ..  .' ..       ~
-							   '.           ~
-                    				   
+                              . ..  .' ..       ~
+                               '.           ~
+                                               				   
 ```
 
 Stars count: 24 :star:
