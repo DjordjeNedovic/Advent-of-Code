@@ -1,28 +1,36 @@
 # Advent-of-Code
 This repository contains my solutions for the problems of Advent of Code.
 
-                  ..........|..........                  1 **
-       .....'''''' .'  -  -  \- .''~ ~ ''''''.....       2 **
-    ''' ~ ~ ~ ~  ~ '.'. -   - \ -'':  ~ ~   ~  ~  '''    3 **
-     ~   ~  ~   ~ ~  ~ ''..'''_[].'  ~    ~   ~ ~  ~     4 **
-    ~   ~ ~  .'. ~  ~  ~ ____/ ''  ~  ~  ~     ~    ~    5 ** 
-      ~    ~ ''  .._____/ ~   ~  ~  ~       ~            6 **
-    ~   ~ ~   ~ :[]'.   ~   ~      ~                     7 **
-           ~     '.\ ~        ~  ~                       8 **
-	~     ~     ~   \  ~
-	                ~\                                   9 **
-			  \ ~
-			   \
-			   ~\
-                         \ ~
-			   ~  \   ~                          10 **
-	                       \    .
-			     ~  \'',:
-	                        :[]..'                       11 **
-					
-					
+```
+              ..........|..........                  1 **
+   .....'''''' .'  -  -  \- .''~ ~ ''''''.....       2 **
+''' ~ ~ ~ ~  ~ '.'. -   - \ -'':  ~ ~   ~  ~  '''    3 **
+ ~   ~  ~   ~ ~  ~ ''..'''_[].'  ~    ~   ~ ~  ~     4 **
+~   ~ ~  .'. ~  ~  ~ ____/ ''  ~  ~  ~     ~    ~    5 ** 
+  ~    ~ ''  .._____/ ~   ~  ~  ~       ~            6 **
+~   ~ ~   ~ :[]'.   ~   ~      ~                     7 **
+       ~     '.\ ~        ~  ~                       8 **
+~     ~     ~   \  ~
+                ~\                               .   9 **
+                  \ ~                          '   
+                   \                       '     ^  
+                   ~\                     .      
+                     \ ~                  :   , ^
+                   ~  \   ~            .''           10 **
+                       \    .       ~  '.
+                     ~  \'',:  ~         '..             
+                        :[]..'          ~   ''...    11 **
+						 ''\__  ~     /
+						   ~  \__    /~     ~
+						         \__/                12 **
+								 ~        ~    ~
+                            ~
+							  . ..  .' ..       ~
+							   '.           ~
+                    				   
+```
 
-Stars count: 22 :star:
+Stars count: 24 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -37,3 +45,4 @@ Day | Task | Solution | STARS |
 9 |[Encoding Error](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-9) |[day 9 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-9/Program.cs) | :star: :star: |
 10 |[Adapter Array](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-10) |[day 10 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-10/Program.cs) | :star: :star: |
 11 |[Seating System](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-11) |[day 11 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-11/Program.cs) | :star: :star: |
+12 |[Rain Risk](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-12) |[day 12 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-12/Program.cs) | :star: :star: |
