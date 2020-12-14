@@ -46,3 +46,5 @@ Day | Task | Solution | STARS |
 10 |[Adapter Array](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-10) |[day 10 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-10/Program.cs) | :star: :star: |
 11 |[Seating System](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-11) |[day 11 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-11/Program.cs) | :star: :star: |
 12 |[Rain Risk](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-12) |[day 12 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-12/Program.cs) | :star: :star: |
+13 ||||
+14 |[Docking Data](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-14) |[day 14 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-14/Program.cs) | :star: :star: |
