@@ -11,16 +11,16 @@ This repository contains my solutions for the problems of Advent of Code.
 ~   ~ ~   ~ :[]'.   ~   ~      ~                     7 **
        ~     '.\ ~        ~  ~                       8 **
 ~     ~     ~   \  ~
-                ~\                               .   9 **
-                  \ ~                          '   
-                   \                       '     ^  
-                   ~\                     .      
-                     \ ~                  :   , ^
-                   ~  \   ~            .''           10 **
-                       \    .       ~  '.
+                ~\         ''..                  .   9 **
+                  \ ~     ^ [].'               '   
+                   \     ^   :\            '     ^  
+                   ~\    '..'  \_______~  .          15 ** 
+                     \ ~       ~   ~   \  :   , ^
+                   ~  \   ~            .\'     ^ ^   10 **
+                       \    .       ~  '.     , ^    14 **
                      ~  \'',:  ~         '..             
                         :[]..'          ~   ''...    11 **
-                         ''\__  ~     /
+                         ''\__  ~     /              13
                            ~  \__    /~     ~
                                  \__/                12 **
                                  ~        ~    ~
@@ -30,7 +30,7 @@ This repository contains my solutions for the problems of Advent of Code.
                                                				   
 ```
 
-Stars count: 24 :star:
+Stars count: 28 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -48,3 +48,4 @@ Day | Task | Solution | STARS |
 12 |[Rain Risk](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-12) |[day 12 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-12/Program.cs) | :star: :star: |
 13 ||||
 14 |[Docking Data](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-14) |[day 14 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-14/Program.cs) | :star: :star: |
+14 |[Rambunctious Recitation](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-15) |[day 15 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-15/Program.cs) | :star: :star: |
