@@ -79,7 +79,7 @@ with your ferry's docking program. It must be using **version 2** of the
 decoder chip!
 
 A version 2 decoder chip doesn't modify the values being written at all.
-Instead, it acts as a [memory address decoder](). Immediately before a value is 
+Instead, it acts as a [memory address decoder](https://www.youtube.com/watch?v=PvfhANgLrm4). Immediately before a value is 
 written to memory, each bit in the bitmask modifies the corresponding bit 
 of the destination **memory address** in the following way:
 
