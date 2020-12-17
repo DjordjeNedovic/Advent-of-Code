@@ -51,4 +51,7 @@
 /aof-2019/day-14/obj/*
 /aof-2019/day-16/obj/*
 
-
+# AoC 2018
+/Advent-of-Code-2018/.vs/*
+/Advent-of-Code-2018/day-1/bin/*
+/Advent-of-Code-2018/day-1/obj/*
