@@ -13,9 +13,12 @@ namespace day_7
         {
             string[] input = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt")).Split(Environment.NewLine);
             Dictionary<string, List<string>> bagsRecepies = ParseBags(input);
-            PartOne(bagsRecepies);
-            Console.WriteLine($"Part one solution:  {final.Count}");
-            Console.WriteLine($"Part two solution:  {PartTwo(bagsRecepies)}");
+            SolvePartOne(bagsRecepies);
+
+            Console.WriteLine("########## Day 7 2020 ##########");
+            Console.WriteLine($"Part one solution: {final.Count}");
+            Console.WriteLine($"Part two solution: {SolvePartTwo(bagsRecepies)}");
+            Console.WriteLine("################################");
         }
 
         private static Dictionary<string, List<string>> ParseBags(string[] input)
@@ -38,7 +41,50 @@ namespace day_7
             return bagsRecepies.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
         }
 
-        private static int PartTwo(Dictionary<string, List<string>> bagsRecepies)
+        private static void SolvePartOne(Dictionary<string, List<string>> bagsRecepies)
+        {
+            var childBags = new List<string>();
+            foreach (KeyValuePair<string, List<string>> recepie in bagsRecepies)
+            {
+                if (recepie.Value.Any(bag => bag.Contains("no other")))
+                {
+                    continue;
+                }
+
+                if (recepie.Value.Any(bag => bag.Contains("shiny gold")))
+                {
+                    childBags.Add(recepie.Key);
+                    final.Add(recepie.Key);
+                }
+            }
+
+            Recursion(childBags, bagsRecepies);
+        }
+
+        private static void Recursion(List<string> childBags, Dictionary<string, List<string>> allBags)
+        {
+            List<string> dependentBags = new List<string>();
+            foreach (string needBag in childBags)
+            {
+                foreach (KeyValuePair<string, List<string>> bag in allBags)
+                {
+                    if (bag.Value.Any(x => x.Contains(needBag)))
+                    {
+                        dependentBags.Add(bag.Key);
+                        final.Add(bag.Key);
+                    }
+                }
+            }
+
+            if (dependentBags.Count != 0)
+            {
+                dependentBags = dependentBags.Distinct().ToList();
+                final = final.Distinct().ToList();
+                Recursion(dependentBags, allBags);
+            }
+        }
+
+        private static int SolvePartTwo(Dictionary<string, List<string>> bagsRecepies)
         {
             string regex = @"(?<value>\d) (?<name>\w+ \w+)";
             int result = 0;
@@ -88,49 +134,6 @@ namespace day_7
             }
 
             return result;
-        }
-
-        private static void PartOne(Dictionary<string, List<string>> bagsRecepies)
-        {
-            var childBags = new List<string>();
-            foreach (KeyValuePair<string, List<string>> recepie in bagsRecepies)
-            {
-                if (recepie.Value.Any(bag => bag.Contains("no other")))
-                {
-                    continue;
-                }
-
-                if (recepie.Value.Any(bag => bag.Contains("shiny gold")))
-                {
-                    childBags.Add(recepie.Key);
-                    final.Add(recepie.Key);
-                }
-            }
-
-            Recursion(childBags, bagsRecepies);
-        }
-
-        private static void Recursion(List<string> childBags, Dictionary<string, List<string>> allBags)
-        {
-            List<string> dependentBags = new List<string>();
-            foreach (string needBag in childBags) 
-            {
-                foreach (KeyValuePair<string, List<string>> bag in allBags)
-                {
-                    if (bag.Value.Any(x => x.Contains(needBag)))
-                    {
-                        dependentBags.Add(bag.Key);
-                        final.Add(bag.Key);
-                    }
-                }
-            }
-
-            if (dependentBags.Count != 0)
-            {
-                dependentBags = dependentBags.Distinct().ToList();
-                final = final.Distinct().ToList();
-                Recursion(dependentBags, allBags);
-            }
         }
     }
 }

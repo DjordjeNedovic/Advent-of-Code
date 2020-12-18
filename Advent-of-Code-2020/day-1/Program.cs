@@ -13,14 +13,13 @@ namespace day_1
             List<int> expenceReport = (Array.ConvertAll(input, s => Int32.Parse(s))).ToList();
             expenceReport.Sort();
 
-            int solutionPartOne = PartOne(expenceReport);
-            Console.WriteLine($"Part one solution is {solutionPartOne}");
-
-            int solutionPartTwo = PartTwo(expenceReport);
-            Console.WriteLine($"Part two solution is {solutionPartTwo}");
+            Console.WriteLine("########## Day 1 2020 ##########");
+            Console.WriteLine($"Part one solution: {SolvePartOne(expenceReport)}");
+            Console.WriteLine($"Part two solution: {SolvePartTwo(expenceReport)}");
+            Console.WriteLine("################################");
         }
 
-        static int PartOne(List<int> modelues) 
+        static int SolvePartOne(List<int> modelues) 
         {
             foreach (int i in modelues)
             {
@@ -36,7 +35,7 @@ namespace day_1
             return 0;
         }
 
-        static int PartTwo(List<int> modelues)
+        static int SolvePartTwo(List<int> modelues)
         {
             foreach (int i in modelues)
             {

@@ -26,9 +26,11 @@ namespace day_11
                 }
             }
 
-            Console.WriteLine($"Part one solution:  { SolvePartOne(seatsPartOne, 4)}");
+            Console.WriteLine("########## Day 11 2020 ##########");
+            Console.WriteLine($"Part one solution: {SolvePartOne(seatsPartOne, 4)}");
             counter = 0;
-            Console.WriteLine($"Part two solution:  {SolvePartOne(seatsPartTwo, 5)}");
+            Console.WriteLine($"Part two solution: {SolvePartOne(seatsPartTwo, 5)}");
+            Console.WriteLine("#################################");
         }
 
         private static int SolvePartOne(List<Seat> seats, int tolerance)

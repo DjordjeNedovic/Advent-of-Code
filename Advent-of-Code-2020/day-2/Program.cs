@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace day_2
@@ -10,15 +9,14 @@ namespace day_2
         {
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
 
-            int partOneSolution = PartOne(input);
-            Console.WriteLine($"Part one: there are {partOneSolution} valid passwords");
-
-            int partTwoSolution = PartTwo(input);
-            Console.WriteLine($"Part two: there are {partTwoSolution} valid passwords");
+            Console.WriteLine("########## Day 2 2020 ##########");
+            Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
+            Console.WriteLine($"Part two solution: {SolvePartTwo(input)}");
+            Console.WriteLine("################################");
         }
 
 
-        private static int PartOne(string[] input)
+        private static int SolvePartOne(string[] input)
         {
             int valid = 0;
             foreach (string dbRow in input)
@@ -52,7 +50,7 @@ namespace day_2
             return valid;
         }
 
-        private static int PartTwo(string[] input)
+        private static int SolvePartTwo(string[] input)
         {
             int valid = 0;
             foreach (string dbRow in input)

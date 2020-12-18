@@ -12,8 +12,11 @@ namespace day_9
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
             long[] inputs = (Array.ConvertAll(input, s => Int64.Parse(s)));
             long findThisNumber = SolvePartOne(inputs);
-            Console.WriteLine($"Part one solution:  {findThisNumber}");
-            Console.WriteLine($"Part two solution:  {SolvePartTwo(findThisNumber, inputs)}");
+
+            Console.WriteLine("########## Day 9 2020 ##########");
+            Console.WriteLine($"Part one solution: {SolvePartOne(inputs)}");
+            Console.WriteLine($"Part two solution: {SolvePartTwo(findThisNumber, inputs)}");
+            Console.WriteLine("################################");
         }
 
         private static long SolvePartTwo(long findThisNumber, long[] inputs)

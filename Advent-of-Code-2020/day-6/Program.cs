@@ -11,39 +11,14 @@ namespace day_6
         {
             string[] input = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt")).Split(Environment.NewLine);
             List<string> answers = FindAnswers(input);
-            int sum = PartOne(answers);
-            Console.WriteLine($"Part two solution: { sum }");
-            sum = PartTwo(answers);
-            Console.WriteLine($"Part two solution: { sum }");
+
+            Console.WriteLine("########## Day 6 2020 ##########");
+            Console.WriteLine($"Part one solution: {SolvePartOne(answers)}");
+            Console.WriteLine($"Part two solution: {SolvePartTwo(answers)}");
+            Console.WriteLine("################################");
         }
 
-        private static int PartTwo(List<string> answers)
-        {
-            int sum = 0;
-            foreach (string ans in answers) 
-            {
-                List<char> answersList = new List<char>();
-                var temp = ans.Split(" ").Select(x => x.Distinct().ToList()).Where(x=>x.Count>0).ToList();
-                for (int i = 0; i < temp.Count; i++) 
-                {
-                    var a = temp[i];
-                    if (i == 0)
-                    {
-                        answersList.AddRange(a);
-                    }
-                    else 
-                    {
-                        answersList = new List<char>(answersList.Intersect(a).ToList());
-                    }
-                }
-
-                sum += answersList.Count;
-            }
-
-            return sum;
-        }
-
-        private static int PartOne(List<string> answers)
+        private static int SolvePartOne(List<string> answers)
         {
             int sum = 0;
             foreach (string ans in answers)
@@ -52,6 +27,32 @@ namespace day_6
                 var count = temp.Count();
 
                 sum += count;
+            }
+
+            return sum;
+        }
+
+        private static int SolvePartTwo(List<string> answers)
+        {
+            int sum = 0;
+            foreach (string ans in answers)
+            {
+                List<char> answersList = new List<char>();
+                var temp = ans.Split(" ").Select(x => x.Distinct().ToList()).Where(x => x.Count > 0).ToList();
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    var a = temp[i];
+                    if (i == 0)
+                    {
+                        answersList.AddRange(a);
+                    }
+                    else
+                    {
+                        answersList = new List<char>(answersList.Intersect(a).ToList());
+                    }
+                }
+
+                sum += answersList.Count;
             }
 
             return sum;

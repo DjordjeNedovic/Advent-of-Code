@@ -69,8 +69,10 @@ namespace day_16
                 }
             }
 
-            Console.WriteLine($"Solve part one, {count}");
-            Console.WriteLine($"Solve part two, {SolvePartTwo(rules, myTicket, validNearbyTicketsInts)}");
+            Console.WriteLine("########## Day 16 2020 ##########");
+            Console.WriteLine($"Part one solution:  {count}");
+            Console.WriteLine($"Part two solution:  {SolvePartTwo(rules, myTicket, validNearbyTicketsInts)}");
+            Console.WriteLine("#################################");
         }
 
         private static long SolvePartTwo(Dictionary<string, List<int>> rules, List<int> myTicket, List<List<int>> validNearbyTicketsInts)

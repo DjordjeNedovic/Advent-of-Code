@@ -18,8 +18,10 @@ namespace day_18
                 resultPartTwo += EvalatePartOne(line, true);
             }
 
-            Console.WriteLine($"Solve part one, {resultPartOne}");
-            Console.WriteLine($"Solve part two, {resultPartTwo}");
+            Console.WriteLine("########## Day 18 2020 ##########");
+            Console.WriteLine($"Part one solution: {resultPartOne}");
+            Console.WriteLine($"Part two solution: {resultPartTwo}");
+            Console.WriteLine("#################################");
         }
 
         private static long EvalatePartOne(string line, bool isPartTwo)

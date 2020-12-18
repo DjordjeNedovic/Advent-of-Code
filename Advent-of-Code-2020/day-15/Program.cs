@@ -11,9 +11,10 @@ namespace day_15
         {
             string[] input = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt")).Split(",");
             List<long> inputs = (Array.ConvertAll(input, s => Int64.Parse(s))).ToList();
-
+            Console.WriteLine("########## Day 15 2020 ##########");
             Console.WriteLine($"Part one solution:  {MemoryGame(inputs, 2020)}");
             Console.WriteLine($"Part two solution:  {MemoryGame(inputs, 30000000)}");
+            Console.WriteLine("#################################");
         }
 
         private static long MemoryGame(List<long> inputs, int numberSpoken)

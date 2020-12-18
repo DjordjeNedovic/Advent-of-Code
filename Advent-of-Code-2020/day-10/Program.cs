@@ -14,11 +14,12 @@ namespace day_10
             List<long> inputs = (Array.ConvertAll(input, s => Int64.Parse(s))).ToList();
             inputs.Sort();
 
-            Console.WriteLine($"Part one solution:  {SolvePartOne(inputs)}");
-
+            Console.WriteLine("########## Day 10 2020 ##########");
+            Console.WriteLine($"Part one solution: {SolvePartOne(inputs)}");
             inputs.Add(inputs.Last() + 3);
             inputs.Insert(0, 0);
-            Console.WriteLine($"Part two solution:  {SolvePartTwo(inputs.ToArray())}");
+            Console.WriteLine($"Part two solution: {SolvePartTwo(inputs.ToArray())}");
+            Console.WriteLine("#################################");
         }
 
         private static long SolvePartOne(List<long> inputs)

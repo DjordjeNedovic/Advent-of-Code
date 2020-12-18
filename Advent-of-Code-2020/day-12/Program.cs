@@ -10,8 +10,10 @@ namespace day_12
         {
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
 
+            Console.WriteLine("########## Day 12 2020 ##########");
             Console.WriteLine($"Part one solution:  {SolvePartOne(input)}");
             Console.WriteLine($"Part two solution:  {SolvePartTwo(input)}");
+            Console.WriteLine("#################################");
         }
 
         private static int SolvePartOne(string[] input)

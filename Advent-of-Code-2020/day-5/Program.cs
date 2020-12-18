@@ -42,9 +42,11 @@ namespace day_5
                 seats.Add(seat);
             }
 
+            Console.WriteLine("########## Day 5 2020 ##########");
             Console.WriteLine($"Part one solution: {seats.Max(seat => seat.Index)}");
-            Seat seatBeforeMy = seats.OrderBy(seat => seat.Index).ToList().Where(seat=> !seats.Exists(tempSeat=>tempSeat.Index == seat.Index + 1)).First();
+            Seat seatBeforeMy = seats.OrderBy(seat => seat.Index).ToList().Where(seat => !seats.Exists(tempSeat => tempSeat.Index == seat.Index + 1)).First();
             Console.WriteLine($"Part two solution: {seatBeforeMy.Index + 1}");
+            Console.WriteLine("################################");
         }
     }
 

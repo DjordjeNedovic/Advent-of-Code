@@ -13,8 +13,10 @@ namespace day_4
             string[] input = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt")).Split(Environment.NewLine);
             List<string> candidates = FindPassowrdsCandidates(input);
 
-            Console.WriteLine($"Part one: there are {SolvePartOne(candidates)} valid passports");
-            Console.WriteLine($"Part one: there are {SolvePartTow(candidates)} valid passports");
+            Console.WriteLine("########## Day 4 2020 ##########");
+            Console.WriteLine($"Part one solution: {SolvePartOne(candidates)}");
+            Console.WriteLine($"Part two solution: {SolvePartTwo(candidates)}");
+            Console.WriteLine("################################");
         }
 
         private static int SolvePartOne(List<string> candidates)
@@ -31,7 +33,7 @@ namespace day_4
             return count;
         }
 
-        private static int SolvePartTow(List<string> candidates)
+        private static int SolvePartTwo(List<string> candidates)
         {
             int count = 0;
             foreach (string password in candidates)
@@ -92,7 +94,6 @@ namespace day_4
             }
 
             return true;
-
         }
     }
 }
