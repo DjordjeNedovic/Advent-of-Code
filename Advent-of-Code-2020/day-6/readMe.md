@@ -57,7 +57,7 @@ For each group, count the number of questions to which anyone answered
 
 <details>
   <summary><strong><em>See result here</em></strong></summary>
-	Your puzzle answer was <strong><em>`6742`</em></strong>.
+	Your puzzle answer was <strong><em>6742</em></strong>.
 </details>
 
 ### --- Part Two ---
@@ -101,5 +101,5 @@ For each group, count the number of questions to which **everyone** answered
 
 <details>
   <summary><strong><em>See result here</em></strong></summary>
-	Your puzzle answer was <strong><em>`3447`</em></strong>.
+	Your puzzle answer was <strong><em>3447</em></strong>.
 </details>
