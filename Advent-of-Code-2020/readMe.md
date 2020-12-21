@@ -15,13 +15,13 @@ This repository contains my solutions for the problems of Advent of Code.
     ~       ~     \ ~   .'^ [].'    ~ ~     ..''     16 **
 ...     ~____   ~  \    :^ , :\  ~       :''  ,  ^   18 **
 ###: .../   ~      ~\    '..'  \_______~ '. ,        15 ** 
-.'' .'[]'.           \ ~       ~   ~   \  :   , ^
+.'' .'[]'.           \ ~       ~   ~   \  :   , ^    18
 '...'#####'.  ~    ~  \   ~            .\'  ,  ^ ^   10 **
 ##### ,###.'           \    .       ~  '.     , ^    14 **
-#,        '.         ~  \'',:   ~        '..   , ^        
+#,        '.         ~  \'',:   ~        '..   , ^   20     
             '           :[]..'          ~   ''...    11 **
                          ''\__  ~     /              13
-                           ~  \__    /~     ~
+                           ~  \__    /~     ~        21 **
                                  \__/                12 **
                                  ~        ~    ~
                             ~
@@ -30,7 +30,7 @@ This repository contains my solutions for the problems of Advent of Code.
                                                				   
 ```
 
-Stars count: 32 :star:
+Stars count: 34 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -52,3 +52,6 @@ Day | Task | Solution | STARS |
 16 |[Ticket Translation](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-16) |[day 16 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-16/Program.cs) | :star: :star: |
 17 ||||
 18 |[Operation Order](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-18) |[day 18 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-18/Program.cs) | :star: :star: |
+19 ||||
+20 ||||
+21 |[Allergen Assessment](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-21) |[day 21 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-21/Program.cs) | :star: :star: |
