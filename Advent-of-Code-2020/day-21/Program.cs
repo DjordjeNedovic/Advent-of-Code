@@ -15,8 +15,8 @@ namespace day_21
         {
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
             Console.WriteLine("########## Day 21 2020 ##########");
-            Console.WriteLine(SolvePartOne(input));
-            Console.WriteLine(SolvePartTwo());
+            Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
+            Console.WriteLine($"Part two solution: {SolvePartTwo()}");
             Console.WriteLine("#################################");
         }
 
