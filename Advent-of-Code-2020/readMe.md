@@ -21,16 +21,16 @@ This repository contains my solutions for the problems of Advent of Code.
 #,      , '.         ~  \'',:  ~         '..  , ^  20 
    ~ ~   , ,'.   ~     :[]..'           ~   ''...  11 **
 ~ ~ ~ ~     , :         ''\__  ~     /             13 
- ~ ~ ~ ~ ~ , ,:           ~  \__    /~      ~      21 **
+ ~ ~ ~ ~ ~ , ,:     ~     ~  \__    /~      ~      21 **
 ~ ~ ~ ~ ~  , .\______           \__/               12 **
- ~ ~ ~    ..'   ~    \__        ~         ~    ~   22
-  .....'''                 ~                     
+ ~ ~ ~    ..'   ~    \______    ~         ~    ~   22 **
+  .....'''           ~     ~\___                   23 
 ''         ~                 . ..   .' ..       ~
      ~                        '.            ~    
 
 ```
 
-Stars count: 34 :star:
+Stars count: 36 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -55,3 +55,4 @@ Day | Task | Solution | STARS |
 19 ||||
 20 ||||
 21 |[Allergen Assessment](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-21) |[day 21 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-21/Program.cs) | :star: :star: |
+22 |[Crab Combat](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-22) |[day 22 solution](https://github.com/DjolenceTipic/Advent-of-Code/blob/main/Advent-of-Code-2020/day-22/Program.cs) | :star: :star: |
