@@ -17,10 +17,10 @@ This repository contains my solutions for the problems of Advent of Code.
 ###: .../   ~      ~\    '..'  \_______~ '. ,      15 **
 .'' .'[]'.           \ ~       ~   ~   \  :  , ^   19 
 '...'#####'.  ~    ~  \   ~            .\' ,  ^ ^  10 **
-##### ,###.'           \   .       ~   '.    , ^   14 **
-#,      , '.         ~  \'',:  ~         '..  , ^  20 
-   ~ ~   , ,'.   ~     :[]..'           ~   ''...  11 **
-~ ~ ~ ~     , :         ''\__  ~     /             13 
+##### ,###.'           \   .       ~   '.[]  , ^   14 **
+#,      , '.         ~  \'',:  ~       _/'..  , ^  20 
+   ~ ~   , ,'.   ~     :[]..'         / ~   ''...  11 **
+~ ~ ~ ~     , :         ''\__  ~     /             13 **
  ~ ~ ~ ~ ~ , ,:     ~     ~  \__    /~      ~      21 **
 ~ ~ ~ ~ ~  , .\______           \__/               12 **
  ~ ~ ~    ..'   ~    \______    ~         ~    ~   22 **
@@ -30,7 +30,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-Stars count: 38 :star:
+Stars count: 41 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -46,7 +46,7 @@ Day | Task | Solution | STARS |
 10 |[Adapter Array](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
 11 |[Seating System](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
 12 |[Rain Risk](./day-12) |[day 12 solution](./day-12/Program.cs) | :star: :star: |
-13 ||||
+13 |[Shuttle Search](./day-13) |[day 13 solution](./day-13/Program.cs) | :star: :star: |
 14 |[Docking Data](./day-14) |[day 14 solution](./day-14/Program.cs) | :star: :star: |
 15 |[Rambunctious Recitation](./day-15) |[day 15 solution](./day-15/Program.cs) | :star: :star: |
 16 |[Ticket Translation](./day-16) |[day 16 solution](./day-16/Program.cs) | :star: :star: |
