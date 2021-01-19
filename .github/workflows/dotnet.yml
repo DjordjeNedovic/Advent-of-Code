@@ -16,6 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
+        path: ./Advent-of-Code-2020/Advent-of-Code-2020.sln
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
