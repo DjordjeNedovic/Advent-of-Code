@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: '3.1.x'
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore ./Advent-of-Code-2020/Advent-of-Code-2020.sln
     - name: Build
       run: dotnet build ./Advent-of-Code-2020/Advent-of-Code-2020.sln --no-restore
       
