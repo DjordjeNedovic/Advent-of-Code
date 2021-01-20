@@ -1,5 +1,7 @@
 # Advent-of-Code
 
+![.NET](https://github.com/DjolenceTipic/Advent-of-Code/workflows/.NET/badge.svg?branch=main)
+
 This repository contains my solutions for [Advent of Code](https://adventofcode.com/). 
 Solutions are not best nor fastest, but they are my solutions :smile:
 
