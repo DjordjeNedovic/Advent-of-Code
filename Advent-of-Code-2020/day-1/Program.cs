@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace day_1
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace day_1
             Console.WriteLine("################################");
         }
 
-        static int SolvePartOne(List<int> modelues) 
+        public static int SolvePartOne(List<int> modelues) 
         {
             foreach (int i in modelues)
             {
@@ -35,7 +35,7 @@ namespace day_1
             return 0;
         }
 
-        static int SolvePartTwo(List<int> modelues)
+        public static int SolvePartTwo(List<int> modelues)
         {
             foreach (int i in modelues)
             {

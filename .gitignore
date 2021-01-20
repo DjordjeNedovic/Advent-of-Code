@@ -46,6 +46,9 @@
 /Advent-of-Code-2020/day-25/bin/*
 /Advent-of-Code-2020/day-25/obj/*
 
+/Advent-of-Code-2020/Advent-Of-Code-2020-Tests/bin/*
+/Advent-of-Code-2020/Advent-Of-Code-2020-Tests/obj/*
+
 # AoC 2019
 /aof-2019/.vs/*
 /aof-2019/day-1/obj/*
@@ -72,3 +75,6 @@
 /Advent-of-Code-2018/day-1/*.user
 /Advent-of-Code-2018/day-2/*
 /Advent-of-Code-2018/day-2/*
+
+
+
