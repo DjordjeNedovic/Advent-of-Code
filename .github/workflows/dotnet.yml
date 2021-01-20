@@ -21,4 +21,5 @@ jobs:
       run: dotnet restore ./Advent-of-Code-2020/Advent-of-Code-2020.sln
     - name: Build
       run: dotnet build ./Advent-of-Code-2020/Advent-of-Code-2020.sln --no-restore
-      
+    - name: Test
+      run: dotnet test ./Advent-of-Code-2020/Advent-of-Code-2020.sln --no-restore --verbosity normal
