@@ -24,13 +24,13 @@ This repository contains my solutions for the problems of Advent of Code.
  ~ ~ ~ ~ ~ , ,:     ~     ~  \__    /~      ~      21 **
 ~ ~ ~ ~ ~  , .\______           \__/               12 **
  ~ ~ ~    ..'   ~    \______    ~         ~    ~   22 **
-  .....'''           ~     ~\___                   23 
-''         ~                 .'..  __' ..       ~  24 **
-     ~                        '.'  : [] .'  ~      25 *
+  .....'''           ~     ~\____                  23 **
+''         ~                 .'..\___''..       ~  24 **
+     ~          ~        ~    '.'  : [] .'  ~      25 *
 
 ```
 
-Stars count: 41 :star:
+Stars count: 43 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -56,6 +56,6 @@ Day | Task | Solution | STARS |
 20 ||||
 21 |[Allergen Assessment](./day-21) |[day 21 solution](./day-21/Program.cs) | :star: :star: |
 22 |[Crab Combat](./day-22) |[day 22 solution](./day-22/Program.cs) | :star: :star: |
-23 ||||
-24 |[Lobby Layout](./day-24)|[day 24 solution](./day-24/Program.cs)|:star: :star:|
-25 |[Combo Breaker](./day-25)|[day 25 solution](./day-25/Program.cs)|:star: |
+23 |[Crab Cups](./day-23) |[day 23 solution](./day-23/Program.cs) | :star: :star: |
+24 |[Lobby Layout](./day-24)|[day 24 solution](./day-24/Program.cs) |:star: :star:|
+25 |[Combo Breaker](./day-25)|[day 25 solution](./day-25/Program.cs) |:star: |

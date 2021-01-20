@@ -13,7 +13,7 @@ namespace day_25
             long t1 = CalculateLoopSize(publicKeyOne);
             long encrptyKey = Encript(t1, publicKeyTwo);
 
-            Console.WriteLine("########## Day 24 2020 ##########");
+            Console.WriteLine("########## Day 25 2020 ##########");
             Console.WriteLine($"Part one solution: {encrptyKey}");
             Console.WriteLine("#################################");
         }
