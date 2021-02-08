@@ -18,10 +18,10 @@ This repository contains my solutions for the problems of Advent of Code.
 .'' .'[]'.           \ ~       ~   ~   \  :  , ^   19 *
 '...'##\##'.  ~    ~  \   ~            .\' ,  ^ ^  10 **
 ##### ,#\#.'           \   .       ~   '.[]  , ^   14 **
-#,      ,\'.         ~  \'',:  ~       _/'..  , ^  20 
-   ~ ~   , ,'.   ~     :[]..'         / ~   ''...  11 **
-~ ~ ~ ~     , :         ''\__  ~     /             13 **
- ~ ~ ~ ~ ~ , ,:     ~     ~  \__    /~      ~      21 **
+#,      ,\'.         ~  \'',:  ~       _/'..  , ^  20 **
+   ~ ~   ,\,'.   ~     :[]..'         / ~   ''...  11 **
+~ ~ ~ ~    \, :         ''\__  ~     /             13 **
+ ~ ~ ~ ~ ~ ,[]:     ~     ~  \__    /~      ~      21 **
 ~ ~ ~ ~ ~  , .\______           \__/               12 **
  ~ ~ ~    ..'   ~    \______    ~         ~    ~   22 **
   .....'''           ~     ~\____                  23 **
@@ -30,7 +30,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-Stars count: 44 :star:
+Stars count: 47 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -52,8 +52,8 @@ Day | Task | Solution | STARS |
 16 |[Ticket Translation](./day-16) |[day 16 solution](./day-16/Program.cs) | :star: :star: |
 17 ||||
 18 |[Operation Order](./day-18) |[day 18 solution](./day-18/Program.cs) | :star: :star: |
-19 |[Monster Messages](./day-19) |[day 19 solution](./day-19/Program.cs) | :star: |
-20 ||||
+19 |[Monster Messages](./day-19) |[day 19 solution](./day-19/Program.cs) | :star: :star: |
+20 |[Jurassic Jigsaw](./day-20) |[day 20 solution](./day-20/Program.cs) | :star: :star: |
 21 |[Allergen Assessment](./day-21) |[day 21 solution](./day-21/Program.cs) | :star: :star: |
 22 |[Crab Combat](./day-22) |[day 22 solution](./day-22/Program.cs) | :star: :star: |
 23 |[Crab Cups](./day-23) |[day 23 solution](./day-23/Program.cs) | :star: :star: |
