@@ -10,10 +10,10 @@ This repository contains my solutions for the problems of Advent of Code.
   ~    ~ ''  .._____/ ~   ~  ~  ~    _ ~ _   O>     6 **
  ~  ~ ~   ~ :[]'.   ~   ~      ~  \ / \ / \ /  ~    7 **
        ~     '.\ ~        ~  ~   ~  ~      ~    ~   8 **
- ~   ~      ~   \  ~     __     ~      ~      ~    17 
-       ~       ~ \      .''\'..    ~       ~    .   9 **
-    ~       ~     \ ~   .'^ [].'      ~  ~  ..''   16 **
-...     ~____  ~   \    :^ , :\  ~       :''  , ^  18 **
+ ~   ~      ~   \  ~    ___     ~      ~      ~    17 **
+       ~       ~ \ ____/.''\'..    ~       ~    .   9 **
+    ~       ~  __/\ ~   .'^ [].'      ~  ~  ..''   16 **
+...     ~_____/~   \    :^ , :\  ~       :''  , ^  18 **
 ###: .../   ~      ~\    '..'  \_______~ '. ,      15 **
 .'' .'[]'.           \ ~       ~   ~   \  :  , ^   19 *
 '...'##\##'.  ~    ~  \   ~            .\' ,  ^ ^  10 **
@@ -26,11 +26,11 @@ This repository contains my solutions for the problems of Advent of Code.
  ~ ~ ~    ..'   ~    \______    ~         ~    ~   22 **
   .....'''           ~     ~\____                  23 **
 ''         ~                 .'..\___''..       ~  24 **
-     ~          ~        ~    '.'  : [] .'  ~      25 *
+     ~          ~        ~    '.'  : [] .'  ~      25 **
 
 ```
 
-Stars count: 47 :star:
+Stars count: 50 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -50,12 +50,12 @@ Day | Task | Solution | STARS |
 14 |[Docking Data](./day-14) |[day 14 solution](./day-14/Program.cs) | :star: :star: |
 15 |[Rambunctious Recitation](./day-15) |[day 15 solution](./day-15/Program.cs) | :star: :star: |
 16 |[Ticket Translation](./day-16) |[day 16 solution](./day-16/Program.cs) | :star: :star: |
-17 ||||
+17 |[Conway Cubes](./day-17) |[day 17 solution](./day-17/Program.cs) | :star: :star: |
 18 |[Operation Order](./day-18) |[day 18 solution](./day-18/Program.cs) | :star: :star: |
 19 |[Monster Messages](./day-19) |[day 19 solution](./day-19/Program.cs) | :star: :star: |
 20 |[Jurassic Jigsaw](./day-20) |[day 20 solution](./day-20/Program.cs) | :star: :star: |
 21 |[Allergen Assessment](./day-21) |[day 21 solution](./day-21/Program.cs) | :star: :star: |
 22 |[Crab Combat](./day-22) |[day 22 solution](./day-22/Program.cs) | :star: :star: |
 23 |[Crab Cups](./day-23) |[day 23 solution](./day-23/Program.cs) | :star: :star: |
-24 |[Lobby Layout](./day-24)|[day 24 solution](./day-24/Program.cs) |:star: :star:|
-25 |[Combo Breaker](./day-25)|[day 25 solution](./day-25/Program.cs) |:star: |
+24 |[Lobby Layout](./day-24)|[day 24 solution](./day-24/Program.cs) |:star: :star: |
+25 |[Combo Breaker](./day-25)|[day 25 solution](./day-25/Program.cs) |:star: :star: |
