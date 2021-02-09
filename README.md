@@ -24,7 +24,18 @@ The folder for each day contains:
 ## Specfication
 Solutions are done in .NET Core 3.0.
 
+## Current Progresion*
+
+| Year | STARS |
+ ------------- | ------------- |
+ 2020 | 50 :star:|
+ 2019 | 29 :star:|
+ 2018 | 4 :star:|
+
 ## Contact
 For any question, you can find me:
 - nedovic.djordje@gmail.com
 - [@djordje_nedovic](https://twitter.com/djordje_nedovic) (twitter)
+
+##
+*It will be updated during time
