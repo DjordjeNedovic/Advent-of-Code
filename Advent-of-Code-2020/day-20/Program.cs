@@ -171,7 +171,7 @@ namespace day_20
                     break;
                 }
 
-                result = new List<string>(RotateClockWise(result, cols));
+                result = new List<string>(RotateClockWise(result, cols-1));
                 if (iterator == 4) 
                 {
                     result.Reverse();
