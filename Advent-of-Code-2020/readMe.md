@@ -30,7 +30,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-Stars count: 50 :star:
+# Stars count: 50 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
