@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace day_4
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace day_4
             Console.WriteLine("################################");
         }
 
-        private static int SolvePartOne(List<string> candidates)
+        public static int SolvePartOne(List<string> candidates)
         {
             int count = 0;
             foreach (string password in candidates)
@@ -33,7 +33,7 @@ namespace day_4
             return count;
         }
 
-        private static int SolvePartTwo(List<string> candidates)
+        public static int SolvePartTwo(List<string> candidates)
         {
             int count = 0;
             foreach (string password in candidates)
@@ -47,7 +47,7 @@ namespace day_4
             return count;
         }
 
-        private static List<string> FindPassowrdsCandidates(string[] input)
+        public static List<string> FindPassowrdsCandidates(string[] input)
         {
             List<string> passwords = new List<string>();
             string passwordData = String.Empty;

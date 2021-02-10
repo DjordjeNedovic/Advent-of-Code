@@ -3,7 +3,7 @@ using System.IO;
 
 namespace day_2
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -16,7 +16,7 @@ namespace day_2
         }
 
 
-        private static int SolvePartOne(string[] input)
+        public static int SolvePartOne(string[] input)
         {
             int valid = 0;
             foreach (string dbRow in input)
@@ -50,7 +50,7 @@ namespace day_2
             return valid;
         }
 
-        private static int SolvePartTwo(string[] input)
+        public static int SolvePartTwo(string[] input)
         {
             int valid = 0;
             foreach (string dbRow in input)

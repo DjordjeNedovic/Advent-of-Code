@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace day_3
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -17,12 +17,12 @@ namespace day_3
             Console.WriteLine("################################");
         }
 
-        private static int SolvePartOne(string[] input)
+        public static int SolvePartOne(string[] input)
         {
             return Ski(input, 3, 1);
         }
 
-        private static int SolvePartTwo(string[] input)
+        public static int SolvePartTwo(string[] input)
         {
             List<int> trees = new List<int>();
             List<Slope> slopes = new List<Slope>()

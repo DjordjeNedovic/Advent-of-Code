@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -17,6 +17,9 @@
   <ItemGroup>
     <ProjectReference Include="..\day-19\day-19.csproj" />
     <ProjectReference Include="..\day-1\day-1.csproj" />
+    <ProjectReference Include="..\day-2\day-2.csproj" />
+    <ProjectReference Include="..\day-3\day-3.csproj" />
+    <ProjectReference Include="..\day-4\day-4.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +27,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="test inputs\day-1\day-1-example-1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="test inputs\day-2\day-2-example-1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="test inputs\day-3\day-3-example-1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="test inputs\day-4\day-4-example-1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
