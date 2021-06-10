@@ -30,7 +30,7 @@ Solutions are done in .NET Core 3.0.
  ------------- | ------------- |
  2020 | 50 :star:|
  2019 | 29 :star:|
- 2018 | 4 :star:|
+ 2018 | 12 :star:|
 
 ## Contact
 For any question, you can find me:
