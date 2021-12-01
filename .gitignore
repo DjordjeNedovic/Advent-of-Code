@@ -1,3 +1,7 @@
+#AoC 2021
+/Advent-of-Code-2021/day-1/obj/*
+/Advent-of-Code-2021/day-1/bin/*
+
 # AoC 2020
 /Advent-of-Code-2020/day-1/obj/*
 /Advent-of-Code-2020/day-1/day-1.csproj.user
