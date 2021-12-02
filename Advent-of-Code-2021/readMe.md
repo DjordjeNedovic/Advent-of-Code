@@ -6,7 +6,7 @@ This repository contains my solutions for the problems of Advent of Code.
                                   .   .  ..''''  2 **
 ```
 
-# Stars count: 2 :star:
+# Stars count: 4 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
