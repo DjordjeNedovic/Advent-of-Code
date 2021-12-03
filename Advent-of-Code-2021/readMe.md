@@ -2,11 +2,12 @@
 This repository contains my solutions for the problems of Advent of Code.
 
 ```
-                    ~   ~  ~ ~~ ~~~~~~~~~~~~~~~  1 **
-                                  .   .  ..''''  2 **
+             ~  ~ ~ ~~ ~~~~~~~~~~~~~~~~~~~~~~~~  1 **
+                            '    '.   .. ..''''  2 **
+                                     .  :        3 **
 ```
 
-# Stars count: 4 :star:
+# Stars count: 6 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
