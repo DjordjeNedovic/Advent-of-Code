@@ -99,3 +99,5 @@
 /Advent-of-Code-2018/day-6/obj/*
 /Advent-of-Code-2018/day-7/obj/*
 /Advent-of-Code-2018/day-8/obj/*
+/Advent-of-Code-2021/.vs/Advent-of-Code-2021/DesignTimeBuild/*.v2
+/Advent-of-Code-2021/.vs/Advent-of-Code-2021/v16/*.suo
