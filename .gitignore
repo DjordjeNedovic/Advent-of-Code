@@ -1,10 +1,17 @@
 #AoC 2021
+/Advent-of-Code-2021/.vs/Advent-of-Code-2021/DesignTimeBuild/*.v2
+/Advent-of-Code-2021/.vs/Advent-of-Code-2021/v16/*.suo
+
 /Advent-of-Code-2021/day-1/obj/*
 /Advent-of-Code-2021/day-1/bin/*
 /Advent-of-Code-2021/day-2/obj/*
 /Advent-of-Code-2021/day-2/bin/*
 /Advent-of-Code-2021/day-3/obj/*
 /Advent-of-Code-2021/day-3/bin/*
+/Advent-of-Code-2021/day-4/obj/*
+/Advent-of-Code-2021/day-4/bin/*
+/Advent-of-Code-2021/day-5/obj/*
+/Advent-of-Code-2021/day-5/bin/*
 
 # AoC 2020
 /Advent-of-Code-2020/day-1/obj/*
@@ -99,5 +106,3 @@
 /Advent-of-Code-2018/day-6/obj/*
 /Advent-of-Code-2018/day-7/obj/*
 /Advent-of-Code-2018/day-8/obj/*
-/Advent-of-Code-2021/.vs/Advent-of-Code-2021/DesignTimeBuild/*.v2
-/Advent-of-Code-2021/.vs/Advent-of-Code-2021/v16/*.suo
