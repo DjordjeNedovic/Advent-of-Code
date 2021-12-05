@@ -13,55 +13,20 @@ namespace day_4
             string[] combinationString = input[0].Split(',');
             int[] inputs = (Array.ConvertAll(combinationString, s => Int32.Parse(s)));
             List<string[][]> final = GetBoards(input);
-            Console.WriteLine("########## Day 3 2021 ##########");
+            Console.WriteLine("########## Day 4 2021 ##########");
             Console.WriteLine($"Part one solution: {SolvePartOne(final, inputs)}");
             final = GetBoards(input);
             Console.WriteLine($"Part two solution: {SolvePartTwo(final, inputs)}");
             Console.WriteLine("################################");
         }
 
-        private static List<string[][]> GetBoards(string[] input)
-        {
-            List<Board> boards = new List<Board>();
-            Board b = new Board();
-
-            for (int i = 1; i < input.Length; i++)
-            {
-                if (input[i] == "")
-                {
-                    boards.Add(b);
-                    b = new Board();
-                    b.Test = new List<string[]>();
-                    continue;
-                }
-
-                var row = input[i].Split(' ').ToList();
-                row.RemoveAll(x => x == "");
-
-                string[] g = row.ToArray();
-                b.Test.Add(g);
-            }
-
-            boards.Add(b);
-            boards.RemoveAt(0);
-
-            List<string[][]> final = new List<string[][]>();
-            foreach (var bb in boards)
-            {
-                var gg = bb.Test.ToArray();
-                final.Add(gg);
-            }
-
-            return final;
-        }
-
-        private static object SolvePartOne(List<string[][]> final, int[] combinations)
+        private static object SolvePartOne(List<string[][]> boadrs, int[] combinations)
         {
             int result = 0;
             for (int number = 0; number < combinations.Length; number++) 
             {
                 int boardNumber = 0;
-                foreach (string[][] board in final)
+                foreach (string[][] board in boadrs)
                 {
                     for (int row = 0; row < board.Length; row++)
                     {
@@ -79,7 +44,7 @@ namespace day_4
 
                 if (combinations[number] > 5)
                 {
-                    int others = CheckIfAnyRow(final);
+                    int others = CheckIfAnyWin(boadrs);
                     if (others != -1) 
                     {
                         result = others * combinations[number];
@@ -91,38 +56,13 @@ namespace day_4
             return result;
         }
 
-        private static int CheckIfAnyRow(List<string[][]> final)
+        private static object SolvePartTwo(List<string[][]> boards, int[] combinations)
         {
-            int found = -1;
-            int result = -1;
-            for (int boardNumber = 0; boardNumber < final.Count; boardNumber++) 
-            {
-                var current = final[boardNumber];
-                for (int index = 0; index < current.Length; index++) 
-                {
-                    if (current[index].All(x => x == "X") || current.Select(x => x[index]).All(x => x == "X")) 
-                    {
-                        found = boardNumber;
-                    }
-                }
-            }
-
-            if (found != -1) 
-            {
-                var s = final[found].SelectMany(x => x).Where(x => x != "X").ToArray();
-                result = (Array.ConvertAll(s, z => Int32.Parse(z))).Sum();
-            }
-
-            return result;
-        }
-
-        private static object SolvePartTwo(List<string[][]> final, int[] combinations)
-        {
-            int finale = 0;
+            int largestWinRound = 0;
             int result = 0;
-            foreach (string[][] board in final)
+            foreach (string[][] board in boards)
             {
-                int boardNumber = 0;
+                int boardWinRound = 0;
                 List<string[][]> ad = new List<string[][]>() { board };
                 for (int number = 0; number < combinations.Length; number++)
                 {
@@ -139,33 +79,84 @@ namespace day_4
 
                     if (combinations[number] > 5)
                     {
-                        int others = CheckIfAnyRow(ad);
+                        int others = CheckIfAnyWin(ad);
                         if (others != -1)
                         {
-                            if (boardNumber > finale) 
+                            if (boardWinRound > largestWinRound) 
                             {
-                                finale = boardNumber;
+                                largestWinRound = boardWinRound;
 
-                                boardNumber = 0;
+                                boardWinRound = 0;
                                 result = others * combinations[number];
-
-                                break;
                             }
 
                             break;
                         }
                     }
 
-                    boardNumber++;
+                    boardWinRound++;
                 }
             }
 
             return result;
         }
-    }
 
-    class Board 
-    {
-        public List<string[]> Test { get; set; }
+
+        private static List<string[][]> GetBoards(string[] input)
+        {
+            List<List<string[]>> allBoards = new List<List<string[]>>();
+            List<string[]> currentBoard = null;
+            for (int i = 1; i < input.Length; i++)
+            {
+                if (input[i] == "")
+                {
+                    allBoards.Add(currentBoard);
+                    currentBoard = new List<string[]>();
+                    continue;
+                }
+
+                var row = input[i].Split(' ').ToList();
+                row.RemoveAll(x => x == "");
+
+                string[] g = row.ToArray();
+                currentBoard.Add(g);
+            }
+
+            allBoards.Add(currentBoard);
+            allBoards.RemoveAt(0);
+
+            List<string[][]> boardsStruct = new List<string[][]>();
+            foreach (var current in allBoards)
+            {
+                boardsStruct.Add(current.ToArray());
+            }
+
+            return boardsStruct;
+        }
+
+        private static int CheckIfAnyWin(List<string[][]> final)
+        {
+            int found = -1;
+            int result = -1;
+            for (int boardNumber = 0; boardNumber < final.Count; boardNumber++)
+            {
+                var current = final[boardNumber];
+                for (int index = 0; index < current.Length; index++)
+                {
+                    if (current[index].All(x => x == "X") || current.Select(x => x[index]).All(x => x == "X"))
+                    {
+                        found = boardNumber;
+                    }
+                }
+            }
+
+            if (found != -1)
+            {
+                var otherNumbers = final[found].SelectMany(x => x).Where(x => x != "X").ToArray();
+                result = (Array.ConvertAll(otherNumbers, z => Int32.Parse(z))).Sum();
+            }
+
+            return result;
+        }
     }
 }
