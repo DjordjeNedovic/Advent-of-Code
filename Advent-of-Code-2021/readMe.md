@@ -2,11 +2,12 @@
 This repository contains my solutions for the problems of Advent of Code.
 
 ```
- ~  ~  ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  1 **
-                  .    '          .       . ..''''  2 **
-            '.      . .  . .     .         :        3 **
-             '   . . '     .     .'    ....'        4 **
-                         .   . ..|\..''             5 **
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  1 **
+   ' '   ' .   .        '  .      .   '     ..''''  2 **
+ .             . .      .   ..   .   .     :        3 **
+.  ~         '   ..     ..    .  .'    ....'        4 **
+      . .   .   . ..   '.    . ..|\..''             5 **
+             .~    .        ' :                     6 **
 ```
 
 # Stars count: 10 :star:
@@ -18,3 +19,4 @@ Day | Task | Solution | STARS |
 3 |[Binary Diagnostic](./day-3) |[day 3 solution](./day-3/Program.cs) | :star: :star: |
 4 |[Giant Squid](./day-4) |[day 4 solution](./day-4/Program.cs) | :star: :star: |
 5 |[Hydrothermal Venture](./day-5) |[day 5 solution](./day-5/Program.cs) | :star: :star: |
+6 |[Lanternfish](./day-6) |[day 6 solution](./day-6/Program.cs) | :star: :star: |
