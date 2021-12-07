@@ -3,14 +3,15 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  1 **
-   ' '   ' .   .        '  .      .   '     ..''''  2 **
- .             . .      .   ..   .   .     :        3 **
-.  ~         '   ..     ..    .  .'    ....'        4 **
-      . .   .   . ..   '.    . ..|\..''             5 **
-             .~    .        ' :                     6 **
+ .    ..       . .  .    . .      . .       ..''''  2 **
+    .. .       .           .     .         :        3 **
+ .~          '   ..     ..    .  .'    ....'        4 **
+.     . .   .   . ..   '.    . ..|\..''             5 **
+             .     .        ' :                     6 **
+                   .     '  :'                      7 **
 ```
 
-# Stars count: 10 :star:
+# Stars count: 14 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -20,3 +21,4 @@ Day | Task | Solution | STARS |
 4 |[Giant Squid](./day-4) |[day 4 solution](./day-4/Program.cs) | :star: :star: |
 5 |[Hydrothermal Venture](./day-5) |[day 5 solution](./day-5/Program.cs) | :star: :star: |
 6 |[Lanternfish](./day-6) |[day 6 solution](./day-6/Program.cs) | :star: :star: |
+7 |[The Treachery of Whales](./day-7) |[day 7 solution](./day-7/Program.cs) | :star: :star: |
