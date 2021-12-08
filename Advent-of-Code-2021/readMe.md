@@ -9,6 +9,7 @@ This repository contains my solutions for the problems of Advent of Code.
 .     . .   .   . ..   '.    . ..|\..''             5 **
              .     .        ' :                     6 **
                    .     '  :'                      7 **
+                                                    8 **
 ```
 
 # Stars count: 14 :star:
@@ -22,3 +23,4 @@ Day | Task | Solution | STARS |
 5 |[Hydrothermal Venture](./day-5) |[day 5 solution](./day-5/Program.cs) | :star: :star: |
 6 |[Lanternfish](./day-6) |[day 6 solution](./day-6/Program.cs) | :star: :star: |
 7 |[The Treachery of Whales](./day-7) |[day 7 solution](./day-7/Program.cs) | :star: :star: |
+8 |[Seven Segment Search](./day-8) |[day 8 solution](./day-8/Program.cs) | :star: :star: |
