@@ -12,7 +12,7 @@ namespace day_7
             string[] input = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt")).Split(",");
             int[] inputs = (Array.ConvertAll(input, s => Int32.Parse(s)));
 
-            Console.WriteLine("########## Day 5 2021 ##########");
+            Console.WriteLine("########## Day 7 2021 ##########");
             Console.WriteLine($"Part one solution: {SolvePartOne(inputs)}");
             Console.WriteLine($"Part two solution: {SolvePartTwo(inputs)}");
             Console.WriteLine("################################");

@@ -112,16 +112,17 @@ namespace day_8
 
         private static string twoThreeOrFive(string onePattern, char[] fourAndEightDiff, string numberSequence)
         {
-            //if numberSequence contains onePatter, result must be 3
+            //if the numberSequence contains all items from the 1 pattern, the numberSequence must be 3
             if (onePattern.ToCharArray().All(x => numberSequence.Contains(x)))
             {
                 return "3";
             }
-            //if numberSequence is not 3 and contains difference of 8 and 4, number must be 2
+            //if the numberSequence is not 3 and contains difference of 8 and 4, the numberSequence must be 2
             else if (fourAndEightDiff.All(x=> numberSequence.ToCharArray().Contains(x)))
             {
                 return "2";
             }
+            //else the numberSequence must be 5
             else
             {
                 return "5";
@@ -130,17 +131,18 @@ namespace day_8
         }
         private static string zeroSixOrNine(string fourPattern, string sevenPattern, string numberSequence)
         {
-            //if numberSequence contains all items from 4 pattern, numberSequence must be 9
+            //if the numberSequence contains all items from the 4 pattern, the numberSequence must be 9 
             if (fourPattern.ToCharArray().All(x => numberSequence.Contains(x)))
             {
                 return "9";
             }
-            //if numberSequence is not 9 and contains all items from 7 pattern, numberSequence
+            //if the numberSequence is not 9 and contains all items from the 7 pattern, the numberSequence must be 0
             else if (sevenPattern.ToCharArray().All(x => numberSequence.Contains(x)))
             {
                 return "0";
             }
-            else 
+            //else the numberSequence must be 6
+            else
             {
                 return "6";
             }
