@@ -48,4 +48,7 @@ metadata entries. In this example, that sum is `1+1+2+10+11+12+2+99=` *`138`*.
 
 What is the sum of all metadata entries?
 
-Your puzzle answer was 42501.
+<details>
+  <summary><strong><em>See result here</em></strong></summary>
+	Your puzzle answer was <strong><em>42501</em></strong>.
+</details>
