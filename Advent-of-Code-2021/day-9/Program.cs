@@ -16,7 +16,7 @@ namespace day_9
         {
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
 
-            Console.WriteLine("########## Day 8 2021 ##########");
+            Console.WriteLine("########## Day 9 2021 ##########");
             Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
             Console.WriteLine($"Part two solution: {SolvePartTwo(input)}");
             Console.WriteLine("################################");
@@ -25,13 +25,13 @@ namespace day_9
         private static int SolvePartOne(string[] input)
         {
             int result = 0;
-            int[][] gg= GetArray(input);
-            for (int row = 0; row < gg.Length; row++)
+            int[][] map= GetArray(input);
+            for (int row = 0; row < map.Length; row++)
             {
-                for (int collumn = 0; collumn < gg[0].Length; collumn++)
+                for (int collumn = 0; collumn < map[0].Length; collumn++)
                 {
-                    int curretnt = gg[row][collumn];
-                    if (IsLowPoint(gg, row, collumn, curretnt)) 
+                    int curretnt = map[row][collumn];
+                    if (IsLowPoint(map, row, collumn, curretnt)) 
                     {
                         result += (curretnt + 1);
                     }
@@ -65,33 +65,32 @@ namespace day_9
 
         private static int[][] GetArray(string[] input)
         {
-            List<int[]> g = new List<int[]>();
+            List<int[]> listOfRowTiles = new List<int[]>();
             foreach (string line in input)
             {
                 int[] inputs = (Array.ConvertAll(line.ToCharArray(), s => Int32.Parse(s.ToString())));
-                g.Add(inputs);
+                listOfRowTiles.Add(inputs);
             }
 
-            return g.ToArray();
+            return listOfRowTiles.ToArray();
         }
 
         private static object SolvePartTwo(string[] input)
         {
             List<int> basins = new List<int>();
-            int result = 0;
-            int[][] gg = GetArray(input);
-            rowLength = gg.Length;
-            collumnLength = gg[0].Length;
+            int[][] map = GetArray(input);
+            rowLength = map.Length;
+            collumnLength = map[0].Length;
             for (int row = 0; row < rowLength; row++)
             {
-                for (int collumn = 0; collumn < gg[0].Length; collumn++)
+                for (int collumn = 0; collumn < map[0].Length; collumn++)
                 {
-                    int curretnt = gg[row][collumn];
-                    if (IsLowPoint(gg, row, collumn, curretnt))
+                    int curretnt = map[row][collumn];
+                    if (IsLowPoint(map, row, collumn, curretnt))
                     {
                         BasinSize = 0;
                         visited = new HashSet<String>();
-                        Recursive(gg, row, collumn);
+                        Recursive(map, row, collumn);
                         basins.Add(BasinSize);
                     }
                 }
@@ -100,19 +99,19 @@ namespace day_9
             return basins.OrderByDescending(x=>x).Take(3).Aggregate(1, (x,y)=>x*y);
         }
 
-        private static void Recursive(int[][] gg, int row, int collumn)
+        private static void Recursive(int[][] map, int row, int collumn)
         {
-            if (!IsVisited(gg, row, collumn) && row != -1 && collumn != -1 && row < rowLength && collumn<collumnLength)
+            if (!IsVisited(map, row, collumn) && row != -1 && collumn != -1 && row < rowLength && collumn<collumnLength)
             {
                 visited.Add($"{row}:{collumn}");
-                int curretnt = gg[row][collumn];
+                int curretnt = map[row][collumn];
                 if (curretnt != 9)
                 {
                     BasinSize++;
-                    Recursive(gg, row - 1, collumn);
-                    Recursive(gg, row + 1, collumn);
-                    Recursive(gg, row, collumn - 1);
-                    Recursive(gg, row, collumn + 1);
+                    Recursive(map, row - 1, collumn);
+                    Recursive(map, row + 1, collumn);
+                    Recursive(map, row, collumn - 1);
+                    Recursive(map, row, collumn + 1);
                 }
             }
         }
