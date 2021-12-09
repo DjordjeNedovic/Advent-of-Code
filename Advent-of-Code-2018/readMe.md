@@ -25,5 +25,5 @@ Day | Task | Solution | STARS |
 4 |[Repose Record](./day-4) |[day 4 solution](./day-4/Program.cs) | :star: :star: |
 5 |[Alchemical Reduction](./day-5) |[day 5 solution](./day-5/Program.cs) | :star: :star: |
 6 |[Chronal Coordinates](./day-6) |[day 6 solution](./day-6/Program.cs) | :star: :star: |
-7 |[Chronal Coordinates](./day-7) |[day 7 solution](./day-7/Program.cs) | :star: :star: |
+7 |[The Sum of Its Parts](./day-7) |[day 7 solution](./day-7/Program.cs) | :star: :star: |
 8 |[Memory Maneuver ](./day-8) |[day 8 solution](./day-8/Program.cs) | :star:  |
