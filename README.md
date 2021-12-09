@@ -31,7 +31,7 @@ Solutions are done in .NET Core 3.0.
  2021 | 18 :star:|
  2020 | 50 :star:|
  2019 | 29 :star:|
- 2018 | 12 :star:|
+ 2018 | 14 :star:|
 
 ## Contact
 For any question, you can find me:

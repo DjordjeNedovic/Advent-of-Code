@@ -3,11 +3,11 @@ This repository contains my solutions for the problems of Advent of Code 2018.
 
 ```
                                    _
-        .---_                              )
-       / / /\|
-     / / | \ *     /    (                          6 **
-    /  /  \ \                                      5 **
-   / /  / \  \       _  _     _    _  _            4 **
+        .---_                          /   )
+       / / /\|      _               |              7 **
+     / / | \ *    /   \ (                /         6 **
+    /  /  \ \               __   _______/          5 **
+   / /  / \  \       ______X_____X_____X_,         4 **
  ./~~~~~~~~~~~\.                                   3 **
 ( .",^. -". '.~ )                                  2 **
 _'~  ~  ~    ~ '_________ ___ __ _  _   _    _     1 **
@@ -15,7 +15,7 @@ _'~  ~  ~    ~ '_________ ___ __ _  _   _    _     1 **
 ```
 
 
-Stars count: 12 :star:
+Stars count: 14 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -25,3 +25,4 @@ Day | Task | Solution | STARS |
 4 |[Repose Record](./day-4) |[day 4 solution](./day-4/Program.cs) | :star: :star: |
 5 |[Alchemical Reduction](./day-5) |[day 5 solution](./day-5/Program.cs) | :star: :star: |
 6 |[Chronal Coordinates](./day-6) |[day 6 solution](./day-6/Program.cs) | :star: :star: |
+7 |[Chronal Coordinates](./day-7) |[day 7 solution](./day-7/Program.cs) | :star: :star: |
