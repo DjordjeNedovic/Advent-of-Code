@@ -10,9 +10,10 @@ This repository contains my solutions for the problems of Advent of Code.
              .     .        ' :                     6 **
                    .     '  :'                      7 **
                                                     8 **
+                                                    9 **
 ```
 
-# Stars count: 14 :star:
+# Stars count: 18 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -24,3 +25,4 @@ Day | Task | Solution | STARS |
 6 |[Lanternfish](./day-6) |[day 6 solution](./day-6/Program.cs) | :star: :star: |
 7 |[The Treachery of Whales](./day-7) |[day 7 solution](./day-7/Program.cs) | :star: :star: |
 8 |[Seven Segment Search](./day-8) |[day 8 solution](./day-8/Program.cs) | :star: :star: |
+9 |[Smoke Basin](./day-9) |[day 9 solution](./day-9/Program.cs) | :star: :star: |
