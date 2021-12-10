@@ -15,11 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\day-01\day-01.csproj" />
+    <ProjectReference Include="..\day-02\day-02.csproj" />
+    <ProjectReference Include="..\day-03\day-03.csproj" />
+    <ProjectReference Include="..\day-04\day-04.csproj" />
     <ProjectReference Include="..\day-19\day-19.csproj" />
-    <ProjectReference Include="..\day-1\day-1.csproj" />
-    <ProjectReference Include="..\day-2\day-2.csproj" />
-    <ProjectReference Include="..\day-3\day-3.csproj" />
-    <ProjectReference Include="..\day-4\day-4.csproj" />
   </ItemGroup>
 
   <ItemGroup>
