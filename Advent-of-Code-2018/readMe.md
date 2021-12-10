@@ -19,11 +19,11 @@ Stars count: 15 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
-1 |[Chronal Calibration](./day-1/) |[day 1 solution](./day-1/Program.cs) | :star: :star: |
-2 |[Inventory Management System](./day-2) |[day 2 solution](./day-2/Program.cs) | :star: :star: |
-3 |[No Matter How You Slice It](./day-3) |[day 3 solution](./day-3/Program.cs) | :star: :star: |
-4 |[Repose Record](./day-4) |[day 4 solution](./day-4/Program.cs) | :star: :star: |
-5 |[Alchemical Reduction](./day-5) |[day 5 solution](./day-5/Program.cs) | :star: :star: |
-6 |[Chronal Coordinates](./day-6) |[day 6 solution](./day-6/Program.cs) | :star: :star: |
-7 |[The Sum of Its Parts](./day-7) |[day 7 solution](./day-7/Program.cs) | :star: :star: |
-8 |[Memory Maneuver ](./day-8) |[day 8 solution](./day-8/Program.cs) | :star:  |
+1 |[Chronal Calibration](./day-01/) |[day 1 solution](./day-01/Program.cs) | :star: :star: |
+2 |[Inventory Management System](./day-02) |[day 2 solution](./day-02/Program.cs) | :star: :star: |
+3 |[No Matter How You Slice It](./day-03) |[day 3 solution](./day-03/Program.cs) | :star: :star: |
+4 |[Repose Record](./day-04) |[day 4 solution](./day-04/Program.cs) | :star: :star: |
+5 |[Alchemical Reduction](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |
+6 |[Chronal Coordinates](./day-06) |[day 6 solution](./day-06/Program.cs) | :star: :star: |
+7 |[The Sum of Its Parts](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
+8 |[Memory Maneuver ](./day-08) |[day 8 solution](./day-08/Program.cs) | :star:  |
