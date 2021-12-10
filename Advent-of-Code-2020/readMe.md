@@ -34,15 +34,15 @@ This repository contains my solutions for the problems of Advent of Code.
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
-1 |[Report Repair](./day-1) |[day 1 solution](./day-1/Program.cs) | :star: :star: |
-2 |[Password Philosophy](./day-2) |[day 2 solution](./day-2/Program.cs) | :star: :star: |
-3 |[Toboggan Trajectory](./day-3) |[day 3 solution](./day-3/Program.cs) | :star: :star: |
-4 |[Passport Processing](./day-4) |[day 4 solution](./day-4/Program.cs) | :star: :star: |
-5 |[Binary Boarding](./day-5) |[day 5 solution](./day-5/Program.cs) | :star: :star: |
-6 |[Custom Customs](./day-6) |[day 6 solution](./day-6/Program.cs) | :star: :star: |
-7 |[Handy Haversacks](./day-7) |[day 7 solution](./day-7/Program.cs) | :star: :star: |
-8 |[Handheld Halting](./day-8) |[day 8 solution](./day-8/Program.cs) | :star: :star: |
-9 |[Encoding Error](./day-9) |[day 9 solution](./day-9/Program.cs) | :star: :star: |
+1 |[Report Repair](./day-01) |[day 1 solution](./day-01/Program.cs) | :star: :star: |
+2 |[Password Philosophy](./day-02) |[day 2 solution](./day-02/Program.cs) | :star: :star: |
+3 |[Toboggan Trajectory](./day-03) |[day 3 solution](./day-03/Program.cs) | :star: :star: |
+4 |[Passport Processing](./day-04) |[day 4 solution](./day-04/Program.cs) | :star: :star: |
+5 |[Binary Boarding](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |
+6 |[Custom Customs](./day-06) |[day 6 solution](./day-06/Program.cs) | :star: :star: |
+7 |[Handy Haversacks](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
+8 |[Handheld Halting](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
+9 |[Encoding Error](./day-09) |[day 9 solution](./day-09/Program.cs) | :star: :star: |
 10 |[Adapter Array](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
 11 |[Seating System](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
 12 |[Rain Risk](./day-12) |[day 12 solution](./day-12/Program.cs) | :star: :star: |
