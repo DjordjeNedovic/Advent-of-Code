@@ -101,20 +101,20 @@
 
 # AoC 2018
 /Advent-of-Code-2018/.vs/*
-/Advent-of-Code-2018/day-1/bin/*
-/Advent-of-Code-2018/day-1/obj/*
-/Advent-of-Code-2018/day-1/*.user
-/Advent-of-Code-2018/day-2/bin/*
-/Advent-of-Code-2018/day-2/obj/*
-/Advent-of-Code-2018/day-3/bin/*
-/Advent-of-Code-2018/day-3/obj/*
-/Advent-of-Code-2018/day-4/bin/*
-/Advent-of-Code-2018/day-4/obj/*
-/Advent-of-Code-2018/day-5/bin/*
-/Advent-of-Code-2018/day-5/obj/*
-/Advent-of-Code-2018/day-6/bin/*
-/Advent-of-Code-2018/day-6/obj/*
-/Advent-of-Code-2018/day-7/obj/*
-/Advent-of-Code-2018/day-7/bin/*
-/Advent-of-Code-2018/day-8/obj/*
-/Advent-of-Code-2018/day-8/bin/*
+/Advent-of-Code-2018/day-01/bin/*
+/Advent-of-Code-2018/day-01/obj/*
+/Advent-of-Code-2018/day-01/*.user
+/Advent-of-Code-2018/day-02/bin/*
+/Advent-of-Code-2018/day-02/obj/*
+/Advent-of-Code-2018/day-03/bin/*
+/Advent-of-Code-2018/day-03/obj/*
+/Advent-of-Code-2018/day-04/bin/*
+/Advent-of-Code-2018/day-04/obj/*
+/Advent-of-Code-2018/day-05/bin/*
+/Advent-of-Code-2018/day-05/obj/*
+/Advent-of-Code-2018/day-06/bin/*
+/Advent-of-Code-2018/day-06/obj/*
+/Advent-of-Code-2018/day-07/obj/*
+/Advent-of-Code-2018/day-07/bin/*
+/Advent-of-Code-2018/day-08/obj/*
+/Advent-of-Code-2018/day-08/bin/*
