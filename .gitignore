@@ -81,23 +81,36 @@
 /Advent-of-Code-2020/Advent-Of-Code-2020-Tests/obj/*
 
 # AoC 2019
-/aof-2019/.vs/*
-/aof-2019/day-1/obj/*
-/aof-2019/day-2/obj/*
-/aof-2019/day-3/obj/*
-/aof-2019/day-4/obj/*
-/aof-2019/day-5/obj/*
-/aof-2019/day-6/obj/*
-/aof-2019/day-7/obj/*
-/aof-2019/day-8/obj/*
-/aof-2019/day-9/obj/*
-/aof-2019/day-10/obj/*
-/aof-2019/day-11/obj/*
-/aof-2019/day-12/obj/*
-/aof-2019/day-13/obj/*
-/aof-2019/day-14/bin/*
-/aof-2019/day-14/obj/*
-/aof-2019/day-16/obj/*
+/Advent-of-Code-2019/.vs/*
+/Advent-of-Code-2019/day-1/obj/*
+/Advent-of-Code-2020/day-1/bin/*
+/Advent-of-Code-2019/day-2/obj/*
+/Advent-of-Code-2020/day-2/bin/*
+/Advent-of-Code-2019/day-3/obj/*
+/Advent-of-Code-2020/day-3/bin/*
+/Advent-of-Code-2019/day-4/obj/*
+/Advent-of-Code-2020/day-4/bin/*
+/Advent-of-Code-2019/day-5/obj/*
+/Advent-of-Code-2020/day-5/bin/*
+/Advent-of-Code-2019/day-6/obj/*
+/Advent-of-Code-2020/day-6/bin/*
+/Advent-of-Code-2019/day-7/obj/*
+/Advent-of-Code-2020/day-7/bin/*
+/Advent-of-Code-2019/day-8/obj/*
+/Advent-of-Code-2020/day-8/bin/*
+/Advent-of-Code-2019/day-9/obj/*
+/Advent-of-Code-2020/day-9/bin/*
+/Advent-of-Code-2019/day-10/obj/*
+/Advent-of-Code-2020/day-10/bin/*
+/Advent-of-Code-2019/day-11/obj/*
+/Advent-of-Code-2020/day-11/bin/*
+/Advent-of-Code-2019/day-12/obj/*
+/Advent-of-Code-2019/day-12/bin/*
+/Advent-of-Code-2019/day-13/obj/*
+/Advent-of-Code-2019/day-13/bin/*
+/Advent-of-Code-2019/day-14/bin/*
+/Advent-of-Code-2019/day-14/obj/*
+/Advent-of-Code-2019/day-16/obj/*
 
 # AoC 2018
 /Advent-of-Code-2018/.vs/*
