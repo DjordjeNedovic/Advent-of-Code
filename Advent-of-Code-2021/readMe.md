@@ -11,11 +11,13 @@ This repository contains my solutions for the problems of Advent of Code.
                          .  :'                       7 **
                       . .    '''''.....  ....        8 **
                            :'..  ..    ''    ':      9 **
-                           :   ''  ''''..      '.   10 **
-                           :             '..'. :           
+                           :   ''  ''''..     '.    10 **
+                           :             '..'. :    11
+                                  :'''..   ..' :    12
+                              ..''      ''' ...:    13 **
 ```
 
-# Stars count: 18 :star:
+# Stars count: 22 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -29,3 +31,6 @@ Day | Task | Solution | STARS |
 8 |[Seven Segment Search](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
 9 |[Smoke Basin](./day-09) |[day 9 solution](./day-09/Program.cs) | :star: :star: |
 10 |[Syntax Scoring](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
+11 | | | |
+12 | | | |
+13 |[Transparent Origami](./day-13) |[day 13 solution](./day-13/Program.cs) | :star: :star: |

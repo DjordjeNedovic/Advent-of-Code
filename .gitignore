@@ -1,7 +1,6 @@
 #AoC 2021
 /Advent-of-Code-2021/.vs/Advent-of-Code-2021/DesignTimeBuild/*.v2
 /Advent-of-Code-2021/.vs/Advent-of-Code-2021/v16/*.suo
-
 /Advent-of-Code-2021/day-01/obj/*
 /Advent-of-Code-2021/day-01/bin/*
 /Advent-of-Code-2021/day-02/obj/*
@@ -22,6 +21,8 @@
 /Advent-of-Code-2021/day-09/bin/*
 /Advent-of-Code-2021/day-10/obj/*
 /Advent-of-Code-2021/day-10/bin/*
+/Advent-of-Code-2021/day-13/obj/*
+/Advent-of-Code-2021/day-13/bin/*
 
 # AoC 2020
 /Advent-of-Code-2020/day-01/obj/*
