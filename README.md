@@ -28,7 +28,7 @@ Solutions are done in .NET Core 3.0.
 
 | Year | STARS |
  ------------- | ------------- |
- 2021 | 22 :star:|
+ 2021 | 24 :star:|
  2020 | 50 :star:|
  2019 | 29 :star:|
  2018 | 14 :star:|
