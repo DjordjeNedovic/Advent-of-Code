@@ -1,0 +1,2 @@
+﻿Player 1 starting position: 9
+Player 2 starting position: 10

@@ -15,10 +15,17 @@ This repository contains my solutions for the problems of Advent of Code.
                            :             '..'. :    11
                                   :'''..   ..' :    12
                               ..''      ''' ...:    13 **
-                              ..''      ''' ...:    14 **
+                                                    14 **
+                                                    15 *
+                                                    16
+                                                    17
+                                                    18
+                                                    19
+                                                    20
+                                                    21 *
 ```
 
-# Stars count: 24 :star:
+# Stars count: 26 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -36,3 +43,10 @@ Day | Task | Solution | STARS |
 12 | | | |
 13 |[Transparent Origami](./day-13) |[day 13 solution](./day-13/Program.cs) | :star: :star: |
 14 |[Extended Polymerization](./day-14) |[day 14 solution](./day-14/Program.cs) | :star: :star: |
+15 |[Chiton](./day-15) |[day 15 solution](./day-15/Program.cs)| :star: |
+16 | |  |  |
+17 | |  |  |
+18 | |  |  |
+19 | |  |  |
+20 | |  |  |
+21 |[Dirac Dice](./day-21) |[day 21 solution](./day-21/Program.cs)| :star: |
