@@ -12,7 +12,7 @@ This repository contains my solutions for the problems of Advent of Code.
                       . .    '''''.....  ....        8 **
                            :'..  ..    ''    ':      9 **
                            :   ''  ''''..     '.    10 **
-                           :             '..'. :    11
+                           :             '..'. :    11 **
                                   :'''..   ..' :    12
                               ..''      ''' ...:    13 **
                                                     14 **
@@ -25,7 +25,7 @@ This repository contains my solutions for the problems of Advent of Code.
                                                     21 *
 ```
 
-# Stars count: 26 :star:
+# Stars count: 28 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -39,7 +39,7 @@ Day | Task | Solution | STARS |
 8 |[Seven Segment Search](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
 9 |[Smoke Basin](./day-09) |[day 9 solution](./day-09/Program.cs) | :star: :star: |
 10 |[Syntax Scoring](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
-11 | | | |
+11 |[Dumbo Octopus](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
 12 | | | |
 13 |[Transparent Origami](./day-13) |[day 13 solution](./day-13/Program.cs) | :star: :star: |
 14 |[Extended Polymerization](./day-14) |[day 14 solution](./day-14/Program.cs) | :star: :star: |
