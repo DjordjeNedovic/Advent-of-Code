@@ -13,10 +13,10 @@ This repository contains my solutions for the problems of Advent of Code.
                            :'..  ..    ''    ':      9 **
                            :   ''  ''''..     '.    10 **
                            :             '..'. :    11 **
-                                  :'''..   ..' :    12
-                              ..''      ''' ...:    13 **
-                                                    14 **
-                                                    15 *
+                          :       :'''..   ..' :    12 **
+                        .'    ..''      ''' ...:    13 **
+                       : ...''  ..':  .....'        14 **
+                       :'    '''    ''              15 *
                                                     16
                                                     17
                                                     18
@@ -40,7 +40,7 @@ Day | Task | Solution | STARS |
 9 |[Smoke Basin](./day-09) |[day 9 solution](./day-09/Program.cs) | :star: :star: |
 10 |[Syntax Scoring](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
 11 |[Dumbo Octopus](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
-12 | | | |
+12 |[Dumbo Octopus](./day-12) |[day 12 solution](./day-12/Program.cs) | :star: :star: |
 13 |[Transparent Origami](./day-13) |[day 13 solution](./day-13/Program.cs) | :star: :star: |
 14 |[Extended Polymerization](./day-14) |[day 14 solution](./day-14/Program.cs) | :star: :star: |
 15 |[Chiton](./day-15) |[day 15 solution](./day-15/Program.cs)| :star: |
