@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day-02", "day-02\day-02.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day-03", "day-03\day-03.csproj", "{995C66C8-AB2E-4744-A927-8EB66BFCA099}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{06C26CF3-387D-4BEA-81DA-0EFF08AF742A}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+		ReadMe2022.md = ReadMe2022.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
