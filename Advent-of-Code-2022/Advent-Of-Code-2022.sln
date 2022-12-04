@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day-01", "day-01\day-01.csproj", "{D0141BE8-9E9D-47C2-85E4-634A3EE95C5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day-01", "day-01\day-01.csproj", "{D0141BE8-9E9D-47C2-85E4-634A3EE95C5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day-02", "day-02\day-02.csproj", "{3983EC2D-D7BE-4DD6-B150-D03EB9E21D54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day-02", "day-02\day-02.csproj", "{3983EC2D-D7BE-4DD6-B150-D03EB9E21D54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day-03", "day-03\day-03.csproj", "{995C66C8-AB2E-4744-A927-8EB66BFCA099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day-03", "day-03\day-03.csproj", "{995C66C8-AB2E-4744-A927-8EB66BFCA099}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{06C26CF3-387D-4BEA-81DA-0EFF08AF742A}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
 		ReadMe2022.md = ReadMe2022.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day-04", "day-04\day-04.csproj", "{E07574AD-7B49-4253-B3BE-CA829512F525}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{995C66C8-AB2E-4744-A927-8EB66BFCA099}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{995C66C8-AB2E-4744-A927-8EB66BFCA099}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{995C66C8-AB2E-4744-A927-8EB66BFCA099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E07574AD-7B49-4253-B3BE-CA829512F525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E07574AD-7B49-4253-B3BE-CA829512F525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E07574AD-7B49-4253-B3BE-CA829512F525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E07574AD-7B49-4253-B3BE-CA829512F525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

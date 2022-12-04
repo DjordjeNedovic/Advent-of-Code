@@ -5,6 +5,8 @@
 /Advent-of-Code-2022/day-02/bin/*
 /Advent-of-Code-2022/day-03/obj/*
 /Advent-of-Code-2022/day-03/bin/*
+/Advent-of-Code-2022/day-04/obj/*
+/Advent-of-Code-2022/day-04/bin/*
 
 #AoC 2021
 /Advent-of-Code-2021/.vs/Advent-of-Code-2021/DesignTimeBuild/*.v2
@@ -150,3 +152,5 @@
 /Advent-of-Code-2018/day-07/bin/*
 /Advent-of-Code-2018/day-08/obj/*
 /Advent-of-Code-2018/day-08/bin/*
+/Advent-of-Code-2022/.vs/Advent-Of-Code-2022/v17/.futdcache.v1
+/Advent-of-Code-2022/.vs/Advent-Of-Code-2022/DesignTimeBuild/.dtbcache.v2
