@@ -12,7 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadMe", "ReadMe", "{06C26CF3-387D-4BEA-81DA-0EFF08AF742A}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
-		ReadMe2022.md = ReadMe2022.md
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day-04", "day-04\day-04.csproj", "{E07574AD-7B49-4253-B3BE-CA829512F525}"

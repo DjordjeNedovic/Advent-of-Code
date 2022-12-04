@@ -52,7 +52,7 @@
 
             food.Sort();
 
-            return food.Skip(Math.Max(0, food.Count() - 3)).Sum();
+            return food.Skip(food.Count() - 3).Sum();
         }
     }
 }
