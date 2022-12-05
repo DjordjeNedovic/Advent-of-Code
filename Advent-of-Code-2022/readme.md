@@ -2,14 +2,15 @@
 This repository contains my solutions for the problems of Advent of Code.
 
 ```
-#@@#@###@@#.' ~  './\'./\' .#@@@@#@@@@#@#@@#@##@@  04 **
-#@@@@@@#@_/ ~   ~  \ ' '. '.'.#@@@@@@@@@###@@@@@@  03 **
+@@@@@@#@@#@@#.~~.@@./\.'@#@#@@##@@#@##@@@#@#@@#@@  05 **
+@@@@#@@#@@#.' ~  './\'./\' .#@@@@#@@@@#@#@@#@##@@  04 **
+#@@@@@@@@_/ ~   ~  \ ' '. '.'.#@@@@@@@@@###@@@@@@  03 **
 -~------'    ~    ~ '--~-----~-~----___________--  02 **
   ~    ~  ~      ~     ~  ~  ~     ~  ~  ~   ~     01 **
 
 ```
 
-# Stars count: 8 :star:
+# Stars count: 10 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -17,3 +18,4 @@ Day | Task | Solution | STARS |
 2 |[Rock Paper Scissors](./day-02) |[day 2 solution](./day-02/Program.cs) | :star: :star: |
 3 |[Rucksack Reorganization](./day-03) |[day 3 solution](./day-03/Program.cs) | :star: :star: |
 4 |[Camp Cleanup](./day-04) |[day 4 solution](./day-04/Program.cs) | :star: :star: |
+5 |[Camp Cleanup](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |
