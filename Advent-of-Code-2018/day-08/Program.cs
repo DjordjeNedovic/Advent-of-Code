@@ -1,13 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-
-namespace day_8
+﻿namespace day_08
 {
     class Program
     {
         private static int partOneCount = 0;
-        private static int partTwoCount = 0;
+        
         static void Main(string[] args)
         {
             string[] input = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt")).Split(" ");

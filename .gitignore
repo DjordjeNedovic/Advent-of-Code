@@ -153,6 +153,8 @@
 /Advent-of-Code-2018/day-07/bin/*
 /Advent-of-Code-2018/day-08/obj/*
 /Advent-of-Code-2018/day-08/bin/*
+/Advent-of-Code-2018/day-11/obj/*
+/Advent-of-Code-2018/day-11/bin/*
 
 #General
 *.user

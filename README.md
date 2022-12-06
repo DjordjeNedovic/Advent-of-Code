@@ -28,11 +28,11 @@ Solutions are done in .NET Core 3.0.
 
 | Year | STARS |
  ------------- | ------------- |
- 2022 | 10 :star:|
+ 2022 | 12 :star:|
  2021 | 30 :star:|
  2020 | 50 :star:|
  2019 | 29 :star:|
- 2018 | 14 :star:|
+ 2018 | 18 :star:|
 
 ## Contact
 For any question, you can find me:

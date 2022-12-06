@@ -2,7 +2,9 @@
 This repository contains my solutions for the problems of Advent of Code 2018.
 
 ```
-                                   _
+                                   _              11 **
+                                                  10
+                                   _               9
         .---_             _       |   _/   )       8 **
        / / /\|      __   ) )__      |     /        7 **
      / / | \ *    / / \ ( (      _       /         6 **
@@ -15,7 +17,7 @@ _'~  ~  ~    ~ '_________ ___ __ _  _   _    _     1 **
 ```
 
 
-Stars count: 16 :star:
+Stars count: 18 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -26,4 +28,7 @@ Day | Task | Solution | STARS |
 5 |[Alchemical Reduction](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |
 6 |[Chronal Coordinates](./day-06) |[day 6 solution](./day-06/Program.cs) | :star: :star: |
 7 |[The Sum of Its Parts](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
-8 |[Memory Maneuver ](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
+8 |[Memory Maneuver](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
+9 | | | |
+10 | | | |
+11 |[Chronal Charge](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |

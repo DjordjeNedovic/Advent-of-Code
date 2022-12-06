@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-namespace day_6
+﻿namespace day_06
 {
     class Program
     {
@@ -11,7 +6,7 @@ namespace day_6
         {
             string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
             Console.WriteLine("########## Day 6 2018 ##########");
-            //Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
+            Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
             Console.WriteLine($"Part two solution: {SolvePartTwo(input)}");
             Console.WriteLine("################################");
         }

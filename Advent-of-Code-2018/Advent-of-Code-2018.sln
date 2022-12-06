@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29503.13
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day-01", "day-01\day-01.csproj", "{7676F90D-2AA2-48BB-AD58-A6BB843FD401}"
 EndProject
@@ -22,7 +22,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{21720AEE-3BF3-4880-BBFE-AC1C0ECEC851}"
 	ProjectSection(SolutionItems) = preProject
 		readMe.md = readMe.md
+		..\README.md = ..\README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day-11", "day-11\day-11.csproj", "{5F5A313D-B1AA-4C46-B3E2-9C779A4D88AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +65,10 @@ Global
 		{317AC1E0-5837-49D3-9B51-CEEF082B34A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{317AC1E0-5837-49D3-9B51-CEEF082B34A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{317AC1E0-5837-49D3-9B51-CEEF082B34A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F5A313D-B1AA-4C46-B3E2-9C779A4D88AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5A313D-B1AA-4C46-B3E2-9C779A4D88AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5A313D-B1AA-4C46-B3E2-9C779A4D88AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5A313D-B1AA-4C46-B3E2-9C779A4D88AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
