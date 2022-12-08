@@ -2,6 +2,8 @@
 This repository contains my solutions for the problems of Advent of Code.
 
 ```
+@@@@#@@#@@#.~~.@#@@@@#@#.@@#@@##@@#@##@@@#@#@@#@@  07 **
+@@@@@@#@#@@#.~~.#@##@@@..#@#@@##@@#@##@@@#@#@@#@@  06 **
 @@@@@@#@@#@@#.~~.@@./\.'@#@#@@##@@#@##@@@#@#@@#@@  05 **
 @@@@#@@#@@#.' ~  './\'./\' .#@@@@#@@@@#@#@@#@##@@  04 **
 #@@@@@@@@_/ ~   ~  \ ' '. '.'.#@@@@@@@@@###@@@@@@  03 **
@@ -10,7 +12,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 10 :star:
+# Stars count: 14 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -19,3 +21,5 @@ Day | Task | Solution | STARS |
 3 |[Rucksack Reorganization](./day-03) |[day 3 solution](./day-03/Program.cs) | :star: :star: |
 4 |[Camp Cleanup](./day-04) |[day 4 solution](./day-04/Program.cs) | :star: :star: |
 5 |[Camp Cleanup](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |
+6 |[Tuning Trouble](./day-06) |[day 6 solution](./day-06/Program.cs) | :star: :star: |
+7 |[No Space Left On Device](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
