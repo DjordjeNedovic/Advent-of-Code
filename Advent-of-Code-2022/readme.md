@@ -23,3 +23,7 @@ Day | Task | Solution | STARS |
 5 |[Camp Cleanup](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |
 6 |[Tuning Trouble](./day-06) |[day 6 solution](./day-06/Program.cs) | :star: :star: |
 7 |[No Space Left On Device](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
+8 | | | |
+9 | | | |
+10 | | | |
+11 |[Monkey in the Middle](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: |

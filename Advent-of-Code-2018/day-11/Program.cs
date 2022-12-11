@@ -19,7 +19,7 @@
             Dictionary<string, int> matrix3x3values = new Dictionary<string, int>();
             for (int yD = 0; yD < 297; yD++)
             {
-                for (int xD = 0; xD < 279; xD++)
+                for (int xD = 0; xD < 297; xD++)
                 {
                     string key = $"{xD},{yD}";
 
