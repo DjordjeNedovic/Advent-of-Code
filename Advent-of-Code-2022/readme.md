@@ -2,6 +2,10 @@
 This repository contains my solutions for the problems of Advent of Code.
 
 ```
+@@@@#@@#@@@#.~~.@#@@@@#@#.@@#@@##@@@##@@@#@#@@@@@  11 **
+@@@@#@@#@@#.~~.@#@@@@#@#.@@#@@##@@#@##@@@#@#@@@@@  10 **
+@@@@#@@#@@#@@@@@#@@@@#@#@@@#@@##@@#@##@@@#@#@@@@@  09 
+@@@@#@@#@@@@##@@@@@@@#@##@@#@@##@@#@##@@@#@#@@@@@  08 
 @@@@#@@#@@#.~~.@#@@@@#@#.@@#@@##@@#@##@@@#@#@@@@@  07 **
 @@@@@@#@#@@#.~~.#@##@@@..#@#@@##@@#@##@@@#@#@@#@@  06 **
 @@@@@@#@@#@@#.~~.@@./\.'@#@#@@##@@#@##@@@#@#@@#@@  05 **
@@ -12,7 +16,8 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 14 :star:
+# Stars count: 1.
+:star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -25,5 +30,5 @@ Day | Task | Solution | STARS |
 7 |[No Space Left On Device](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
 8 | | | |
 9 | | | |
-10 | | | |
-11 |[Monkey in the Middle](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: |
+10 |[Cathode-Ray Tube](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
+11 |[Monkey in the Middle](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
