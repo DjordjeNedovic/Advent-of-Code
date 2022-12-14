@@ -5,7 +5,7 @@ This repository contains my solutions for the problems of Advent of Code.
 @@@@#@@#@@@#.~~.@#@@@@#@#.@@#@@##@@@##@@@#@#@@@@@  11 **
 @@@@#@@#@@#.~~.@#@@@@#@#.@@#@@##@@#@##@@@#@#@@@@@  10 **
 @@@@#@@#@@#@@@@@#@@@@#@#@@@#@@##@@#@##@@@#@#@@@@@  09 
-@@@@#@@#@@@@##@@@@@@@#@##@@#@@##@@#@##@@@#@#@@@@@  08 
+@@@@#../  \.~~./  \......@@#@@##@@#@##@@@#@#@@@@@  08 *
 @@@@#@@#@@#.~~.@#@@@@#@#.@@#@@##@@#@##@@@#@#@@@@@  07 **
 @@@@@@#@#@@#.~~.#@##@@@..#@#@@##@@#@##@@@#@#@@#@@  06 **
 @@@@@@#@@#@@#.~~.@@./\.'@#@#@@##@@#@##@@@#@#@@#@@  05 **
@@ -16,8 +16,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 1.
-:star:
+# Stars count: 19 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -28,7 +27,10 @@ Day | Task | Solution | STARS |
 5 |[Camp Cleanup](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |
 6 |[Tuning Trouble](./day-06) |[day 6 solution](./day-06/Program.cs) | :star: :star: |
 7 |[No Space Left On Device](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
-8 | | | |
+8 |[Treetop Tree House](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: |
 9 | | | |
 10 |[Cathode-Ray Tube](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
 11 |[Monkey in the Middle](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
+12 | | | |
+13 | | | |
+14 | | | |
