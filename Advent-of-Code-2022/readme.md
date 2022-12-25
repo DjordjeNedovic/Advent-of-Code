@@ -12,10 +12,10 @@ This repository contains my solutions for the problems of Advent of Code.
 @@@@@@@@@@@@@##@@#@@#@@@@@@@@@@@@@@##@@@@@##@@@@@  14
 @@@@@@@@@@@@@##@@#@@#@@@@@@@@@@@@@@##@@@@@##@@@@@  13
 @@@@@@@@@@@@@##@@#@@#@@@@@@@@@@@@@@##@@@@@##@@@@@  12
-@@@@#@@#@@@#.~~.@#@@@@#@#.@@#@@##@@@##@@@#@#@@@@@  11 **
-@@@@#@@#@@#.~~.@#@@@@#@#.@@#@@##@@#@##@@@#@#@@@@@  10 **
-@#@@@@@##@#%%%%%|_ @@@#@@@@#@@##@@#@##@@@#@#@@@@@  09 
-@@@@@../  \.~~./  \......@@@@@#@@@@###@#@@@@@#@@@  08 **
+@@@@#@@#@@@#.~~.@#@@@@#@#.@@#@@## .'.~~~'  #'@@@@  11 **
+@@@@#@@#@@#.~~.@#@@@@#@#.@@#@@#@@#  ~~~~~..#@@@##  10 **
+@#@@@@@#_|%%%=%%|_ @@@#@@@@#@@##@@#@##@@@#@#@@@@@  09 * 
+@@@@@../  \.~~./  \......@##|@@@@@@###@#@@@@@#@@@  08 **
 @@@#@@@@###.~~.@@@@@@@#@.@@@@@@@@#@@#@@####@#@#@#  07 **
 @@@#@#@@#@#@.~~.@@@@@@#..@@@@@#@@@@##@@@#@#@##@@@  06 **
 @#@@#@@#@#@@@.~~.@#./\.'@#@@#@@@####@#@@#@@@#@#@#  05 **
@@ -26,7 +26,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 22 :star:
+# Stars count: 23 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -38,7 +38,7 @@ Day | Task | Solution | STARS |
 6 |[Tuning Trouble](./day-06) |[day 6 solution](./day-06/Program.cs) | :star: :star: |
 7 |[No Space Left On Device](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
 8 |[Treetop Tree House](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
-9 | | | |
+9 |[Day 9: Rope Bridge](./day-09) |[day 9 solution](./day-09/Program.cs) | :star: |
 10 |[Cathode-Ray Tube](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
 11 |[Monkey in the Middle](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
 12 | | | |
