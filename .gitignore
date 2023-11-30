@@ -1,6 +1,8 @@
 #Aoc 2023
+/Advent-of-Code-2023/.vs/*
 
 #AoC 2022
+/Advent-of-Code-2022/.vs/*
 /Advent-of-Code-2022/day-01/obj/*
 /Advent-of-Code-2022/day-01/bin/*
 /Advent-of-Code-2022/day-02/obj/*
@@ -27,6 +29,7 @@
 /Advent-of-Code-2022/day-21/bin/*
 
 #AoC 2021
+/Advent-of-Code-2021/vs/*
 /Advent-of-Code-2021/day-01/obj/*
 /Advent-of-Code-2021/day-01/bin/*
 /Advent-of-Code-2021/day-02/obj/*
@@ -61,9 +64,9 @@
 /Advent-of-Code-2021/day-21/bin/*
 
 # AoC 2020
+/Advent-of-Code-2020/.vs/*
 /Advent-of-Code-2020/day-01/obj/*
 /Advent-of-Code-2020/day-01/bin/*
-/Advent-of-Code-2020/.vs/*
 /Advent-of-Code-2020/day-02/bin/*
 /Advent-of-Code-2020/day-02/obj/*
 /Advent-of-Code-2020/day-03/bin/*
