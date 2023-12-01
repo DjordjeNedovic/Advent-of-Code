@@ -11,6 +11,6 @@ This repository contains my solutions for the problems of Advent of Code.
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
-1 | | | |
+1 |[Trebuchet?!](./day-01) |[day 1 solution](./day-01/Program.cs) | :star: :star: |
 
 
