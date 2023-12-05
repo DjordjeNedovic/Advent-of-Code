@@ -6,13 +6,8 @@ This repository contains my solutions for [Advent of Code](https://adventofcode.
 Solutions are not the best nor fastest, but they are my solutions :smile:
 
 The folder for each day contains:
-
-~~- Task of the day (readMe.md file)~~
-~~- Input for the given task~~
 - Code to solve the given task (main file is always "Program.cs")
-~~- My solutions to the given input are at the end of readMe.md file~~
-
- - Be free to use it for testing your solution.
+- Be free to use it for testing your solution.
 
 ## Specification
 Solutions are done in .NET Core 3.0.
@@ -36,6 +31,7 @@ For any question, you can find me:
 ##
 *It will be updated during time
 
+##
 On https://adventofcode.com/about#faq_copying you can find the following:
 
 ```
