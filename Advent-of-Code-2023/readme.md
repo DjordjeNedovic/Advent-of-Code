@@ -2,9 +2,13 @@
 This repository contains my solutions for the problems of Advent of Code.
 
 ```
-                 ...'''                           04 **
-              .''
-            .'                    /               
+                              . ' '' '''...
+                            '           .. ''.    06
+                         '            ~'  '.~ '.   
+                                        '. *'~ :  05 ** 
+                 ...'''''          .''.~  '..' .   
+              .''          .   ~..'*   '. ~ ..'   04 **
+            .'               '''../......'''               
             :             /\    -/  :               
             '.            -   - /  .'
               '..    _     _   *..'               03 **
@@ -13,7 +17,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 09 :star:
+# Stars count: 10 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -21,4 +25,4 @@ Day | Task | Solution | STARS |
 2 |[Cube Conundrum](./day-02) |[day 2 solution](./day-02/Program.cs) | :star: :star: |
 3 |[Gear Ratios](./day-03) |[day 3 solution](./day-03/Program.cs) | :star: :star: |
 4 |[Scratchcards](./day-04) |[day 4 solution](./day-04/Program.cs) | :star: :star: |
-5 |[If You Give A Seed A Fertilizer](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: |
+5 |[If You Give A Seed A Fertilizer](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |

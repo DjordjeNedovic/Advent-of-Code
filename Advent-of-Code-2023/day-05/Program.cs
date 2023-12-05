@@ -2,7 +2,6 @@
 {
     internal class Program
     {
-        private static List<Plant> seedsPartOne = new();
         private static List<Tuple<long, long, long>> seed_to_soil_map = new();
         private static List<Tuple<long, long, long>> soil_to_fert_map = new();
         private static List<Tuple<long, long, long>> fert_to_water_map = new();
@@ -17,20 +16,97 @@
 
             CreateMap(input);
 
+            //In release mode, on i7 (11 gen) and 16gb of ram
+            //it will take 5 sec to do this
+
             Console.WriteLine("########## Day 5 2025 ##########");
-            Console.WriteLine($"Part one solution: {Solve(seedsPartOne)}");
+            Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
+            Console.WriteLine($"Part two solution: {SolvePartTwo(input)}");
             Console.WriteLine("################################");
+        }
+
+        private static long SolvePartOne(string[] input)
+        {
+            var seds = Array.ConvertAll(input[0].Split(':')[1].Split(' ').Where(x => x != "").ToArray(), s => Int64.Parse(s));
+            List<Plant> seedsPartOne = new();
+
+            foreach (var kvp in seds)
+            {
+                seedsPartOne.Add(new Plant() { Seed = kvp });
+            }
+
+            return Solve(seedsPartOne);
+        }
+
+        private static long SolvePartTwo(string[] input)
+        {
+            //THANKS TO REDDIT
+            //data is somehow grouped in a sequence
+            //idea is to read every 1000th seed number in range
+            //and find a range with a smallest Location for every 1000th seed number
+            var seedsRanges = Array.ConvertAll(input[0].Split(':')[1].Split(' ').Where(x => x != "").ToArray(), s => Int64.Parse(s));
+
+            long minLocationGeneral = 0;
+            long minLocationRange = 0;
+
+            List<Plant> plants = new List<Plant>();
+            for (long i = 0; i < seedsRanges.Length / 2; i++)
+            {
+                long start = seedsRanges[i * 2];
+                long end = seedsRanges[i * 2 + 1];
+
+                for (long current = start; current < start + end - 1; current += 1000)
+                {
+                    plants.Add(new Plant() { Seed = current });
+                }
+
+                var minLocationThatIsFoundInThisRange = Solve(plants);
+
+                if (minLocationGeneral == 0 || minLocationThatIsFoundInThisRange < minLocationGeneral)
+                {
+                    minLocationGeneral = minLocationThatIsFoundInThisRange;
+                    minLocationRange = i;
+                }
+            }
+
+            //when you find range that contains seed with smallest number
+            //do previous step againg (read every 1000the seed)
+            // find min location and find that seed number
+            plants = new List<Plant>();
+            long minStart = seedsRanges[minLocationRange * 2];
+            long minEnd = seedsRanges[minLocationRange * 2 + 1];
+            for (long current = minStart; current < minStart + minEnd - 1; current += 1000)
+            {
+                plants.Add(new Plant() { Seed = current });
+            }
+
+            var resultOfComputation = Solve(plants);
+
+            //when you find seed number
+            //take every number between +1000 and -1000 of the seed number
+            var platObjectWithSmallestLocation = plants.Where(x => x.Location == minLocationGeneral).First();
+
+            minStart = platObjectWithSmallestLocation.Seed - 1000;
+            minEnd = platObjectWithSmallestLocation.Seed + 1000;
+            plants = new List<Plant>();
+
+            for (long current = minStart; current < minEnd; current += 1)
+            {
+                plants.Add(new Plant() { Seed = current });
+            }
+
+            //iterate throught all of them
+            //get smallest location
+            resultOfComputation = Solve(plants);
+
+            //i belive that this can be done in cleanr manner
+            //but i am to tired right now
+            
+            return resultOfComputation;
         }
 
         private static void CreateMap(string[] input)
         {
-            var seds = Array.ConvertAll(input[0].Split(':')[1].Split(' ').Where(x=> x!= "").ToArray(), s=>Int64.Parse(s));
-
-            foreach(var kvp in seds) 
-            {
-                seedsPartOne.Add(new Plant() { Seed = kvp});
-            }
-
             string state = "";
             for (int i = 1; i < input.Length; i++) 
             {
@@ -113,7 +189,6 @@
                 {
                     if (map.Item2 <= currentSeed.Fert && currentSeed.Fert <= (map.Item2 + map.Item3 - 1))
                     {
-                        //set soil to object
                         currentSeed.Water = currentSeed.Fert + (map.Item1 - map.Item2);
                         break;
                     }
@@ -128,7 +203,6 @@
                 {
                     if (map.Item2 <= currentSeed.Water && currentSeed.Water <= (map.Item2 + map.Item3 - 1))
                     {
-                        //set soil to object
                         currentSeed.Light = currentSeed.Water + (map.Item1 - map.Item2);
                         break;
                     }
@@ -181,11 +255,6 @@
                 {
                     currentSeed.Location = currentSeed.Humidity;
                 }
-            }
-
-            foreach (var t in seedsList) 
-            {
-                //Console.WriteLine(t.ToString());
             }
 
             return seedsList.Select(x => x.Location).Min();
