@@ -1,156 +1,155 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace day_01
+namespace day_01;
+
+internal class Program
 {
-    internal class Program
+    private static readonly List<string> numbers = new List<string>() { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+    static void Main(string[] args)
     {
-        private static readonly List<string> numbers = new List<string>() { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+        string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
 
-        static void Main(string[] args)
+        Console.WriteLine("########## Day 1 2023 ##########");
+        Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
+        Console.WriteLine($"Part two solution: {SolvePartTwo(input)}");
+        Console.WriteLine("################################");
+    }
+
+    private static int SolvePartOne(string[] input)
+    {
+        string regexPattern = @"\d+";
+        int result = 0;
+        foreach (string line in input)
         {
-            string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
-
-            Console.WriteLine("########## Day 1 2022 ##########");
-            Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
-            Console.WriteLine($"Part two solution: {SolvePartTwo(input)}");
-            Console.WriteLine("################################");
+            result += Int32.Parse(JustNumbers(regexPattern, line));
         }
 
-        private static int SolvePartOne(string[] input)
+        return result;
+    }
+
+
+    private static int SolvePartTwo(string[] input)
+    {
+        string regexPattern = @"\d+";
+        int result = 0;
+
+        foreach (string line in input)
         {
-            string regexPattern = @"\d+";
-            int result = 0;
-            foreach (string line in input)
+            string one = "";
+            string two = "";
+
+            Dictionary<string, List<int>> foundWords = FindNumbersInString(numbers, line);
+
+            MatchCollection mc = Regex.Matches(line, regexPattern);
+            if (foundWords.Count == 0) 
             {
                 result += Int32.Parse(JustNumbers(regexPattern, line));
             }
-
-            return result;
-        }
-
-
-        private static int SolvePartTwo(string[] input)
-        {
-            string regexPattern = @"\d+";
-            int result = 0;
-
-            foreach (string line in input)
+            else if (mc.Count != 0)
             {
-                string one = "";
-                string two = "";
+                var numRes = JustNumbers(regexPattern, line);
+                int postionOfOneDigit = mc[0].Index;
+                int postionOfSecoundNumber = mc[mc.Count - 1].Index;
 
-                Dictionary<string, List<int>> foundWords = FindNumbersInString(numbers, line);
+                string smallestNumber, largetsNumber;
+                int smallestNumberPosition, largetsNumberPosition;
+                GetPositionsOfWordsInString(foundWords, out smallestNumber, out largetsNumber, out smallestNumberPosition, out largetsNumberPosition);
 
-                MatchCollection mc = Regex.Matches(line, regexPattern);
-                if (foundWords.Count == 0) 
-                {
-                    result += Int32.Parse(JustNumbers(regexPattern, line));
-                }
-                else if (mc.Count != 0)
-                {
-                    var numRes = JustNumbers(regexPattern, line);
-                    int postionOfOneDigit = mc[0].Index;
-                    int postionOfSecoundNumber = mc[mc.Count - 1].Index;
+                one = postionOfOneDigit < smallestNumberPosition ? numRes.ElementAt(0).ToString() : Case(smallestNumber);
+                two = postionOfSecoundNumber > largetsNumberPosition ? numRes.ElementAt(1).ToString() : Case(largetsNumber);
 
-                    string smallestNumber, largetsNumber;
-                    int smallestNumberPosition, largetsNumberPosition;
-                    GetPositionsOfWordsInString(foundWords, out smallestNumber, out largetsNumber, out smallestNumberPosition, out largetsNumberPosition);
-
-                    one = postionOfOneDigit < smallestNumberPosition ? numRes.ElementAt(0).ToString() : Case(smallestNumber);
-                    two = postionOfSecoundNumber > largetsNumberPosition ? numRes.ElementAt(1).ToString() : Case(largetsNumber);
-
-                    result += Int32.Parse(one + two);
-                }
-                else
-                {
-                    string smallestNumber, largetsNumber;
-                    int smallestNumberPosition, largetsNumberPosition;
-                    GetPositionsOfWordsInString(foundWords, out smallestNumber, out largetsNumber, out smallestNumberPosition, out largetsNumberPosition);
-
-                    result += Int32.Parse($"{Case(smallestNumber) + Case(largetsNumber)}");
-                }
+                result += Int32.Parse(one + two);
             }
-
-            return result;
-        }
-
-        private static void GetPositionsOfWordsInString(Dictionary<string, List<int>> foundWords, out string smallestNumber, out string largetsNumber, out int smallestNumberPosition, out int largetsNumberPosition)
-        {
-            smallestNumber = "";
-            smallestNumberPosition = -1;
-
-            largetsNumber = "";
-            largetsNumberPosition = -1;
-
-            //find fist oocurens of number
-            foreach (KeyValuePair<string, List<int>> kvp in foundWords)
+            else
             {
-                var gmin = kvp.Value.Min();
-                var gmax = kvp.Value.Max();
+                string smallestNumber, largetsNumber;
+                int smallestNumberPosition, largetsNumberPosition;
+                GetPositionsOfWordsInString(foundWords, out smallestNumber, out largetsNumber, out smallestNumberPosition, out largetsNumberPosition);
 
-                if (smallestNumberPosition == -1 || gmin < smallestNumberPosition)
-                {
-                    smallestNumber = kvp.Key;
-                    smallestNumberPosition = gmin;
-                }
-
-                if (largetsNumberPosition == -1 || gmax > largetsNumberPosition)
-                {
-                    largetsNumber = kvp.Key;
-                    largetsNumberPosition = gmax;
-                }
+                result += Int32.Parse($"{Case(smallestNumber) + Case(largetsNumber)}");
             }
         }
 
-        private static string JustNumbers(string regexPattern, string line)
+        return result;
+    }
+
+    private static void GetPositionsOfWordsInString(Dictionary<string, List<int>> foundWords, out string smallestNumber, out string largetsNumber, out int smallestNumberPosition, out int largetsNumberPosition)
+    {
+        smallestNumber = "";
+        smallestNumberPosition = -1;
+
+        largetsNumber = "";
+        largetsNumberPosition = -1;
+
+        //find fist oocurens of number
+        foreach (KeyValuePair<string, List<int>> kvp in foundWords)
         {
-            MatchCollection mc = Regex.Matches(line, regexPattern);
+            var gmin = kvp.Value.Min();
+            var gmax = kvp.Value.Max();
 
-            var firstMatch = mc.First().Value;
-            var firstDigit = firstMatch.Length > 1 ? firstMatch = firstMatch.ToArray().ElementAt(0).ToString() : firstMatch;
-
-            var lastMatch = mc.Last().Value;
-            var lastDigit = lastMatch.Length > 0 ? lastMatch = lastMatch.ToArray().ElementAt(lastMatch.Length - 1).ToString() : lastMatch;
-
-            return $"{firstDigit}{lastDigit}";
-        }
-
-        private static Dictionary<string, List<int>> FindNumbersInString(List<string> numbers, string line)
-        {
-            Dictionary<string, List<int>> foundWords = new Dictionary<string, List<int>>();
-
-            foreach (string num in numbers)
+            if (smallestNumberPosition == -1 || gmin < smallestNumberPosition)
             {
-                if (line.Contains(num))
-                {
-                    MatchCollection mc = Regex.Matches(line, num);
-                    foundWords.Add(num, new List<int>());
+                smallestNumber = kvp.Key;
+                smallestNumberPosition = gmin;
+            }
 
-                    for (int i = 0; i <mc.Count;i++) 
-                    {
-                        foundWords[num].Add(mc[i].Index);
-                    }
+            if (largetsNumberPosition == -1 || gmax > largetsNumberPosition)
+            {
+                largetsNumber = kvp.Key;
+                largetsNumberPosition = gmax;
+            }
+        }
+    }
+
+    private static string JustNumbers(string regexPattern, string line)
+    {
+        MatchCollection mc = Regex.Matches(line, regexPattern);
+
+        var firstMatch = mc.First().Value;
+        var firstDigit = firstMatch.Length > 1 ? firstMatch = firstMatch.ToArray().ElementAt(0).ToString() : firstMatch;
+
+        var lastMatch = mc.Last().Value;
+        var lastDigit = lastMatch.Length > 0 ? lastMatch = lastMatch.ToArray().ElementAt(lastMatch.Length - 1).ToString() : lastMatch;
+
+        return $"{firstDigit}{lastDigit}";
+    }
+
+    private static Dictionary<string, List<int>> FindNumbersInString(List<string> numbers, string line)
+    {
+        Dictionary<string, List<int>> foundWords = new Dictionary<string, List<int>>();
+
+        foreach (string num in numbers)
+        {
+            if (line.Contains(num))
+            {
+                MatchCollection mc = Regex.Matches(line, num);
+                foundWords.Add(num, new List<int>());
+
+                for (int i = 0; i <mc.Count;i++) 
+                {
+                    foundWords[num].Add(mc[i].Index);
                 }
             }
-
-            return foundWords;
         }
 
-        private static string Case(string word) 
+        return foundWords;
+    }
+
+    private static string Case(string word) 
+    {
+        switch (word) 
         {
-            switch (word) 
-            {
-                case "one": return "1";
-                case "two": return "2";
-                case "three": return "3";
-                case "four": return "4";
-                case "five": return "5";
-                case "six": return "6";
-                case "seven": return "7";
-                case "eight": return "8";
-                case "nine": return "9";
-                default: throw new ArgumentException("Something wen wrong");
-            }
+            case "one": return "1";
+            case "two": return "2";
+            case "three": return "3";
+            case "four": return "4";
+            case "five": return "5";
+            case "six": return "6";
+            case "seven": return "7";
+            case "eight": return "8";
+            case "nine": return "9";
+            default: throw new ArgumentException("Something wen wrong");
         }
     }
 }
