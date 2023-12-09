@@ -8,7 +8,7 @@ This repository contains my solutions for the problems of Advent of Code.
         .' ~  ,* ~ ~ ~ ~ ##### '.                 09 **
         : ~ '(~), ~ * ~ ~ ~ ### :                 08 **
         '. ~ " ' ~ ~ ~   ##### .'
-          '.. ~ ~ * ~ ##### ..'.' '' '''...       07
+          '.. ~ ~ * ~ ##### ..'.' '' '''...       07 **
              '''.........'''' ~ .'*. ~  .. ''.    06 **
                         .' ~    '...' ~'  '.~ '.   
                         :         ~     '. *'~ :  05 ** 
@@ -23,7 +23,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 16 :star:
+# Stars count: 18 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -33,6 +33,6 @@ Day | Task | Solution | STARS |
 4 |[Scratchcards](./day-04) |[day 4 solution](./day-04/Program.cs) | :star: :star: |
 5 |[If You Give A Seed A Fertilizer](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |
 6 |[Wait For It](./day-06) |[day 6 solution](./day-06/Program.cs) | :star: :star: |
-7 | | | |
+7 |[Camel Cards](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
 8 |[Haunted Wasteland](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
 9 |[Mirage Maintenance](./day-09) |[day 9 solution](./day-09/Program.cs) | :star: :star: |
