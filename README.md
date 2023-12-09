@@ -16,7 +16,7 @@ Solutions are done in .NET Core 3.0.
 
 | Year | STARS |
  ------------- | ------------- |
- 2023 | 14 :star:|
+ 2023 | 18 :star:|
  2022 | 22 :star:|
  2021 | 30 :star:|
  2020 | 50 :star:|
@@ -24,7 +24,7 @@ Solutions are done in .NET Core 3.0.
  2018 | 18 :star:|
 
 ## Contact
-For any question, you can find me:
+For any questions, you can find me at:
 - nedovic.djordje@gmail.com
 - [@djordje_nedovic](https://twitter.com/djordje_nedovic) (twitter)
 
@@ -38,4 +38,4 @@ On https://adventofcode.com/about#faq_copying you can find the following:
 Can I copy/redistribute part of Advent of Code? Please don't.
 ```
 
-So I will not include anything but code in this repo. Older solutions will be updated accordingly during time :)
+So I will not include anything but code in this repo. Older solutions will be updated accordingly over time :)
