@@ -3,9 +3,13 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-
-                              . ' '' '''...       07
-                            ' ~ .'*. ~  .. ''.    06 **
+                     ' ''...                      10
+          .   ~ ~ ~ ~   ### ''.
+        .' ~  ,* ~ ~ ~ ~ ##### '.                 09 **
+        : ~ '(~), ~ * ~ ~ ~ ### :                 08 **
+        '. ~ " ' ~ ~ ~   ##### .'
+          '.. ~ ~ * ~ ##### ..'.' '' '''...       07
+             '''.........'''' ~ .'*. ~  .. ''.    06 **
                         .' ~    '...' ~'  '.~ '.   
                         :         ~     '. *'~ :  05 ** 
                  ...'''''.         .''.~  '..' .   
@@ -19,7 +23,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 14 :star:
+# Stars count: 16 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -30,5 +34,5 @@ Day | Task | Solution | STARS |
 5 |[If You Give A Seed A Fertilizer](./day-05) |[day 5 solution](./day-05/Program.cs) | :star: :star: |
 6 |[Wait For It](./day-06) |[day 6 solution](./day-06/Program.cs) | :star: :star: |
 7 | | | |
-8 | | | |
+8 |[Haunted Wasteland](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
 9 |[Mirage Maintenance](./day-09) |[day 9 solution](./day-09/Program.cs) | :star: :star: |
