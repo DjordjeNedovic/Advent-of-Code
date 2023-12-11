@@ -2,8 +2,8 @@
 This repository contains my solutions for the problems of Advent of Code.
 
 ```
-
-                     ' ''...                        10
+                                                    11 **
+                     ' ''...                        10 **
           .   ~ ~ ~ ~   ### ''.
         .' ~  ,* ~ ~ ~ ~ ##### '.                   09 **
         : ~ '(~), ~ * ~ ~ ~ ### :                   08 **
@@ -23,7 +23,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 18 :star:
+# Stars count: 22 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -36,3 +36,5 @@ Day | Task | Solution | STARS |
 7 |[Camel Cards](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
 8 |[Haunted Wasteland](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
 9 |[Mirage Maintenance](./day-09) |[day 9 solution](./day-09/Program.cs) | :star: :star: |
+10| Pipe Maze | | :star: :star: |
+11 |[Cosmic Expansion](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
