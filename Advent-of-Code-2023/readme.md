@@ -5,7 +5,7 @@ This repository contains my solutions for the problems of Advent of Code.
                                                     14 *
                                                     15 **
                                                     16
-                                                    13 *
+                                                    13 **
                                                     
                                                     12
 
@@ -30,7 +30,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 26 :star:
+# Stars count: 27 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -46,6 +46,6 @@ Day | Task | Solution | STARS |
 10| Pipe Maze | | :star: :star: |
 11 |[Cosmic Expansion](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
 12|  | | |
-13| Point of Incidence | | :star: |
+13|[Point of Incidence](./day-13)|[day 13 solution](./day-13/Program.cs) | :star: :star: |
 14| Parabolic Reflector Dish | | :star: |
 15 |[Lens Library](./day-15) |[day 15 solution](./day-15/Program.cs) | :star: :star: |
