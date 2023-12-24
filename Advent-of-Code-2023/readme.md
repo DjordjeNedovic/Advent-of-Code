@@ -6,9 +6,9 @@ This repository contains my solutions for the problems of Advent of Code.
                                                     15 **
                                                     16 **
                                                     13 **
-                                                    
+                                                    17
                                                     12
-
+                                                    18 **
                                                     11 **
                      ' ''...                        10 **
           .   ~ ~ ~ ~   ### ''.
@@ -30,7 +30,7 @@ This repository contains my solutions for the problems of Advent of Code.
 
 ```
 
-# Stars count: 29 :star:
+# Stars count: 31 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -50,3 +50,5 @@ Day | Task | Solution | STARS |
 14| Parabolic Reflector Dish | | :star: |
 15 |[Lens Library](./day-15) |[day 15 solution](./day-15/Program.cs) | :star: :star: |
 16 |[The Floor Will Be Lava](./day-16) |[day 16 solution](./day-16/Program.cs) | :star: :star: |
+17|  | | |
+18 |[Lavaduct Lagoon](./day-18) |[day 18 solution](./day-18/Program.cs) | :star: :star: |
