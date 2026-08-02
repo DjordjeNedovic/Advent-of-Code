@@ -1,0 +1,16 @@
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\bin\Debug\net10.0\day-09.exe
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\bin\Debug\net10.0\puzzleInput.txt
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\bin\Debug\net10.0\day-09.deps.json
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\bin\Debug\net10.0\day-09.runtimeconfig.json
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\bin\Debug\net10.0\day-09.dll
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\bin\Debug\net10.0\day-09.pdb
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\day-09.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\day-09.AssemblyInfoInputs.cache
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\day-09.AssemblyInfo.cs
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\day-09.csproj.CoreCompileInputs.cache
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\day-09.sourcelink.json
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\day-09.dll
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\refint\day-09.dll
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\day-09.pdb
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\day-09.genruntimeconfig.cache
+D:\Projects\Advent of Code\Advent-of-Code\Advent-of-Code-2018\day-09\obj\Debug\net10.0\ref\day-09.dll

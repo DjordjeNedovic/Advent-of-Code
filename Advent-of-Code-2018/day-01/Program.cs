@@ -1,70 +1,61 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace day_01
+string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
+
+Console.WriteLine("########## Day 1 2018 ##########");
+Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
+Console.WriteLine($"Part two solution: {SolvePartTwo(input)}");
+Console.WriteLine("################################");
+
+int SolvePartOne(string[] inputs)
 {
-    class Program
+    string regex = @"(\+|\-)(?<value>\d+)";
+
+    int count = 0;
+    foreach (string input in inputs)
     {
-        static void Main(string[] args)
+        Match match = Regex.Match(input, regex);
+        string sign = match.Groups[1].Value;
+        int neededSize = Int32.Parse(match.Groups["value"].Value);
+
+        neededSize = sign == "+" ? neededSize : -neededSize;
+        count += neededSize;
+    }
+
+    return count;
+}
+
+int SolvePartTwo(string[] inputs)
+{
+    string regex = @"(\+|\-)(?<value>\d+)";
+    int count = 0;
+
+    List<int> results = new List<int>();
+    bool shoulBreak = false;
+    while (true) 
+    {
+        for (int i = 0; i < inputs.Length; i++) 
         {
-            string[] input = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "puzzleInput.txt"));
+            Match match = Regex.Match(inputs[i], regex);
+            string sign = match.Groups[1].Value;
+            int neededSize = Int32.Parse(match.Groups["value"].Value);
 
-            Console.WriteLine("########## Day 1 2018 ##########");
-            Console.WriteLine($"Part one solution: {SolvePartOne(input)}");
-            Console.WriteLine($"Part two solution: {SolvePartTwo(input)}");
-            Console.WriteLine("################################");
-        }
-
-        private static int SolvePartOne(string[] inputs)
-        {
-            string regex = @"(\+|\-)(?<value>\d+)";
-
-            int count = 0;
-            foreach (string input in inputs)
+            neededSize = sign == "+" ? neededSize : -neededSize;
+            count += neededSize;
+            if (results.Contains(count)) 
             {
-                Match match = Regex.Match(input, regex);
-                string sign = match.Groups[1].Value;
-                int neededSize = Int32.Parse(match.Groups["value"].Value);
-
-                neededSize = sign == "+" ? neededSize : -neededSize;
-                count += neededSize;
+                shoulBreak = true;
+                break;
             }
 
-            return count;
+            results.Add(count);
         }
 
-        private static int SolvePartTwo(string[] inputs)
+        if (shoulBreak) 
         {
-            string regex = @"(\+|\-)(?<value>\d+)";
-            int count = 0;
-
-            List<int> results = new List<int>();
-            bool shoulBreak = false;
-            while (true) 
-            {
-                for (int i = 0; i < inputs.Length; i++) 
-                {
-                    Match match = Regex.Match(inputs[i], regex);
-                    string sign = match.Groups[1].Value;
-                    int neededSize = Int32.Parse(match.Groups["value"].Value);
-
-                    neededSize = sign == "+" ? neededSize : -neededSize;
-                    count += neededSize;
-                    if (results.Contains(count)) 
-                    {
-                        shoulBreak = true;
-                        break;
-                    }
-
-                    results.Add(count);
-                }
-
-                if (shoulBreak) 
-                {
-                    break;
-                }
-            }
-
-            return count;
+            break;
         }
     }
+
+    return count;
 }
