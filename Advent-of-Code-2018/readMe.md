@@ -2,12 +2,15 @@
 This repository contains my solutions for the problems of Advent of Code 2018.
 
 ```
-                                   _              11 **
-                                                  10
-                                   _     __        9 **
-        .---_             _       | |\__/_/)       8 **
+                                 - -           \  14
+                               -- - '    |/       13
+                                                | 12 **
+                                    |           | 11 **
+                                               /  10 **
+                                   _     __   |    9 **
+        .---_             _       | |\__/_/)  |    8 **
        / / /\|      __   ) )__   _|_|     /        7 **
-     / / | \ *    / / \ ( (      _/      /         6 **
+     / / | \ *    / / \ ( (   \_/_/      /    |    6 **
     /  /  \ \    | | \/  \_\__ _ _______/          5 **
    / /  / \  \    \_\______X_____X_____X_,         4 **
  ./~~~~~~~~~~~\.                                   3 **
@@ -17,7 +20,7 @@ _'~  ~  ~    ~ '_________ ___ __ _  _   _    _     1 **
 ```
 
 
-Stars count: 20 :star:
+Stars count: 24 :star:
 
 Day | Task | Solution | STARS |
 ------------ | ------------ | ------------- | ------------- |
@@ -30,5 +33,6 @@ Day | Task | Solution | STARS |
 7 |[The Sum of Its Parts](./day-07) |[day 7 solution](./day-07/Program.cs) | :star: :star: |
 8 |[Memory Maneuver](./day-08) |[day 8 solution](./day-08/Program.cs) | :star: :star: |
 9 |[Marble Mania](./day-09) |[day 9 solution](./day-09/Program.cs) | :star: :star: |
-10 | | | |
+10 |[The Stars Align](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
 11 |[Chronal Charge](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
+12 |[Subterranean Sustainability](./day-12) |[day 12 solution](./day-12/Program.cs) | :star: :star: |

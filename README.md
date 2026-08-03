@@ -7,7 +7,6 @@ Solutions are not the best nor fastest, but they are my solutions :smile:
 
 The folder for each day contains:
 - Code to solve the given task (main file is always "Program.cs")
-- Be free to use it for testing your solution.
 
 ## Specification
 Solutions are done in .NET Core 3.0.
@@ -21,7 +20,7 @@ Solutions are done in .NET Core 3.0.
  2021 | 30 :star:|
  2020 | 50 :star:|
  2019 | 29 :star:|
- 2018 | 18 :star:|
+ 2018 | 24 :star:|
 
 ## Contact
 For any questions, you can find me at:
