@@ -48,7 +48,7 @@ for (int y = 0; y < input.Length; y++)
     }
 }
 
-Console.WriteLine("########## Day 9 2018 ##########");
+Console.WriteLine("########## Day 13 2018 ##########");
 Console.WriteLine($"Part one solution: {SolvePartOne(map, carts)}");
 Console.WriteLine($"Part one solution: {SolvePartTwo(map, cartsPartTwo)}");
 Console.WriteLine("################################");

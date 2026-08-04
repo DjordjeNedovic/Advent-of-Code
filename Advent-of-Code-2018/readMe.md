@@ -36,3 +36,5 @@ Day | Task | Solution | STARS |
 10 |[The Stars Align](./day-10) |[day 10 solution](./day-10/Program.cs) | :star: :star: |
 11 |[Chronal Charge](./day-11) |[day 11 solution](./day-11/Program.cs) | :star: :star: |
 12 |[Subterranean Sustainability](./day-12) |[day 12 solution](./day-12/Program.cs) | :star: :star: |
+13 |[Mine Cart Madness](./day-13) |[day 13 solution](./day-13/Program.cs) | :star: :star: |
+14 |[Chocolate Charts](./day-14) |[day 14 solution](./day-14/Program.cs) | :star: :star: |
