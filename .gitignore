@@ -206,12 +206,21 @@
 /Advent-of-Code-2018/day-07/bin/*
 /Advent-of-Code-2018/day-08/obj/*
 /Advent-of-Code-2018/day-08/bin/*
+/Advent-of-Code-2018/day-09/obj/*
+/Advent-of-Code-2018/day-09/bin/*
+/Advent-of-Code-2018/day-10/obj/*
+/Advent-of-Code-2018/day-10/bin/*
 /Advent-of-Code-2018/day-11/obj/*
 /Advent-of-Code-2018/day-11/bin/*
+/Advent-of-Code-2018/day-12/obj/*
+/Advent-of-Code-2018/day-12/bin/*
+/Advent-of-Code-2018/day-13/obj/*
+/Advent-of-Code-2018/day-13/bin/*
+/Advent-of-Code-2018/day-14/obj/*
+/Advent-of-Code-2018/day-14/bin/*
 
 #General
 *.user
 *.v1
 *.v2
-/Advent-of-Code-2018/day-10
-/Advent-of-Code-2018/day-12
+
